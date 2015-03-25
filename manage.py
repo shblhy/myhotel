@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-import os
-import sys
+import os,sys
+
 
 def set_django_env():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
-    
+
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 

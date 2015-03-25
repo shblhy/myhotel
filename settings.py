@@ -37,7 +37,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'member.User'
 
 INSTALLED_APPS = (
-    'member',
+    'apps.member',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,9 +45,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hehotel',
-    'room',
-    'order',
-    'article'
+    'apps.room',
+    'apps.order',
+    'apps.article'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,9 +60,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'hehotel.urls'
+ROOT_URLCONF = 'urls'
 
-WSGI_APPLICATION = 'hehotel.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 
@@ -74,7 +74,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'hehotel',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD':'password',                  # Not used with sqlite3.
+        'PASSWORD': 'password',                  # Not used with sqlite3.
         'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3808'                    # Set to empty string for default. Not used with sqlite3.
         },
@@ -122,16 +122,16 @@ LOGGING = {
            #'filters': ['special'],
            'level': 'INFO',
            'propagate': True
-        }  
+        }
     }
 }
 if SHOW_SQL:
-    LOGGING['handlers']['console']={
-        'level':'DEBUG',
-        'class':'logging.StreamHandler',
+    LOGGING['handlers']['console'] = {
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
     }
-    LOGGING['loggers']['django.db.backends']= {
+    LOGGING['loggers']['django.db.backends'] = {
                 'handlers': ['console'],
                 'propagate': True,
-                'level':'DEBUG',
+                'level': 'DEBUG',
             }
