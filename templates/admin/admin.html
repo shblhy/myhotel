@@ -1,0 +1,29 @@
+{% extends "baseadmin.html" %}
+{% block content %}
+<p>统计信息</p>
+<p>    网站共有注册会员{{user_cnt.all}}个。<br/>
+    旅店共有房间{{room_cnt.all}}间，目前空闲的有{{room_cnt.empty}}间，预定中的有{{room_cnt.order}}间。<br/>
+    目前总共有订单记录{{order_cnt.all}}条,成交{{order_cnt.pay}}条。</p>
+
+{%endblock%}
+
+<!--ul>
+<li><a href="../sitemap.html">网站地图</a></li>
+<li><a href="../main/contactus.html">联系我们</a></li>
+<li><a href="../main/recruit.html">工作机会</a></li>
+<li><a href="../main/privacy.html">隐私条款</a></li>
+<li>版权所有：道县万豪假日酒店酒店 粤ICP备 05025329号-1</li>
+</ul>
+<div class="footer">
+	<div class="footer-nav"> <a href="site_map.html" class="newfooter-nav">网站地图</a>|<a href="contact_hotel.html" class="newfooter-nav">联系我们</a>|<a href="career.html" class="newfooter-nav">工作机会</a>|<a href="privacy.html" class="newfooter-nav">隐私条款</a>|<a href="usage_clause.html" class="newfooter-nav">使用条款</a> </div>
+	<div class="site-info">        
+		<div class="site-r">
+			<p class="copy-address">中国湖南道县</p>
+			<span> 电话： (86 123) 1234 123</span><span class="email">电子邮件: <a rel="nofollow" href="mailto:daox@ad.com">daox@ad.com</a></span>
+		</div>
+		<div class="site-l">
+			<span class="copy_right">版权所有：道县假日酒店</span> 
+			<span class="copy-icp"><a target="_blank" href="http://www.miibeian.gov.cn/">赣ICP备 1342423号-1</a></span>
+		</div>
+	</div>
+</div-->

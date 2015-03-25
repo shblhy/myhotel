@@ -1,0 +1,47 @@
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <script type="text/javascript" src="/static/base/com/jquery.form.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>道县万豪假日酒店</title>
+</head>
+<body>
+<div>
+        <h3>会员登录</h3>
+        <form id="pop-login-form1" action="/member/login/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label for="pop-login-account">用户名：</label>
+                        <input type="text" id="pop-login-account" name="username">
+                        <span style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label for="pop-login-password">密码：</label>
+                        <input type="password" id="pop-login-password" name="password">
+                        <span style="display:none;"></span><span >请输入密码!</span> </dd>
+                    <dd>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+<script language="JavaScript">
+    $('#login-submit-btn').click(function(){
+        $("#pop-login-form1").ajaxForm({
+                data : {},
+                dataType : "json",
+                success: function(data) {
+                    alert('sucess');
+                    window.location = '/'
+                }
+            }).submit();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<div>
+    <script type="text/template" class="J-baseinfo-template">
+        <table>
+            <tr>
+                <th><span class="strong">*</span>中间商类型：</th>
+                <td class="middle-radios">
+                    <label>
+                    <input type="radio" name="middleman_type" wine-bind="middleman_type" value="1"> 公司
+                    </label>
+                    <label>
+                    <input type="radio" name="middleman_type" wine-bind="middleman_type" value="2"> 个人
+                    </label>
+                </td>
+            </tr>
+            <tr class="J-middle-company">
+                <th><span class="strong">*</span>企业名称：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="name">
+                        <div class="input-des">请输入2-50个字符，支持中英文、数字</div>
+                        <label><i class="icon-tips icon-warn"></i>请输入2-50个字符，支持中英文、数字</label>
+                    </div>
+                </td>
+            </tr>
+            <tr class="J-middle-company">
+                <th><span class="strong">*</span>企业简称：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="short_name">
+                        <div class="input-des">请输入2-10个字符</div>
+                        <label><i class="icon-tips icon-warn"></i>请输入2-10个字符</label>
+                    </div>
+                </td>
+            </tr>
+            <tr class="J-middle-company">
+                <th><span class="strong">*</span>企业邮箱：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="email">
+                        <div class="input-des">请输入企业邮箱</div>
+                        <label><i class="icon-tips icon-warn"></i>邮箱格式不正确，请输入正确的邮箱</label>
+                    </div>
+                </td>
+            </tr>
+            <tr class="J-middle-company">
+                <th><span class="strong">*</span>企业电话：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="tel">
+                        <div class="input-des">请输入企业电话</div>
+                        <label><i class="icon-tips icon-warn"></i>电话号码格式不正确，请输入正确的座机号或者手机号</label>
+                    </div>
+                </td>
+            </tr>
+            <tr class="J-middle-company">
+                <th><span class="strong">*</span>企业地址：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="address">
+                        <div class="input-des">请输入企业地址，2-50个字符</div>
+                        <label><i class="icon-tips icon-warn"></i>请输入2-50个字符</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="strong">*</span>联系人：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="contact">
+                        <div class="input-des">请输入联系人，2-10个字符</div>
+                        <label><i class="icon-tips icon-warn"></i>请输入2-10个字符</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th><span class="strong">*</span>联系电话：</th>
+                <td>
+                    <div class="input-box">
+                        <input type="text" class="input" wine-bind="contact_num">
+                        <div class="input-des">请输入联系电话</div>
+                        <label><i class="icon-tips icon-warn"></i>电话号码格式不正确，请输入正确的座机号或者手机号</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><a href="javascript:void(0);" class="btn-sure J-baseinfo-save">保存</a></td>
+            </tr>
+        </table>
+    </script>
+
+    <script type="text/template" class="J-password-popup">
+        <div class="popup-layout">
+            <div class="popup-bg"></div>
+            <div class="popup">
+                <div class="popup-content">
+                    <h3>修改密码</h3>
+                    <div class="popup-inner">
+                            <table>
+                                <tr>
+                                    <th><span class="strong">*</span>旧密码：</th>
+                                    <td>
+                                        <div class="input-box">
+                                            <input type="text" class="input" wine-bind="old_pwd">
+                                            <div class="input-des">请输入旧密码</div>
+                                            <label><i class="icon-tips icon-warn"></i>格式不正确，6到16个字符</label>
+                                        </div>
+                                    </td>
+                                </tr><tr>
+                                    <th><span class="strong">*</span>新密码：</th>
+                                    <td>
+                                        <div class="input-box">
+                                            <input type="text" class="input" wine-bind="new_pwd">
+                                            <div class="input-des">请输入新密码</div>
+                                            <label><i class="icon-tips icon-warn"></i>格式不正确，6到16个字符</label>
+                                        </div>
+                                    </td>
+                                </tr><tr>
+                                    <th><span class="strong">*</span>重复新密码：</th>
+                                    <td>
+                                        <div class="input-box">
+                                            <input type="text" class="input" wine-bind="new_pwd_repeat">
+                                            <div class="input-des">请重复新密码</div>
+                                            <label><i class="icon-tips icon-warn"></i>与新密码不一致</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td><a href="javascript:void(0);" class="btn-sure J-middle-save">保存</a></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>

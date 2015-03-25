@@ -1,0 +1,26 @@
+{% extends "baseadmin.html" %}
+{% block content %}
+<form id="article_form" action="/article/input_article" method="post">
+    <label id="article_form_errmsg"></label>
+    <ul>
+        <li><label>*标题</label><input type="text"  id="title" name="title" value="{{article.title}}"/></li>
+        <li><label>*内容</label><textarea id="content" name="content" value="{{article.content}}"> </textarea></li>
+        <li><label>*图片</label><input type="text" id="picture" name="picture" value="{{article.picture|default_if_none:''}}"/></li>
+    </ul>
+ </form>
+ <button id="submit-article-btn">提交</button>
+  <script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+        $(function() {
+                $('#submit-article-btn').click(function(){
+                	$("#article_form").ajaxForm({
+	                    dataType : "json",
+	                    success: function(data) {
+	                        window.location = "/special_offers";
+	                    }
+	                }).submit();
+                });
+        });
+    });
+</script>
+ {% endblock %}

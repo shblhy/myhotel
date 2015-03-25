@@ -1,0 +1,22 @@
+{% extends "baseheadpic.html" %}
+{% block content %}
+<!--扩展的房间列表，为了提供给用户友好的展示风格-->
+<br/>
+<ul class="test_ul compare-list">
+    {%for rtype in room_types%}
+    <li class="list_item">
+    	<table>
+    		<tr><td>{{rtype.name}}</td></tr>
+    		<tr><td><img src="{{rtype.full_photo_path}}" alt="尚未上传"></td></tr>
+    		<tr><td>{{rtype.comment}}</td></tr>
+    		<tr><td><a href="/order/add/{{rtype.id}}">预订</a></td></tr>
+    	</table>
+    </li>
+    {%endfor%}
+</ul>
+<script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+         functions.base.set_all_aclick();
+    });
+</script>
+{% endblock %}

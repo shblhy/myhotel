@@ -1,0 +1,106 @@
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <script type="text/javascript" src="/static/base/js/require-config.js"></script>
+    <link media="screen" href="/static/plugin/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <title>道县万豪假日酒店</title>
+</head>
+<body>
+<p>首页</p>
+<p><a href="{%url 'login'%}">登录</a> | <a href="{%url 'regist'%}">注册</a> | <a href="{%url 'admin'%}">后台</a></p>
+<ul>
+<li><a href="{%url 'hotel'%}">酒店介绍</a></li>
+<li><a href="{%url 'rooms'%}">房间住宿</a></li>
+<li><a href="{%url 'special_offers'%}">图文活动</a></li>
+</ul>
+<p>配图</p>
+<p>内容</p>
+<ul>
+<li><a href="{%url 'sitemap'%}">网站地图</a></li>
+<li><a href="{%url 'contactus'%}">联系我们</a></li>
+<li><a href="{%url 'recruit'%}">工作机会</a></li>
+<li><a href="{%url 'privacy'%}">隐私条款</a></li>
+<li>版权所有：道县万豪假日酒店酒店 粤ICP备 05025329号-1</li>
+</ul>
+<!-->
+<div id="pop-login-content" class="floatblock popup-module common_window" style="display: none;">
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员登录</h3>
+        <form id="pop-login-form1" action="/member/login/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-login-account">用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-login-account" name="username">
+                        <span class="text-error-info text-error-pop-login-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-login-password">密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-login-password" name="password">
+                        <span class="text-error-info text-error-pop-login-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="pop-regist-content" class="floatblock" style="display: none;">
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员注册</h3>
+        <form id="pop-regist-form1" action="/member/regist/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-account">*用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-regist-username" name="username">
+                        <span class="text-error-info text-error-pop-regist-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-password" name="password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*重复密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-repeat-password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">再次输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*手机：</label>
+                        <input type="text"  class="input input-text" id="pop-phone" name="phone">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入10-20位手机</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*真实姓名：</label>
+                        <input type="text"  class="input input-text" id="pop-realname" name="realname">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入真实姓名</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">QQ：</label>
+                        <input type="text"  class="input input-text" id="pop-qq" name="qq">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">Email：</label>
+                        <input type="text"  class="input input-text" id="pop-email" name="email">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</-->
+<script type="text/javascript">
+    require(["jquery","functions","table","form"], function($,functions,table) {
+    	alert('aaaa');
+    });
+</script>
+
+</body>
+</html>

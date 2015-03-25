@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import url("reset.css");
+/*
+ * 本样式表主要用于登错误页面
+ */
+.c-module {
+    height: 200px;
+    left: 48%;
+    margin-left: -248px;
+    margin-top: -100px;
+    position: absolute;
+    top: 48%;
+    width: 496px;
+}
+.c-wrap:after {
+    clear: both;
+}
+.c-wrap:before, .c-container .c-wrap:after {
+    content: "";
+    display: table;
+}
+.c-wrap:before, .c-wrap:after {
+    content: "";
+    display: table;
+}
+.c-logo {
+    background: url("../images/broadinter.png") no-repeat scroll 0 15px transparent;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 170px;
+}
+.c-box:after {
+    clear: both;
+}
+.c-box:before, .c-box:after {
+    content: "";
+    display: table;
+}
+h1 {
+    color: #d9d9d9;
+    font-size: 112px;
+    font-weight: bold;
+    line-height: 112px;
+}
+.apology {
+    color: #444444;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    margin-top: -4px;
+}
+a{
+	color:#2295ab;
+}
+.c-box {
+    border-left: 1px solid rgba(153, 153, 153, 0.3);
+    float: left;
+    height: 200px;
+    padding-left: 30px;
+    position: relative;
+    width: 282px;
+}

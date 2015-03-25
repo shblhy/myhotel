@@ -1,0 +1,46 @@
+{% extends "basecustomer.html" %}
+{% block content %}
+<!--todo管理员与用户自身看到的情况应该有所不同，不同点？-->
+<ul>
+    <li><label style="width: 100px;">用户名</label>{{user.username}}</li>
+    <li><label style="width: 100px;">姓名</label>{{user.real_name}}</li>
+    <li><label style="width: 100px;">手机</label>{{user.phone}}</li>
+    <li><label style="width: 100px;">邮箱</label>{{user.email}}</li>
+    <li><label style="width: 100px;">qq</label>{{user.qq}}</li>
+</ul>
+<div>
+    <label>我的订单(共{{orders|length}}单)</label>
+</div>
+<table id="tb_orders" data-search="tb_orders_search" class="table table-striped"></table>
+<script type="text/javascript">
+    require(["jquery","functions","table","form"], function($,functions,table) {
+        $(function() {
+             var o =  {
+                "initData" :{{table.get_rows|safe}},
+                "aoColumns":{{table.get_columns|safe}},
+                //"sAjaxSource": '/order/room_types.table'
+                "buttons": [],
+                "bPaginate": false,
+                "actions":[{
+                    type:"view",
+                    text:"详情",
+                    url:"/room/room_type/detail",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-detail icon-color'
+                },{
+                    type:"edit",
+                    text:"编辑",
+                    url:"/room/room_type/edit",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-edit icon-color'
+                }]
+            }; 
+            var t = new table.Table('tb_orders',o);
+            t.drawTable();
+		});
+    });
+</script>
+
+{% endblock %}

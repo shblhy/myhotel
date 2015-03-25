@@ -1,0 +1,49 @@
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link media="screen" href="/static/plugin/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link media="screen" href="/static/base/css/reset.css" rel="stylesheet">
+	<link media="screen" href="/static/base/css/style.css" rel="stylesheet">
+	<link media="screen" href="/static/base/css/style_.css" rel="stylesheet">
+	<script type="text/javascript" src="/static/base/js/require-config.js"></script>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+	<title>道县万豪假日酒店官方网站|最低房价保证，更多优惠服务</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="道县万豪假日酒店，道县酒店，道县五星级酒店，道县5星级酒店，道县靠海酒店，道县度假酒店，道县酒店预订，道县酒店预定，道县商务酒店" name="keywords">
+	<meta content="道县万豪假日酒店官方网站预订，价格最优，更多优惠。道县万豪假日酒店屹立于道县最为繁华的商业地带，是商务旅行和休闲度假的首选之地。" name="description">
+</head>
+<body>
+	<div class="wrapper">
+	<div class="header">
+	    <ul  class="horizontal_menu lgray slide" id="horizontal_menu">
+	        <li><a href="/">前台主页</a></li>
+	        
+	        <li><a href="{%url 'admin_room_types'%}">房型管理</a></li>
+	        <li><a href="{%url 'admin_room'%}">房间管理</a></li>
+	        <li><a href="{%url 'admin_member_users'%}">用户管理</a></li>
+	        <li><a href="{%url 'admin_order_orders'%}">订单管理</a></li>
+	        <li><a href="{%url 'admin_article_articles'%}">文章管理</a></li>
+	    </ul>
+	</div>
+	<br/>
+	<div class="main2">
+    {% block content %} {% endblock %}
+    </div>
+<div class="footer">
+	<div class="footer-nav2"> <a href="site_map.html" class="newfooter-nav">网站地图</a>|<a href="contact_hotel.html" class="newfooter-nav">联系我们</a>|<a href="career.html" class="newfooter-nav">工作机会</a>|<a href="privacy.html" class="newfooter-nav">隐私条款</a>|<a href="usage_clause.html" class="newfooter-nav">使用条款</a> </div>
+	<div class="site-info">        
+		<div class="site-r">
+			<p class="copy-address">中国湖南道县</p>
+			<span> 电话： (86 123) 1234 123</span><span class="email">电子邮件: <a rel="nofollow" href="mailto:daox@ad.com">daox@ad.com</a></span>
+		</div>
+		<div class="site-l">
+			<span class="copy_right">版权所有：道县假日酒店</span> 
+			<span class="copy-icp"><a target="_blank" href="http://www.miibeian.gov.cn/">赣ICP备 1342423号-1</a></span>
+		</div>
+	</div>
+</div>
+	</div>	
+</body>
+</html>

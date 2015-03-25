@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <!-- Mirrored from www.datatables.net/media/blog/bootstrap_2/ by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 21 Aug 2013 02:37:48 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>DataTables example</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-modified.css">
+    <link rel="stylesheet" type="text/css" href="../DT_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="jquery.fileupload.css">
+
+    <script type="text/javascript" charset="utf-8" language="javascript" src="jquery-1.9.1.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="jquery-migrate-1.1.0.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="../jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="jquery.animate-colors-min.js"></script>
+</head>
+<body class="container-fluid">
+<input type="text" id="filter">
+    <table class="table table-bordered table-striped" id="dataTable"></table>
+    <div style="margin-left:200px" id="colvis" class="btn btn-primary">显示更多列</div>
+
+    <script type="text/javascript">
+/**
+ * Method
+ *
+ * fnClearTable(); 参数Boolean，是否重绘，在bServerSide:true 下会出发请求
+ * fnGetIndexById(); 通过id获取row index
+ * 
+ * 
+ * 当bServerSide为true，删除等操作的方案
+ * 1.调用fnClearTable触发重新请求当前页，弊端：删除与刷新操作两次请求
+ * 2.当服务端返回删除成功，fnFindCellRowIndexes(注：结果是数组) fnUpdate fnUpdatePagination（fnDeleteRow会重置页码显示数量与当前记录数一致）
+ *
+ *
+ *
+ * 
+ */
+/***sDom:
+l - Length changing 页记录数
+f - Filtering input 全局过滤
+t - The table! 表格主体
+i - Information 记录信息
+p - Pagination 分页
+r - pRocessing 处理
+< and > - div elements 尖括号为DIV元素
+<"class" and > - div with a class 尖括号内部引号为class样式
+Examples: <"wrapper"flipt>, <lf<t>ip>
+*/
+
+/* Table initialisation */
+$(document).ready(function() {
+    $('#filter').on('keyup',function(){
+        window.oTable.fnFilter(this.value)
+    })
+    window.oTable = $('#dataTable').dataTable( {
+        "sDom": "<'row-fluid'<''f{<span class='btn btn-success fileinput-button'><i class='icon-add icon-white'></i><span>导入目标</span><input id='fileupload' type='file' name='file'></span>}><''>> t <'tableFooter'<''lb><''pi>>",
+        "oLanguage": { //国际化
+            "sProcessing": "正在获取数据，请稍后...",
+            "sZeroRecords": "无数据",//过滤后空数据
+            "sInfo": "第_START_-_END_记录 共_TOTAL_条",
+            "sInfoEmpty": "无记录",
+            "sInfoFiltered": "",
+            "sInfoPostFix": "",
+            "sSearch": "全局过滤：",
+            "sLengthMenu": "_MENU_ 条/页",
+            "oPaginate": {
+                "sPrevious": "上一页",
+                "sNext": "下一页"
+            },
+            "sEmptyTable": "<a href='#'>自定义空数据样式</a>"//过滤前空数据
+        },
+        "buttons":[{
+            //"btnClass":"",//除了类型样式外追加样式
+            //"type":"add",//删除：del，添加：add，普通：normal，无类型：none/空/无定义
+            "text":"打印数据",//按钮文本
+            "ico":"",//图标
+            "fn":{
+                "click":function(oSettings){
+                    var data = oSettings.oInstance.fnGetData();
+                    console.dir(data);
+                }
+            }
+        },{
+            "text":"删除",
+            "type":"del",
+            "ico":"",
+            "fn":{
+                "click":function(oSettings){    
+                    var values = oSettings.oInstance.fnGetSelected();
+                    for(var i in values){                       
+                        var index = oSettings.oInstance.fnFindCellRowIndexes(values[i], 0);
+                        $(oSettings.oInstance.fnGetNodes(index[0])).fadeOut(500, function(){
+                            oSettings.oInstance.fnDeleteRow(index[0]);
+                        })
+                    }
+                }
+            }
+        },{
+            "text":"新增",
+            "type":"add",
+            "ico":"",
+            "fn":{
+                "click":function(oSettings){    
+                    $(oTable.fnAddDataAndDisplay(["006","任务d", "pointD", "类型8", "南山", "delete"]).nTr).children('td').css("backgroundColor","green").animate({"backgroundColor":"#FFFFFF"},2000,function(){
+                        $(this).removeAttr('style');
+                    });
+                }
+            }
+        }],
+        //"bServerSide": true,//服务端数据,
+        //"sServerGlobal":true,
+        "sServerCallback" :{
+            'ready':function(){
+            },
+            'fail':function(xhr, error, thrown){
+            },
+            'done':function(json, status){
+                return {
+                    'sEcho' : json.sEcho,
+                    'iTotalRecords' : json.iTotalRecords,
+                    'iTotalDisplayRecords' : json.iTotalDisplayRecords,
+                    'aaData' : json.aaData                      
+                }
+            },
+            'always':function(XHR, TS){
+            }
+        },
+        //"sAjaxSource": "http://datatables.net/release-datatables/examples/server_side/scripts/jsonp.php",
+        /*
+        "fnServerData": function( sUrl, aoData, fnCallback, oSettings ) {
+            oSettings.jqXHR = $.ajax( {
+                "url": sUrl,
+                "data": aoData,
+                "success": fnCallback,
+                "dataType": "jsonp",
+                "cache": false
+            } );
+        },
+        */
+        /***性能优化***/
+        //"bDeferRender": true,//延迟DOM增加，只对bServerSide : false 起作用，当启用时，排序需点2次 为true时新插入动画没效果
+        "aaSorting":[ [3,'desc'] ],//第四列【任务类型】降序,[升序：asc；降序：desc]
+        "bSortClasses":false,//禁用列排序样式
+        /***end***/
+        //"sAjaxSource": "server_side.json",//数据url     
+        "aoColumns" : [{
+            "sTitle" : "id",
+            "sShowC" : false,//插件ColVis中，次列筛选不显示过滤按钮
+            //"sCellType" : "td",
+            //"sClass" : "xxxxxxxxxx",
+            //"sContentPadding" : "xxxxxxxxxx",
+            //"sDefaultContent" : "null",
+            //"sName" : "xxxxxxxxxx",
+            //"sSortDataType" : "std",
+            //"sSortingClass" : "sorting_desc",//持久性属性，设置无排序下的列头样式(降序样式：sorting_desc 升序样式：sorting_asc)
+            //"sSortingClassJUI" : "xxxxxxxxxx",
+            //"sType" : "numeric",
+            //"sWidth" : "null",
+            //"sWidthOrig" : "null",
+            "bVisible" : false,
+            "bSortable" : true//是否可排序
+        }, {
+            "sTitle" : "任务名称",
+            "sWidth" : 20
+        }, {
+            "sTitle" : "监测点",
+            "bVisible" : false
+        }, {
+            "sTitle" : "任务类型",
+            "sClass": "center",//列的样式
+            "mRender": function (val, type, aData) {//列值 类型【display filter】 行数据
+                return val;
+            }
+        }, {
+            "sTitle" : "地址"
+        }, {
+            "sTitle" : "",
+            "mRender": function (val, type, aData) {//列值 类型【display filter】 行数据
+                return val;
+            }
+        }],
+
+        "asStripeClasses":['odd','even'], //定义斑马
+        /***与 FixedHeader 不能并用；checkboxSelect为true，sWidth作用错位，"bAutoWidth": false***/
+        "sScrollX": "100%",
+        /***与 FixedHeader 不能并用；checkboxSelect为true，sWidth作用错位，"bAutoWidth": false***/
+        //"sScrollXInner": "100%",
+
+        "colvis":$('#colvis'),
+        /***Feature enablement***/
+        "bPaginate": true, //开启-分页
+        "bLengthChange": true, //开启-分页菜单
+        "bFilter": [3], //开启-过滤 默认关闭提高性能，开启时mRender调用两次，值为数组，数组元素为排除过滤列index，起始为0，若为true，则全局参加过滤
+        "bSort": true, //开启-排序
+        "bInfo": true, //开启-信息
+        "bAutoWidth": false, //开启-自适应宽度
+        
+        "aoColumnDefs": [{
+            "sClass": "center",//列样式
+            "aTargets": [ -1, -2 ] //倒数第一/二列
+        },{
+            "bSortable": false,//禁用排序
+            "aTargets": [ 1 ] //第二列【第一列隐藏】
+        },{
+            "sWidth": '10',//宽度
+            "aTargets": [ 5 ] //第二列【第一列隐藏】
+        }],
+
+        /***无限垂直滚动[需调整]***/
+        //"bScrollInfinite": true, 
+        //"bScrollCollapse": true, 
+        //"sScrollY": "100px", 
+
+        //"aLengthMenu":[15,30,60],//分页菜单-参数
+        "iDisplayLength" : 2, //默认显示的记录数，与分页配合使用
+        //"iDisplayEnd" : 5, //从第6记录结束
+        "iDisplayStart" : 0, //从第1记录开始
+        /*
+        "columnFilter" : [
+            null,{
+                type : "select"
+            },{
+                type : "select"
+            },{
+                type : "select"
+            },{
+                type : "select"
+            },null
+        ], // 列筛选
+        */
+        "trHighlight":true,//tr鼠标滑过高光
+
+        "checkboxSelect" : true, //多选复选框  var mRender = oCol.mRender ? _fnGetObjectDataFn(oCol.mRender) : null;
+        "fnCheckboxSelectRender" : function(nTd, aData, iRow, oSettings){
+            if(aData[6]==false)
+                $(nTd).children('input').attr('disabled',true);
+        },
+
+        "initData":{//初始化数据，受分页bPaginate限制
+            "sEcho": 1,//前端发现送给服务端，服务端原样返回，每渲染一次自增1，与iDraw做比较 (在的代码：json.sEcho * 1 < oSettings.iDraw)
+            "iTotalRecords": "13",//过滤前总记录数
+            "iTotalDisplayRecords": "13",//过滤后总记录数，我没有使用过滤，不太清楚和iTotalRecords的区别
+            "aaData": [
+                ["0001","任务a", "pointA", "类型5", "深圳", "delete"],
+                ["0002","任务b", "pointB", "类型6", "福田", "delete", false],
+                ["0003","任务c", "pointC", "类型7", "罗湖", "delete"],
+                ["0004","任务d", "pointD", "类型8", "南山", "delete"]
+            ]
+        },
+        /*
+        "aaData": [//本地数据，受分页bPaginate限制
+            ["0001","1", "Firefox 1.0", "Win 98+ \/ OSX.2+", "1.7", "A"],
+            ["0002","2", "Firefox 1.0", "Win 98+ \/ OSX.2+", "1.7", "A"],
+            ["0003","3", "Firefox 1.0", "Win 98+ \/ OSX.2+", "1.7", "A"]
+        ],
+        */
+        //"aaSorting" : [ [1,'desc'], [2,'asc'] ], //默认的排序方式，第1列升序/2列降序,[]空为不排序,[shift]+点击 多列排序
+
+        /***callback***/
+        "fnDrawCallback" : function( oSettings ) {//
+        },
+        "fnServerParams" : function( aoData ) {//添加额外的HTTP变量，只能用push方法，不能用concat
+            //aoData.push( { "name": "status", "value": $('#status').select2('val')  });
+        },
+        "fnStateSaveParams" : function( oSettings, oData ) {//
+        },
+        "fnStateLoadParams" : function( oSettings, oData ) {//
+        },
+        "fnStateLoaded" : function( oSettings, oData ) {//
+        },
+        "fnRowCallback" : function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {//,参数为：行节点，行数据，当前页行索引，总数行索引，取值aData为准，防止点击排序等操作，渲染已经渲染后的html
+        },
+        "fnCreatedRow" : function( nRow, aData, iDataIndex, oSettings ) {//类似formatter,参数为：行节点，行数据，行索引，表格参数对象，取值aData为准，防止点击排序等操作，渲染已经渲染后的html
+            var $action = $('td:last', nRow);
+            var action = $action.html();
+            $action.empty();
+            if(action == 'delete'){
+                var $delete = $('<a href="javascript:void(0)">删除</a>').click(function(){
+                    //oTable.fnDeleteRow(iDataIndex);//不能使用iDataIndex用作绑定事件的记录行索引，当删除第二条记录，列表重新排序，此时的iDataIndex不会更新，导致iDataIndex不准确
+                    var index = oTable.fnFindCellRowIndexes(aData[0], 0);
+                    if(index.length){
+                        oTable.fnDeleteRow(index[0])
+                    }
+                });
+                $action.append($delete);
+            }
+        },
+        "fnHeaderCallback" : function( nHead, aData, iStart, iEnd, aiDisplay ) {//
+        },
+        "fnFooterCallback" : function( nFoot, aData, iStart, iEnd, aiDisplay ) {//
+        },
+        "fnPreDrawCallback" : function( oSettings ) {//
+        },
+        "fnInitComplete" : function(){//渲染完毕
+        }
+        /***end***/        
+    });
+    /***显示/隐藏列
+    $('<span>显示隐藏第一列</span>').click(function(){
+        var bVis = oTable.fnSettings().aoColumns[1].bVisible;
+        console.dir(oTable.fnSettings().aoColumns)
+        oTable.fnSetColumnVis( 1, bVis ? false : true );            
+    }).insertBefore(oTable);
+*/
+    
+    /***events***/
+    //$('#dataTable').on('filter',function(){}); //filter[oSettings] sort[oSettings] page[oSettings] processing[oSettings, bShow] xhr[oSettings, DataTable.initData]
+
+    //清空数据
+    //oTable.fnClearTable();
+
+    //新增数据[数据不包含分页] 
+    //oTable.fnAddData();
+
+    //销毁-清空-重新渲染
+    //oTable.fnDestroy();
+    //$('#dataTable').empty().dataTable();
+    
+    //
+    //对于动态插入数据，原理fnAddData是从aaData数组后面追加，当使用fnAddDataAndDisplay的limit参数，表格初始渲染的数组需为升序
+    //$(oTable.fnAddDataAndDisplay(["0000","NNNNNNNew", "Firefox 1.0", "Win 98+ \/ OSX.2+", "1.7", "A"],3).nTr).children('td').css("backgroundColor","red").animate({"backgroundColor":"#FFFFFF"},2000,function(){$(this).removeAttr('style')});
+} );
+</script>
+
+    <!--官方插件-->
+    <!--ColVis显示/隐藏列：sDom添加C-->
+    <script type="text/javascript" charset="utf-8" language="javascript" src="..\ColVis.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\ColVis.css">
+    <!--FixedHeader头部置顶-->
+    <script type="text/javascript" charset="utf-8" language="javascript" src="..\FixedHeader-2.0.6\js\FixedHeader.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        //new FixedHeader( oTable );
+    })
+</script>
+    <!--[X]TableTools导出数据[不支持中文，需要服务环境，浏览器兼容问题，排序问题]-->
+    <!--[X]AutoFill拖拽自动填充-->
+    <!--[X]ColReorder拖拽列-->
+    <!--[X]Editor收费-->
+    <!--[X]KeyTable记录轨迹-->
+    <!--[X]Scroller纵轴滚动翻页-->
+    <!--[X]FixedColumns冻结与水平滚动，合并相同行：产生水平或垂直滚动条，与FixedHeader冲突
+<script type="text/javascript" charset="utf-8" language="javascript" src="extras\FixedColumns-2.0.3\media\js\FixedColumns.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        new FixedColumns( oTable, {
+            "iLeftWidth": 150,
+            "fnDrawCallback": function ( left, right ) {
+                var that = this, groupVal = null, matches = 0, heights = [], index = -1;
+                
+                /* Get the heights of the cells and remove redundant ones */
+                $('tbody tr td', left.body).each( function ( i ) {
+                    var currVal = this.innerHTML;
+                    
+                    /* Reset values on new cell data. */
+                    if (currVal != groupVal) {
+                        groupVal = currVal;
+                        index++;
+                        heights[index] = 0;
+                        matches = 0;
+                    } else  {
+                        matches++;
+                    }
+                    
+                    heights[ index ] += $(this.parentNode).height();
+                    if ( currVal == groupVal && matches > 0 ) {
+                        this.parentNode.parentNode.removeChild(this.parentNode);
+                    }
+                } );
+
+                /* Now set the height of the cells which remain, from the summed heights */
+                $('tbody tr td', left.body).each( function ( i ) {
+                    that.fnSetRowHeight( this.parentNode, heights[ i ] );
+                } );
+            }
+        } );
+    })
+</script>
+-->
+<!--第三方插件-->
+<!--[X]ColumnFilterWidgets列过滤-->
+<!--[X]ColReorder with resizing列宽调整，与FixedHeader冲突:sDom添加R
+<script type="text/javascript" charset="utf-8" language="javascript" src="extras\ColReorderWithResize.js"></script>
+-->
+<!--[X][X]DataTables Column Filter未与改版后兼容，并与columnFilter重复  
+<script type="text/javascript" charset="utf-8" language="javascript" src="extras/JQuery-DataTables-ColumnFilter/media/js/jquery.dataTables.columnFilter.js"></script>
+-->
+<!--[X]DataTables Row Grouping行记录合并-->
+<!--[X][X]Row reordering行拖拽排序
+<script type="text/javascript" charset="utf-8" language="javascript" src="extras\jquery.dataTables.rowReordering.js"></script>
+-->
+</body>
+</html>

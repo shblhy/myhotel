@@ -1,0 +1,32 @@
+<!--预订页面，选择房间点预订后跳转至此-->
+<form id="order_form" method="post">
+    <label id="order_form_errmsg"></label>
+    <ul>
+        <input type="hidden" id="member" name="member" value="{{request.user.id}}" />
+        <li><label>*房间类型</label><input type="text" id="room_type" value="{{room_type.name}}" readonly="readonly"/>¥{{room_type.price}}
+            <input type="hidden" id="room_type_id" name="room_type" value="{{room_type.id}}" />
+        </li>
+        <!--li><label>可选房间</label><>
+        </li-->
+        <li><label>*入住时间</label><input  type="text" id="use_time" name="use_time" value="{{order.room.use_time|date:'Y-m-d'}}"/></li>
+        <li><label>*入住天数</label><input  type="text" id="use_days" name="use_days" value="{{order.room.use_days}}"/></li>
+        <li><label>备注</label><input  type="text" id="note" name="note" value="{{order.note}}"/></li>
+    </ul>
+    <button id="submit-order-btn">提交</button>
+ </form>
+ <script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+        $(function() {
+                $("#submit-order-btn").click(function(){
+                    alert("ggod");
+                    $("#order_form").ajaxForm({
+                        url:"/order/do_order",
+                        dataType : "json",
+                        success: function(data) {
+                            functions.base.load_page("/member/user_center");
+                        }
+                    }).submit();
+               });
+        });
+    });
+</script>

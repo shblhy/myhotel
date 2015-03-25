@@ -1,0 +1,67 @@
+<form id="form_room_type" method="post">
+    <label id="form_room_type_errmsg"></label>
+    <ul>
+        <li><label>*名称</label><input type="text" id="name" name="name" value="{{room_type.name}}"/></li>
+        <li><label>*状态</label><input type="text" id="status" name="status" value="{{room_type.status}}"/></li>
+        <li><label>*介绍</label><input type="text" id="comment" name="comment" value="{{room_type.comment}}"/></li>
+        <li><label>*价格</label><input type="text" id="price" name="price" value="{{room_type.price}}"/></li>
+        <li><label>照片</label><img id='img-photo' src="{{room_type.full_photo_path}}" alt="待上传">
+            <a href="javascript:;" class="btn" id="btn_upload_room_type_photo">上传图片</a>
+        <input type="hidden" id="photo" name="photo" value="{{room_type.photo}}"/>
+        
+        </li>
+    </ul>
+    <button id="submit_room_type_btn">提交</button>
+ </form>
+ <div>
+     <form id="form_upload_room_type" method="post" enctype="multipart/form-data">
+            <label id="form_upload_room_type_errmsg"></label>
+            <input type="file" id="photo" name="photo" value="{{room_type.photo}}"/>
+            <button id="submit_room_type_photo_btn">提交</button>
+     </form>
+ </div>
+<!--script type="application/javascript" src="/static/templates/room_type/room_type_input.js"></script-->
+<!--简单的js直接接在文件里，遇到要调试的情况，便单独取出存放。
+    之所以放在static路径下的原因是安全问题-->
+<script type="application/javascript">
+require(["jquery","functions","form"], function($,functions) {
+    $(function() {
+            var form_upload_room_type = $("#form_upload_room_type").ajaxForm({
+                    url : "/room/room_type/upload_photo", 
+                    dataType : "json",
+                    success: function(data) {
+                        $("#img-photo").attr('src',"/static/upload/room_type/"+data);
+                        $("#photo").val(data);
+                    },
+                    error: function(data){
+                        $("#form_upload_room_type_errmsg").text(data.responseText);
+                    }
+                });
+             $("#submit_room_type_photo_btn").click(function(){
+                form_upload_room_type.ajaxSubmit();
+                }
+            );
+            var form_room_type = $("#form_room_type").ajaxForm({
+                    url : "/room/room_type/add_room_type", 
+                    dataType : "json",
+                    success: function(data) {
+                        functions.base.load_page("/room/room_types");
+                    },
+                    error: function(data){
+                        $("#form_room_type_errmsg").html(data);
+                    }
+                });
+            $("#submit_room_type_btn").click(function(){
+                form_room_type.ajaxSubmit();
+                }
+            );
+             /*等同写法
+                $('#submit-room_type-btn').on('click',function(){
+                form_room_type.ajaxSubmit();
+            });*/
+           
+           
+            
+    });
+});
+</script>

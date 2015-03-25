@@ -1,0 +1,607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/usage/features by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - Usage</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="http://legacy.datatables.net/media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		
+		<style type="text/css" media="screen">
+			@import "http://legacy.datatables.net/media/css/site.ccss";
+		</style>
+		
+		<script type="text/javascript" src="http://legacy.datatables.net/media/javascript/complete.min.js"></script>
+	</head>
+	<body class="grid_2_3">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="http://legacy.datatables.net/index">
+						<img src="http://legacy.datatables.net/media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a class="active" href="http://legacy.datatables.net/usage">Usage</a></li>
+					<li><a  href="http://legacy.datatables.net/examples">Examples</a></li>
+					<li><a  href="http://legacy.datatables.net/styling">Styling</a></li>
+					<li><a  href="http://legacy.datatables.net/api">API</a></li>
+					<li><a  href="http://legacy.datatables.net/development">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="http://legacy.datatables.net/extras">Extras</a></li>
+					<li><a  href="http://legacy.datatables.net/plug-ins">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a  href="http://legacy.datatables.net/faqs">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+									<ul class="submenu submenu_usage">
+						<li><a class="active" href="http://legacy.datatables.net/usage/features">Features</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/options">Options</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/callbacks">Callbacks</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/columns">Columns</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/i18n">Internationalisation</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/server-side">Server-side processing</a></li>
+						<li><a                                                             href="http://legacy.datatables.net/ref">Full reference</a></li>
+					</ul>
+					<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="http://legacy.datatables.net/media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+			<h2>Features</h2>
+			<p>By default the majority of features that DataTables provides are enabled, such that a richly interactive table is presented to end users. However, you may wish to disable various features to customise DataTables to your specific application. This is possible using the following initialisation parameters.</p>
+			
+				<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bAutoWidth"></a><b>bAutoWidth</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable automatic column width calculation. This can be disabled
+as an optimisation (it takes some time to calculate the widths) if the
+tables widths are passed in using aoColumns.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bAutoWidth": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bDeferRender"></a><b>bDeferRender</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Deferred rendering can provide DataTables with a huge speed boost when you
+are using an Ajax or JS data source for the table. This option, when set to
+true, will cause DataTables to defer the creation of the table elements for
+each row until they are needed for a draw - saving a significant amount of
+time.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "sAjaxSource": "sources/arrays.txt",
+       "bDeferRender": true
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bFilter"></a><b>bFilter</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable filtering of data. Filtering in DataTables is "smart" in
+that it allows the end user to input multiple words (space separated) and
+will match a row containing those words, even if not in the order that was
+specified (this allows matching across multiple columns). Note that if you
+wish to use filtering in DataTables this must remain 'true' - to remove the
+default filtering input box and retain filtering abilities, please use
+<a href="http://legacy.datatables.net/ref#sDom">sDom</a>).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bFilter": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bInfo"></a><b>bInfo</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable the table information display. This shows information 
+about the data that is currently visible on the page, including information
+about filtered data if that action is being performed.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bInfo": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bJQueryUI"></a><b>bJQueryUI</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable jQuery UI ThemeRoller support (required as ThemeRoller requires some
+slightly different and additional mark-up from what DataTables has
+traditionally used).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     $('#example').dataTable( {
+       "bJQueryUI": true
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bLengthChange"></a><b>bLengthChange</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Allows the end user to select the size of a formatted page from a select
+menu (sizes are 10, 25, 50 and 100). Requires pagination (bPaginate).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bLengthChange": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bPaginate"></a><b>bPaginate</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable pagination.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bPaginate": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bProcessing"></a><b>bProcessing</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable the display of a 'processing' indicator when the table is
+being processed (e.g. a sort). This is particularly useful for tables with
+large amounts of data where it can take a noticeable amount of time to sort
+the entries.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bProcessing": true
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bScrollInfinite"></a><b>bScrollInfinite</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p><code>Deprecated</code> Enable infinite scrolling for DataTables (to be used in combination with
+sScrollY). Infinite scrolling means that DataTables will continually load
+data as a user scrolls through a table, which is very useful for large
+dataset. This cannot be used with pagination, which is automatically
+disabled.</p>
+
+<p>Please note that this option has now been deprecated and will be removed
+in the next version of DataTables. Please use the <a href="http://datatables.net/extras/scroller">Scroller extra</a> instead.</p>
+</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     $('#example').dataTable( {
+       "bScrollInfinite": true,
+       "bScrollCollapse": true,
+       "sScrollY": "200px"
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bServerSide"></a><b>bServerSide</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Configure DataTables to use server-side processing. Note that the
+sAjaxSource parameter must also be given in order to give DataTables a
+source to obtain the required data for each draw.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bServerSide": true,
+       "sAjaxSource": "xhr.php"
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bSort"></a><b>bSort</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable sorting of columns. Sorting of individual columns can be
+disabled by the "bSortable" option for each column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bSort": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bSortClasses"></a><b>bSortClasses</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable the addition of the classes 'sorting_1', 'sorting_2' and
+'sorting_3' to the columns which are currently being sorted on. This is
+presented as a feature switch as it can increase processing time (while
+classes are removed and added) so for large data sets you might want to
+turn this off.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bSortClasses": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bStateSave"></a><b>bStateSave</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable state saving. When enabled a cookie will be used to save
+table display information such as pagination information, display length,
+filtering and sorting. As such when the end user reloads the page the
+display will match what they had previously set up.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">false</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function () {
+     $('#example').dataTable( {
+       "bStateSave": true
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sScrollX"></a><b>sScrollX</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable horizontal scrolling. When a table is too wide to fit into a certain
+layout, or you have a large number of columns in the table, you can enable
+x-scrolling to show the table in a viewport, which can be scrolled. This
+property can be any CSS unit, or a number (in which case it will be treated
+as a pixel measurement).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"><i>blank string - i.e. disabled</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     $('#example').dataTable( {
+       "sScrollX": "100%",
+       "bScrollCollapse": true
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sScrollY"></a><b>sScrollY</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable vertical scrolling. Vertical scrolling will constrain the DataTable
+to the given height, and enable scrolling for any data which overflows the
+current viewport. This can be used as an alternative to paging to display
+a lot of data in a small area (although paging and scrolling can both be
+enabled at the same time). This property can be any CSS unit, or a number
+(in which case it will be treated as a pixel measurement).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"><i>blank string - i.e. disabled</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     $('#example').dataTable( {
+       "sScrollY": "200px",
+       "bPaginate": false
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/usage/features by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+</html>

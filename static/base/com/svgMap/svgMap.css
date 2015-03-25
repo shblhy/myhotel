@@ -1,0 +1,16 @@
+#svgMap_wrapper{
+	position:relative;
+	x-background-color: #F1F1F1;
+	height:420px;
+}
+#svgMap{
+}
+#svgMap_back_btn{
+	position:absolute;
+	left:7px;
+	top:7px;
+	z-index:999;
+}
+#map_tooltip table{
+	
+}

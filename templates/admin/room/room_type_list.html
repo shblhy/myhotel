@@ -1,0 +1,19 @@
+<!--扩展的房间列表，为了提供给用户友好的展示风格-->
+<ul class="test_ul">
+    {%for rtype in room_types%}
+    <li>
+    	<table><tr><td>{{rtype.name}}</td></tr>
+    		<tr><td><img src="{{rtype.full_photo_path}}" alt="尚未上传"></td></tr>
+    			<tr><td>{{rtype.comment}}</td></tr>
+    			<tr><td><a href="javascript:void(0)" data-href="/order/{{rtype.id}}/order">预订</a></td>
+    	</tr>
+    		
+    	</table>
+    </li>
+    {%endfor%}
+</ul>
+<script type="text/javascript">
+    require(["jquery","functions","form"], function($) {
+         functions.base.set_all_aclick();
+    });
+</script>

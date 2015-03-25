@@ -1,0 +1,128 @@
+.ms2side__div {
+	width: 100%;
+	padding: 1px;
+	overflow: auto;
+	background: url('') repeat-x; /* HACK FOR CHROME */
+}
+
+.ms2side__select {
+	float: left;
+}
+
+.ms2side__header {
+	color: #666;
+	background-color: #E8E8E8;
+	width: 280px;
+	height: 28px;
+	line-height: 28px;
+	text-align:center;
+	border:1px solid #D5D5D5;
+	border-bottom: none;
+}
+
+.ms2side__options, .ms2side__updown {
+	float: left;
+	font-size: 10pt;
+	margin: 0;
+	padding: 18px 8px 0;
+	color: black;
+	text-align: center;
+	overflow: hidden;
+}
+
+.ms2side__updown {
+	font-size: 9pt;
+}
+
+.ms2side__options p, .ms2side__updown p {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: #E6E6E6 #E6E6E6 #B3B3B3;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0;
+    padding: 4px 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    margin-top:2px;
+}
+
+.ms2side__options p.ms2side_hover, .ms2side__updown p.ms2side_hover {
+	background: url("../../images/btn_spirit.gif") repeat-x scroll left -182px #A6D0E7;
+}
+
+.ms2side__options p.ms2side__hide, .ms2side__updown p.ms2side__hide {
+	cursor: default;
+	background: #EAEAEA !important;
+    box-shadow: none !important;
+    color:#999999;
+}
+
+.ms2side__div select {
+	width: 280px;
+	float: left;
+	height:128px;
+}
+#target_listms2side__sx,#target_listms2side__dx {
+	height:420px;
+}
+/* INPUT FOR SEARCH */
+.ms2side__header input {
+}
+
+.ms2side__header input.wait {
+	width: 80px;
+	height: 12px;
+	background: #FFFFFF url(loading.gif) no-repeat center right;
+}
+
+.ms2side__header input.small {
+	width: 100px;
+	border: 1px solid #AAAAAA;
+    height: 18px;
+    line-height: 22px;
+}
+/* INPUT FOR SELECT SEARCH */
+.ms2side__header select {
+	width: 80px;
+	height: 18px;
+	float: none;
+}
+.ms2side__header select.small {
+    height: 22px ;
+    line-height: 22px ;
+}
+
+
+
+/* REMOVE FILTER OPTION FOR SEARCH
+.ms2side__header a {
+	font-size: 10pt;
+	padding: 0 8px;
+	width: 16px;
+	height: 16px;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid gray;
+	background: #FFFFFF url(close.gif) no-repeat center center;
+	margin: 0 0 0 3px;
+}
+ */
+.ms2side__header a:hover {
+	background-color: #F0F0FF;
+	border-color: gray;
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/examples/ by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:51:15 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - Examples</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="../release-datatables/media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		
+		<style type="text/css" media="screen">
+			@import "../media/css/site.css";
+		</style>
+		
+		<script type="text/javascript" src="../media/javascript/js-core-min.js"></script>
+		<script type="text/javascript" src="../media/javascript/jquery.js"></script>
+		<script type="text/javascript" src="../media/javascript/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../media/javascript/syntax/shCore.js"></script>
+		<script type="text/javascript" src="../media/javascript/syntax/shBrushJScript.js"></script>
+		<script type="text/javascript" src="../media/javascript/syntax/shBrushXml.js"></script>
+		<script type="text/javascript">
+			$(document).ready( function() {
+				$('.details').toggle();
+				$('.css_link').click( function() {
+					$('.details', this.parentNode.parentNode.parentNode).toggle();
+					$(this).html( $(this).html() == "Show details" ? "Hide details" : "Show details" );
+				} );
+				
+				SyntaxHighlighter.config.clipboardSwf = '../media/javascript/syntax/clipboard.swf';
+				SyntaxHighlighter.all();
+			} );
+		</script>
+		
+	</head>
+	<body class="grid_1_2">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="../index.html">
+						<img src="../media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a  href="../usage/index.html">Usage</a></li>
+					<li><a class="active" href="index.html">Examples</a></li>
+					<li><a  href="../styling/index.html">Styling</a></li>
+					<li><a  href="../api.html">API</a></li>
+					<li><a  href="../development/index.html">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="../extras/index.html">Extras</a></li>
+					<li><a  href="../plug-ins/index.html">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a  href="../faqs.html">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="../media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="../media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="../media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="../media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="../../cdn.adpacks.com/adpacks451b.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+			<h2>Examples</h2>
+			<p>One of the best ways of learning how to do anything new (including software APIs!) is to get your hands dirty as quickly as possible. These examples will show you how to perform tasks ranging from something as simple as applying DataTables to an HTML table, right the way through to doing server-side processing with pipelining and custom plug-in functions.</p>
+			
+			<div class="grid_column_1">
+				<h3>Basic initialisation</h3>
+				<ul>
+					<li><a href="../release-datatables/examples/basic_init/zero_config.html">Zero configuration</a></li>
+					<li><a href="../release-datatables/examples/basic_init/filter_only.html">Feature enablement</a></li>
+					<li><a href="../release-datatables/examples/basic_init/table_sorting.html">Sorting data</a></li>
+					<li><a href="../release-datatables/examples/basic_init/multi_col_sort.html">Multi-column sorting</a></li>
+					<li><a href="../release-datatables/examples/basic_init/multiple_tables.html">Multiple tables</a></li>
+					<li><a href="../release-datatables/examples/basic_init/hidden_columns.html">Hidden columns</a></li>
+					<li><a href="../release-datatables/examples/basic_init/complex_header.html">Complex headers - grouping with colspan</a></li>
+					<li><a href="../release-datatables/examples/basic_init/dom.html">DOM positioning</a></li>
+					<li><a href="../release-datatables/examples/basic_init/flexible_width.html">Flexible table width</a></li>
+					<li><a href="../release-datatables/examples/basic_init/state_save.html">State saving</a></li>
+					<li><a href="../release-datatables/examples/basic_init/alt_pagination.html">Alternative pagination styles</a></li>
+					<li>Scrolling: <a href="../release-datatables/examples/basic_init/scroll_x.html">Horizontal</a> / 
+						<a href="../release-datatables/examples/basic_init/scroll_y.html">Vertical</a> / 
+						<a href="../release-datatables/examples/basic_init/scroll_xy.html">Both</a> / 
+						<a href="../release-datatables/examples/basic_init/scroll_y_theme.html">Themed</a> / 
+						<a href="../release-datatables/examples/basic_init/scroll_y_infinite.html">Infinite</a>
+					</li>
+					<li><a href="../release-datatables/examples/basic_init/language.html">Change language information (internationalisation)</a></li>
+					<li><a href="../release-datatables/examples/basic_init/themes.html">ThemeRoller themes (Smoothness)</a></li>
+				</ul>
+				
+				<h3>Advanced initialisation</h3>
+				<ul>
+					<li>Events: <a href="../release-datatables/examples/advanced_init/events_live.html">Live events</a> / 
+						<a href="../release-datatables/examples/advanced_init/events_pre_init.html">Pre-init</a> / 
+						<a href="../release-datatables/examples/advanced_init/events_post_init.html">Post-init</a>
+					</li>
+					<li><a href="../release-datatables/examples/advanced_init/column_render.html">Column rendering</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/html_sort.html">Sorting without HTML tags</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/dom_multiple_elements.html">Multiple table controls (sDom)</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/length_menu.html">Defining length menu options</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/complex_header.html">Complex headers and hidden columns</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/dom_toolbar.html">Custom toolbar (element) around table</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/highlight.html">Row highlighting with CSS</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/row_grouping.html">Row grouping</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/row_callback.html">Row callback</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/footer_callback.html">Footer callback</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/sorting_control.html">Control sorting direction of columns</a></li>
+					<li><a href="../release-datatables/examples/advanced_init/language_file.html">Change language information from a file (internationalisation)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/advanced_init/defaults.html">Setting defaults</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/advanced_init/localstorage.html">State saving with localStorage</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/advanced_init/dt_events.html">Custom events</a></li>
+				</ul>
+				
+				<h3>API</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/add_row.html">Dynamically add a new row</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/multi_filter.html">Individual column filtering (using "input" elements)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/multi_filter_select.html">Individual column filtering (using "select" elements)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/highlight.html">Highlight rows and columns</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/row_details.html">Show and hide details about a particular record</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/select_row.html">User selectable rows (multiple rows)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/select_single_row.html">User selectable rows (single row) and delete rows</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/editable.html">Editable rows (with jEditable)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/form.html">Submit form with elements in table</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/counter_column.html">Index column (static number column)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/show_hide.html">Show and hide columns dynamically</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/api_in_init.html">API function use in initialisation object (callback)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/tabs_and_scrolling.html">DataTables scrolling and tabs</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/api/regex.html">Regular expression filtering</a></li>
+				</ul>
+			</div>
+			
+			<div class="grid_column_2">
+				<h3>Data sources</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/data_sources/dom.html">DOM</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/data_sources/js_array.html">Javascript array</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/data_sources/ajax.html">Ajax source</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/data_sources/server_side.html">Server side processing</a></li>
+				</ul>
+				
+				<h3>Server-side processing</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/server_side.html">Obtain server-side data</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/custom_vars.html">Add extra HTTP variables</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/post.html">Use HTTP POST</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/ids.html">Automatic addition of IDs and classes to rows</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/object_data.html">Reading table data from objects</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/row_details.html">Show and hide details about a particular record</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/select_rows.html">User selectable rows (multiple rows)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/jsonp.html">JSONP for a cross domain data source</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/editable.html">jEditable integration with DataTables</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/defer_loading.html">Deferred loading of Ajax data</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/server_side/pipeline.html">Pipelining data (reduce Ajax calls for paging)</a></li>
+				</ul>
+				
+				<h3>Ajax data source</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/ajax.html">Ajax sourced data (array of arrays)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/objects.html">Ajax sourced data (array of objects)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/defer_render.html">Deferred DOM creation for extra speed</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/null_data_source.html">Empty data source columns</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/custom_data_property.html">Use a data source other than aaData (the default)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/objects_subarrays.html">Read column data from sub-arrays</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/ajax/deep.html">Read column data from deeply nested properties</a></li>
+				</ul>
+				
+				<h3>Plug-ins</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/plugin_api.html">Add custom API functions</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/sorting_plugin.html">Sorting and automatic type detection</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/sorting_sType.html">Sorting without automatic type detection</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/paging_plugin.html">Custom pagination controls</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/range_filtering.html">Range filtering / custom filtering</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/dom_sort.html">Live DOM sorting</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/examples/plug-ins/html_sort.html">Automatic HTML type detection</a></li>
+				</ul>
+			</div>
+			<div class="css_clear"></div>
+			
+			<h2 style="margin-top: 2em;">Extras</h2>
+			<p>There are a <a href="http://legacy.datatables.net/extras">number of extras</a> for DataTables which provide extra features and enhanced interaction options. These extras are included in the DataTables downloads package or can be <a href="http://legacy.datatables.net/download">downloaded</a> individually. Below are the examples which are available with each extra.</p>
+			
+			<div class="grid_column_1">
+				<h3>AutoFill</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/AutoFill/index.html">Basic initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/AutoFill/columns.html">Selecting which columns to provide AutoFill on</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/AutoFill/scrolling.html">Scrolling a DataTable using fill</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/AutoFill/inputs.html">Using with input elements</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/AutoFill/callbacks.html">Customisation using callback functions</a></li>
+				</ul>
+				
+				
+				<h3>ColReorder</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/index.html">Basic initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/alt_insert.html">Styling the insert cursor</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/col_filter.html">Individual column filtering</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/colvis.html">Integration with DataTables' ColVis plug-in</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/fixedcolumns.html">Integration with DataTables' FixedColumns plug-in</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/fixedheader.html">Integration with DataTables' FixedHeader plug-in</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/predefined.html">Using a predefined column order set</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/reset.html">Providing a user control to reset the column order</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/scrolling.html">Column reordering shown with scrolling in DataTables</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/server_side.html">Server-side processing support</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/state_save.html">State saving of the column position</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColReorder/theme.html">jQuery UI theme integration</a></li>
+				</ul>
+				
+				
+				<h3>ColVis</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/index.html">Basic initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/mouseover.html">Activate with a mouseover rather than click</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/text.html">Custom text in the button</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/theme.html">Using with jQuery UI ThemeRoller</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/exclude_columns.html">Excluding columns from the show / hide list</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/two_tables.html">Two tables initialised together - individual controls</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/two_tables_identical.html">Two tables initialised together - shared control</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/ColVis/style.html">Alternative styling and reset to original</a></li>
+				</ul>
+				
+				
+				<h3>FixedHeader</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedHeader/index.html">Basic demo with just the HeaderFixed</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedHeader/html_table.html">FixedHeader without requiring DataTables</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedHeader/two_tables.html">Two tables with FixedHeaders on a single page</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedHeader/zIndexes.html">Change the display order of the fixed elements (zIndex)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedHeader/top_bottom_left_right.html">A spreadsheet style layout with header and footer, left and right columns all fixed.</a></li>
+				</ul>
+				
+				
+				<h3>KeyTable</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/KeyTable/index.html">Basic usage</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/KeyTable/editing.html">Editing a table</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/KeyTable/form.html">Integration with an HTML form</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/KeyTable/datatable.html">Integration with DataTables</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/KeyTable/datatable_scrolling.html">Using KeyTable with scrolling in DataTables</a></li>
+				</ul>
+			</div>
+			
+			<div class="grid_column_2">
+				<h3>Editor</h3>
+				<ul>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/index.html">Basic initialisation</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/fieldDefaults.html">Setting defaults</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/fieldTypes.html">Using different field input types</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/dates.html">Date input fields</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/envelope_buttons.html">Envelope display controller</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/stackedInputs.html">Styling the form for stacked inputs</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/inlineControls.html">Inline edit and delete controls</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/htmlTable.php">DOM sourced table</a> (not Ajax)</li>
+				</ul>
+				<ul>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/events_keySubmit.html">Using events</a> - submit on return and close on escape</li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/clientValidation.html">Client-side validation</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/envelope_inline.html">Envelope display controller with inline controls</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/formOnlyData.html">Data shown only in the form</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/tableOnlyData.html">Data shown only in the DataTable</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/tableFormatting.html">Formatting data especially for the DataTable</a></li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/localstorage.html">Ajax override</a> - using localStorage for the data source</li>
+					<li><a href="http://editor.datatables.net/release/DataTables/extras/Editor/examples/fieldPlugin.html">Plug-in field types</a></li>
+				</ul>
+
+				<h3>FixedColumns</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/index.html">Basic demo of FixedColumns with zero initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/left_right_columns.html">Fix the left and right columns in place</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/index_column.html">Index column attached to side of the table</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/x_y_scrolling.html">Index column, but with Y scrolling and no pagination</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/two_columns.html">Two columns fixed in place</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/right_column.html">Fix the right column in place</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/css_size.html">Speeding up row height matching with CSS</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/rowspan.html">Using ROWSPAN with FixedColumns</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/col_filter.html">Individual column filtering</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/scale_fixed.html">Setting the fixed column width and resizing the table</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/scale_relative.html">Setting the fixed column width with relative sizing</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping_height.html">Row grouping by grouping like rows in the fixed column</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/FixedColumns/row_grouping.html">Row grouping by inserting a grouping row</a></li>
+				<ul>
+				
+				
+				<h3>TableTools</h3>
+				<ul>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/index.html">Basic initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/swf_path.html">Setting the SWF path</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/alter_buttons.html">Custom button arrangement</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/button_text.html">Button text alteration</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/collection.html">Using button collections</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/theme.html">Using jQuery UI themes</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/pdf_message.html">Customising the PDF output (adding text and orientation)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/multi_instance.html">Multiple TableTools toolbars for a single table</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/multiple_tables.html">Multiple DataTables with a single initialisation</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/select_multi.html">User selectable rows (multiple rows)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/select_single.html">User selectable rows (single row)</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/alt_init.html">Alternative initialisation using 'new TableTools()'</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/defaults.html">Altering the TableTools defaults</a></li>
+					<li><a href="http://legacy.datatables.net/release-datatables/extras/TableTools/plug-in.html">TableTools plug-in buttons</a></li>
+				</ul>
+			</div>
+			<div class="css_clear"></div>
+			
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/examples/ by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+</html>

@@ -1,0 +1,992 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/api by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:49:27 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - API</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		
+		<style type="text/css" media="screen">
+			@import "media/css/site.css";
+		</style>
+		
+		<script type="text/javascript" src="media/javascript/complete.min.js"></script>
+	</head>
+	<body class="grid_2_3">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="index.html">
+						<img src="media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a  href="usage/index.html">Usage</a></li>
+					<li><a  href="examples/index.html">Examples</a></li>
+					<li><a  href="styling/index.html">Styling</a></li>
+					<li><a class="active" href="api.html">API</a></li>
+					<li><a  href="development/index.html">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="extras/index.html">Extras</a></li>
+					<li><a  href="plug-ins/index.html">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a  href="faqs.html">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="../cdn.adpacks.com/adpacks451b.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+			<div id="fw_content">
+<h2>Javascript API</h2>
+<p>Although most of the time your Javascript interaction with DataTables will be done using the initialisation object as described in the <a href="usage/index.html">Usage</a> section of this site, there are times at which you might find it useful to have some external control of the table. The following functions are available from the jQuery.dataTable object.</p>
+<p>There are also a number of <a href="plug-ins/api.html">plug-in API functions</a> available which extend the capabilities of DataTables beyond the built-in functions described on this page.</p>
+<p>Note for those using server-side processing: A number of the API functions make the assumption that data storage it done on the client-side, rather than the server-side. As such functions such as fnAddData and fnDeleteRow will not effect the data held on your database. Indeed DataTables does not know if you are even using a database! As such, you must make the required calls to the server to manipulate your data as required, and then simply redraw the table (fnDraw) to view the new data.</p>
+
+				<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="$"></a>
+				<b>$</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Perform a jQuery selector action on the table's TR elements (from the tbody) and
+return the resulting jQuery object.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>|<i class="doc_param">node</i>|<i class="doc_param">jQuery</i>}: jQuery selector or node collection to act on</li><li>{<i class="doc_param">object</i>}: Optional parameters for modifying the rows to be included</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">none</span>]: Select TR elements that meet the current filter
+   criterion ("applied") or all TR elements (i.e. no filter).</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">current</span>]: Order of the TR elements in the processed array.
+   Can be either 'current', whereby the current sorting of the table is used, or
+   'original' whereby the original order the data was read into the table is used.</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">all</span>]: Limit the selection to the currently displayed page
+   ("current") or not ("all"). If 'current' is given, then order is assumed to be 
+   'current' and filter is 'applied', regardless of what they might be given as.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">object</i>}: jQuery object, filtered by the given selector.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+
+     // Highlight every second row
+     oTable.$('tr:odd').css('backgroundColor', 'blue');
+   } );
+
+ 
+   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+
+     // Filter to rows with 'Webkit' in them, add a background colour and then
+     // remove the filter, thus highlighting the 'Webkit' rows only.
+     oTable.fnFilter('Webkit');
+     oTable.$('tr', {"filter": "applied"}).css('backgroundColor', 'blue');
+     oTable.fnFilter('');
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="_"></a>
+				<b>_</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Almost identical to $ in operation, but in this case returns the data for the matched
+rows - as such, the jQuery selector used should match TR row nodes or TD/TH cell nodes
+rather than any descendants, so the data can be obtained for the row/cell. If matching
+rows are found, the data returned is the original data array/object that was used to create the row (or a generated array if from a DOM source).</p>
+
+<p>This method is often useful in-combination with $ where both functions are given the
+same parameters and the array indexes will match identically.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>|<i class="doc_param">node</i>|<i class="doc_param">jQuery</i>}: jQuery selector or node collection to act on</li><li>{<i class="doc_param">object</i>}: Optional parameters for modifying the rows to be included</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">none</span>]: Select elements that meet the current filter
+   criterion ("applied") or all elements (i.e. no filter).</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">current</span>]: Order of the data in the processed array.
+   Can be either 'current', whereby the current sorting of the table is used, or
+   'original' whereby the original order the data was read into the table is used.</li><li>{<i class="doc_param">string</i>} [default=<span class="doc_default">all</span>]: Limit the selection to the currently displayed page
+   ("current") or not ("all"). If 'current' is given, then order is assumed to be 
+   'current' and filter is 'applied', regardless of what they might be given as.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>}: Data for the matched elements. If any elements, as a result of the
+   selector, were not TR, TD or TH elements in the DataTable, they will have a null 
+   entry in the array.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+
+     // Get the data from the first row in the table
+     var data = oTable._('tr:first');
+
+     // Do something useful with the data
+     alert( "First cell is: "+data[0] );
+   } );
+
+ 
+   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+
+     // Filter to 'Webkit' and get all data for 
+     oTable.fnFilter('Webkit');
+     var data = oTable._('tr', {"filter": "applied"});
+     
+     // Do something with the data
+     alert( data.length+" rows matched the filter" );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnAddData"></a>
+				<b>fnAddData</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Add a single new row or multiple rows of data to the table. Please note
+that this is suitable for client-side processing only - if you are using 
+server-side processing (i.e. "bServerSide": true), then to add data, you
+must add it to the data source, i.e. the server-side, through an Ajax call.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">array</i>|<i class="doc_param">object</i>}: The data to be added to the table. This can be:
+   <ul>
+     <li>1D array of data - add a single row with the data provided</li>
+     <li>2D array of arrays - add multiple rows in a single call</li>
+     <li>object - data object when using <i>mData</i></li>
+     <li>array of objects - multiple data objects when using <i>mData</i></li>
+   </ul></li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: redraw the table or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>}: An array of integers, representing the list of indexes in 
+   <i>aoData</i> ({@link DataTable.models.oSettings}) that have been added to 
+   the table.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Global var for counter
+   var giCount = 2;
+   
+   $(document).ready(function() {
+     $('#example').dataTable();
+   } );
+   
+   function fnClickAddRow() {
+     $('#example').dataTable().fnAddData( [
+       giCount+".1",
+       giCount+".2",
+       giCount+".3",
+       giCount+".4" ]
+     );
+       
+     giCount++;
+   }</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnAdjustColumnSizing"></a>
+				<b>fnAdjustColumnSizing</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>This function will make DataTables recalculate the column sizes, based on the data 
+contained in the table and the sizes applied to the columns (in the DOM, CSS or 
+through the sWidth parameter). This can be useful when the width of the table's 
+parent element changes (for example a window resize).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">boolean</i>} [default=<span class="doc_default">true</span>]: Redraw the table or not, you will typically want to</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable( {
+       "sScrollY": "200px",
+       "bPaginate": false
+     } );
+     
+     $(window).bind('resize', function () {
+       oTable.fnAdjustColumnSizing();
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnClearTable"></a>
+				<b>fnClearTable</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Quickly and simply clear a table</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: redraw the table or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Immediately 'nuke' the current rows (perhaps waiting for an Ajax callback...)
+     oTable.fnClearTable();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnClose"></a>
+				<b>fnClose</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>The exact opposite of 'opening' a row, this function will close any rows which 
+are currently 'open'.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: the table row to 'close'</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">int</i>}: 0 on success, or 1 if failed (can't find the row)</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable;
+     
+     // 'open' an information row when a row is clicked on
+     $('#example tbody tr').click( function () {
+       if ( oTable.fnIsOpen(this) ) {
+         oTable.fnClose( this );
+       } else {
+         oTable.fnOpen( this, "Temporary row opened", "info_row" );
+       }
+     } );
+     
+     oTable = $('#example').dataTable();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnDeleteRow"></a>
+				<b>fnDeleteRow</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Remove a row for the table</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">mixed</i>}: The index of the row from aoData to be deleted, or
+   the TR element you want to delete</li><li>{<i class="doc_param">function</i>|<i class="doc_param">null</i>}: Callback function</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Redraw the table or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>}: The row that was deleted</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Immediately remove the first row
+     oTable.fnDeleteRow( 0 );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnDestroy"></a>
+				<b>fnDestroy</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Restore the table to it's original state in the DOM by removing all of DataTables 
+enhancements, alterations to the DOM structure of the table and event listeners.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">boolean</i>} [default=<span class="doc_default">false</span>]: Completely remove the table from the DOM</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     // This example is fairly pointless in reality, but shows how fnDestroy can be used
+     var oTable = $('#example').dataTable();
+     oTable.fnDestroy();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnDraw"></a>
+				<b>fnDraw</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Redraw the table</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Re-filter and resort (if enabled) the table before the draw.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Re-draw the table - you wouldn't want to do it here, but it's an example :-)
+     oTable.fnDraw();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnFilter"></a>
+				<b>fnFilter</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Filter the input based on data</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>}: String to filter the table on</li><li>{<i class="doc_param">int</i>|<i class="doc_param">null</i>}: Column to limit filtering to</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">false</span>]: Treat as regular expression or not</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Perform smart filtering or not</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Show the input global filter in it's input box(es)</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Do case-insensitive matching (true) or not (false)</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Sometime later - filter...
+     oTable.fnFilter( 'test string' );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnGetData"></a>
+				<b>fnGetData</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Get the data for the whole table, an individual row or an individual cell based on the 
+provided parameters.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">int</i>|<i class="doc_param">node</i>}: A TR row node, TD/TH cell node or an integer. If given as
+   a TR node then the data source for the whole row will be returned. If given as a
+   TD/TH cell node then iCol will be automatically calculated and the data for the
+   cell returned. If given as an integer, then this is treated as the aoData internal
+   data index for the row (see fnGetPosition) and the data for that row used.</li><li>{<i class="doc_param">int</i>}: Optional column index that you want the data of.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>|<i class="doc_param">object</i>|<i class="doc_param">string</i>}: If mRow is undefined, then the data for all rows is
+   returned. If mRow is defined, just data for that row, and is iCol is
+   defined, only data for the designated cell is returned.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Row data
+   $(document).ready(function() {
+     oTable = $('#example').dataTable();
+
+     oTable.$('tr').click( function () {
+       var data = oTable.fnGetData( this );
+       // ... do something with the array / object of data for the row
+     } );
+   } );
+
+ 
+   // Individual cell data
+   $(document).ready(function() {
+     oTable = $('#example').dataTable();
+
+     oTable.$('td').click( function () {
+       var sData = oTable.fnGetData( this );
+       alert( 'The cell clicked on had the value of '+sData );
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnGetNodes"></a>
+				<b>fnGetNodes</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Get an array of the TR nodes that are used in the table's body. Note that you will 
+typically want to use the '$' API method in preference to this as it is more 
+flexible.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">int</i>}: Optional row index for the TR element you want</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>|<i class="doc_param">node</i>}: If iRow is undefined, returns an array of all TR elements
+   in the table's body, or iRow is defined, just the TR element requested.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Get the nodes from the table
+     var nNodes = oTable.fnGetNodes( );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnGetPosition"></a>
+				<b>fnGetPosition</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Get the array indexes of a particular cell from it's DOM element
+and column index including hidden columns</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: this can either be a TR, TD or TH in the table's body</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">int</i>}: If nNode is given as a TR, then a single index is returned, or
+   if given as a cell, an array of [row index, column index (visible), 
+   column index (all)] is given.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     $('#example tbody td').click( function () {
+       // Get the position of the current data from the node
+       var aPos = oTable.fnGetPosition( this );
+       
+       // Get the data array for this row
+       var aData = oTable.fnGetData( aPos[0] );
+       
+       // Update the data array and return the value
+       aData[ aPos[1] ] = 'clicked';
+       this.innerHTML = 'clicked';
+     } );
+     
+     // Init DataTables
+     oTable = $('#example').dataTable();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnIsOpen"></a>
+				<b>fnIsOpen</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Check to see if a row is 'open' or not.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: the table row to check</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">boolean</i>}: true if the row is currently open, false otherwise</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable;
+     
+     // 'open' an information row when a row is clicked on
+     $('#example tbody tr').click( function () {
+       if ( oTable.fnIsOpen(this) ) {
+         oTable.fnClose( this );
+       } else {
+         oTable.fnOpen( this, "Temporary row opened", "info_row" );
+       }
+     } );
+     
+     oTable = $('#example').dataTable();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnOpen"></a>
+				<b>fnOpen</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>This function will place a new row directly after a row which is currently 
+on display on the page, with the HTML contents that is passed into the 
+function. This can be used, for example, to ask for confirmation that a 
+particular record should be deleted.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: The table row to 'open'</li><li>{<i class="doc_param">string</i>|<i class="doc_param">node</i>|<i class="doc_param">jQuery</i>}: The HTML to put into the row</li><li>{<i class="doc_param">string</i>}: Class to give the new TD cell</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">node</i>}: The row opened. Note that if the table row passed in as the
+   first parameter, is not found in the table, this method will silently
+   return.</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable;
+     
+     // 'open' an information row when a row is clicked on
+     $('#example tbody tr').click( function () {
+       if ( oTable.fnIsOpen(this) ) {
+         oTable.fnClose( this );
+       } else {
+         oTable.fnOpen( this, "Temporary row opened", "info_row" );
+       }
+     } );
+     
+     oTable = $('#example').dataTable();
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnPageChange"></a>
+				<b>fnPageChange</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Change the pagination - provides the internal logic for pagination in a simple API 
+function. With this function you can have a DataTables table go to the next, 
+previous, first or last pages.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>|<i class="doc_param">int</i>}: Paging action to take: "first", "previous", "next" or "last"
+   or page number to jump to (integer), note that page 0 is the first page.</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Redraw the table or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     oTable.fnPageChange( 'next' );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnSetColumnVis"></a>
+				<b>fnSetColumnVis</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Show a particular column</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">int</i>}: The column whose display should be changed</li><li>{<i class="doc_param">bool</i>}: Show (true) or hide (false) the column</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Redraw the table or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Hide the second column after initialisation
+     oTable.fnSetColumnVis( 1, false );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnSettings"></a>
+				<b>fnSettings</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Get the settings for a particular table for external manipulation</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">object</i>}: DataTables settings object. See 
+   {@link DataTable.models.oSettings}</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     var oSettings = oTable.fnSettings();
+     
+     // Show an example parameter from the settings
+     alert( oSettings._iDisplayStart );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnSort"></a>
+				<b>fnSort</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Sort the table by a particular column</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">int</i>}: the data index to sort on. Note that this will not match the 
+   'display index' if you have hidden data entries</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Sort immediately with columns 0 and 1
+     oTable.fnSort( [ [0,'asc'], [1,'asc'] ] );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnSortListener"></a>
+				<b>fnSortListener</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Attach a sort listener to an element for a given column</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: the element to attach the sort listener to</li><li>{<i class="doc_param">int</i>}: the column that a click on this node will sort on</li><li>{<i class="doc_param">function</i>}: callback function when sort is run</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     
+     // Sort on column 1, when 'sorter' is clicked on
+     oTable.fnSortListener( document.getElementById('sorter'), 1 );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnUpdate"></a>
+				<b>fnUpdate</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Update a table cell or row - this method will accept either a single value to update the cell with, an array of values with one element for each column or
+an object in the same format as the original data source. The function is
+self-referencing in order to make the multi column updates easier.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">object</i>|<i class="doc_param">array</i>|<i class="doc_param">string</i>}: Data to update the cell/row with</li><li>{<i class="doc_param">node</i>|<i class="doc_param">int</i>}: TR element you want to update or the aoData index</li><li>{<i class="doc_param">int</i>}: The column to update (set to undefined to update the whole row)</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Redraw the table or not</li><li>{<i class="doc_param">bool</i>} [default=<span class="doc_default">true</span>]: Perform pre-draw actions or not</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">int</i>}: 0 on success, 1 on error</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     oTable.fnUpdate( 'Example update', 0, 0 ); // Single cell
+     oTable.fnUpdate( ['a', 'b', 'c', 'd', 'e'], 1 ); // Row
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnVersionCheck"></a>
+				<b>fnVersionCheck</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Provide a common method for plug-ins to check the version of DataTables being used, in order
+to ensure compatibility.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>}: Version string to check for, in the format "X.Y.Z". Note that the
+   formats "X" and "X.Y" are also acceptable.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">boolean</i>}: true if this version of DataTables is greater or equal to the required
+   version, or false if this version of DataTales is not suitable</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready(function() {
+     var oTable = $('#example').dataTable();
+     alert( oTable.fnVersionCheck( '1.9.0' ) );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+
+			<h3>Static methods</h3>
+			<p>As well as the functions above which apply to individual tables, DataTables provides a number of static functions which give general information about the use of DataTables on the page. These functions can be accessed through the object <i><b>$.fn.dataTable.{functionName}</b></i>.</p>
+				<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnVersionCheck"></a>
+				<b>fnVersionCheck</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Provide a common method for plug-ins to check the version of DataTables being used, in order
+to ensure compatibility.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">string</i>}: Version string to check for, in the format "X.Y.Z". Note that the
+   formats "X" and "X.Y" are also acceptable.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">boolean</i>}: true if this version of DataTables is greater or equal to the required
+   version, or false if this version of DataTales is not suitable</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   alert( $.fn.dataTable.fnVersionCheck( '1.9.0' ) );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnIsDataTable"></a>
+				<b>fnIsDataTable</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Check if a TABLE node is a DataTable table already or not.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">node</i>}: The TABLE node to check if it is a DataTable or not (note that other
+   node types can be passed in, but will always return false).</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">boolean</i>}: true the table given is a DataTable, or false otherwise</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   var ex = document.getElementById('example');
+   if ( ! $.fn.DataTable.fnIsDataTable( ex ) ) {
+     $(ex).dataTable();
+   }</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnTables"></a>
+				<b>fnTables</b><br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Get all DataTable tables that have been initialised - optionally you can select to
+get only currently visible tables.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Input parameters:</td>
+			<td valign="top"><ol class="doc_params"><li>{<i class="doc_param">boolean</i>} [default=<span class="doc_default">false</span>]: Flag to indicate if you want all (default) or 
+   visible tables only.</li></ol></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Return parameter:</td>
+			<td valign="top">{<i class="doc_param">array</i>}: Array of TABLE nodes (not DataTable instances) which are DataTables</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   var table = $.fn.dataTable.fnTables(true);
+   if ( table.length > 0 ) {
+     $(table).dataTable().fnAdjustColumnSizing();
+   }</pre>
+			</td>
+		</tr>
+	</table>
+			</div>
+			<div class="css_clear"></div>
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="license_gpl2.html">GPL v2 license</a> or a <a href="license_bsd.html">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/api by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:49:53 GMT -->
+</html>

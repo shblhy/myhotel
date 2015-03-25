@@ -1,0 +1,137 @@
+.swMain {
+    position: relative;
+}
+.swMain .stepContainer {
+    clear: both;
+    display: block;
+    margin: 0 0 20px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+.swMain .stepContainer div.content {
+}
+.swMain div.actionBar {
+    background-color: #F8F8F8;
+    border-top: 1px solid #EEEEEE;
+    left: 0;
+    padding: 10px;
+    text-align: center;
+}
+.swMain div.actionBar .btn {
+    margin-right: 5px;
+}
+.swMain ul.anchor {
+    border-bottom: 1px solid #CCCCCC;
+    clear: both;
+    display: block;
+    float: left;
+    margin: 10px 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.swMain ul.anchor li {
+    border: 0 solid #E0E0E0;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 6px 0 0;
+    position: relative;
+    top: 1px;
+}
+.swMain ul.anchor li a {
+    display: block;
+    float: left;
+    margin: 0;
+    outline-style: none;
+    padding: 3px;
+    position: relative;
+    x-width: auto;
+}
+.swMain ul.anchor li a .stepNumber {
+    float: left;
+    font-size: 40px;
+    padding: 17px 5px 5px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+}
+.swMain ul.anchor li a .stepDesc {
+    display: block;
+    float: left;
+    font-size: 16px;
+    x-font-weight: bold;
+    padding: 10px 5px 5px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+.swMain ul.anchor li a .stepDesc small {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px !important;
+}
+.swMain ul.anchor li a.selected {
+    background: none repeat scroll 0 0 #C2E3F0;
+    border: 1px solid #73B4CE;
+    color: #666666;
+    cursor: text;
+}
+.swMain ul.anchor li a.selected:hover {
+    background: none repeat scroll 0 0 #A9DAED;
+    cursor: pointer;
+}
+.swMain ul.anchor li a.done {
+    background: none repeat scroll 0 0 #A4D143;
+    border: 1px solid #8CC63F;
+    color: #FFFFFF;
+    position: relative;
+}
+.swMain ul.anchor li a.done:hover {
+    background: none repeat scroll 0 0 #8CC63F;
+    border: 1px solid #5A5655;
+    color: #5A5655;
+}
+.swMain ul.anchor li a.disabled {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #CCCCCC;
+    color: #CCCCCC;
+    cursor: text;
+}
+.swMain ul.anchor li a.disabled:hover {
+    background: none repeat scroll 0 0 #F8F8F8;
+    color: #CCCCCC;
+}
+.swMain ul.anchor li a.error {
+    background: none repeat scroll 0 0 #F08F75 !important;
+    border: 1px solid #FB3500 !important;
+    color: #6C6C6C !important;
+}
+.swMain ul.anchor li a.error:hover {
+    color: #000000 !important;
+}
+.swMain .buttonNext, .swMain .buttonPrevious {
+    float: right;
+}
+.swMain .loader {
+    background: url("../images/loadder/loader_green.gif") no-repeat scroll 5px center #FFFFFF;
+    border: 1px solid #FFD700;
+    color: #5A5655;
+    display: none;
+    float: left;
+    font: bold 13px Verdana,Arial,Helvetica,sans-serif;
+    margin: 2px 0 0 2px;
+    padding: 8px 10px 8px 40px;
+    position: relative;
+    z-index: 998;
+}
+.swMain .alert {
+    display: none;
+    text-align: left;
+}
+.swMain .msgBox .content {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border: medium none;
+    min-height: 0;
+    padding: 10px;
+}

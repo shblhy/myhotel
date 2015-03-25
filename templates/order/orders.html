@@ -1,0 +1,54 @@
+{% extends "baseadmin.html" %}
+{% block content %}
+<label>订单管理</label>>><label>订单列表</label>
+ <div class="small-padding gray-background-color">
+    <form id="tb_orders_search" name="tb_orders_search">
+        <label>
+            <span class="pull-left mini-width text-right">房间：</span>
+            <input type="text" name="room_id" class="small-width input-small" id="room_id"></label>
+        <label>
+            <span class="pull-left mini-width text-right">顾客：</span>
+            <input type="text" name="customer_like" class="small-width input-small" id="customer_like" ></label>                
+            <a id="search" class="btn btn-primary" href="javascript:void(0)">查询</a>
+    </form>
+</div>
+<table id="tb_orders" data-search="tb_orders_search" class="table table-striped" ></table>
+<script type="text/javascript">
+    require(["jquery","functions","table","form"], function($,functions,table) {
+        $(function() {
+             var o =  {
+                "initData" :{{table.get_rows|safe}},
+                "aoColumns":{{table.get_columns|safe}},
+                "sAjaxSource": '/order/orders.table',
+                "buttons": [],
+                "actions":[{
+                    type:"view",
+                    text:"详情",
+                    url:"/order/detail",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-detail icon-color'
+                },{
+                    type:"edit",
+                    text:"编辑",
+                    url:"/order/edit",
+                    style: 'restful',
+                    target: '_blank',
+                    iconClass:'icon-detail icon-color'
+                },{
+                    type:"delete",
+                    text:"删除",
+                    url:"/order/delete",
+                    style: 'restful',
+                    iconClass:'icon-detail icon-color'
+                }]
+            }; 
+            var t = new table.Table('tb_orders',o);
+            t.drawTable();
+            $('#search').click(function(){
+                t.search();
+            });
+        });
+    });
+</script>
+{% endblock %}

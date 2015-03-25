@@ -1,0 +1,159 @@
+/version 3
+/name [ 26
+	4149e59cb0e59bbee9a29ce889b2e8aebee7bdaee58aa8e4bd9c
+]
+/isOpen 0
+/actionCount 1
+/action-1 {
+	/name [ 26
+		4149e59cb0e59bbee9a29ce889b2e8aebee7bdaee58aa8e4bd9c
+	]
+	/keyIndex 0
+	/colorIndex 1
+	/isOpen 0
+	/eventCount 4
+	/event-1 {
+		/useRulersIn1stQuadrant 0
+		/internalName (ai_plugin_setColor)
+		/localizedName [ 12
+			e8aebee7bdaee9a29ce889b2
+		]
+		/isOpen 0
+		/isOn 1
+		/hasDialog 0
+		/parameterCount 6
+		/parameter-1 {
+			/key 1768186740
+			/showInPalette -1
+			/type (ustring)
+			/value [ 12
+				e5a1abe58585e9a29ce889b2
+			]
+		}
+		/parameter-2 {
+			/key 1718185068
+			/showInPalette -1
+			/type (boolean)
+			/value 1
+		}
+		/parameter-3 {
+			/key 1954115685
+			/showInPalette -1
+			/type (enumerated)
+			/name [ 10
+				52474220e9a29ce889b2
+			]
+			/value 2
+		}
+		/parameter-4 {
+			/key 1919247406
+			/showInPalette -1
+			/type (real)
+			/value 211.0
+		}
+		/parameter-5 {
+			/key 1735550318
+			/showInPalette -1
+			/type (real)
+			/value 211.0
+		}
+		/parameter-6 {
+			/key 1651275109
+			/showInPalette -1
+			/type (real)
+			/value 211.0
+		}
+	}
+	/event-2 {
+		/useRulersIn1stQuadrant 0
+		/internalName (ai_plugin_setColor)
+		/localizedName [ 12
+			e8aebee7bdaee9a29ce889b2
+		]
+		/isOpen 0
+		/isOn 1
+		/hasDialog 0
+		/parameterCount 1
+		/parameter-1 {
+			/key 1836349808
+			/showInPalette -1
+			/type (enumerated)
+			/name [ 21
+				e4ba92e68da2e5a1abe889b2e5928ce68f8fe8beb9
+			]
+			/value 7
+		}
+	}
+	/event-3 {
+		/useRulersIn1stQuadrant 0
+		/internalName (ai_plugin_setColor)
+		/localizedName [ 12
+			e8aebee7bdaee9a29ce889b2
+		]
+		/isOpen 0
+		/isOn 1
+		/hasDialog 0
+		/parameterCount 6
+		/parameter-1 {
+			/key 1768186740
+			/showInPalette -1
+			/type (ustring)
+			/value [ 12
+				e5a1abe58585e9a29ce889b2
+			]
+		}
+		/parameter-2 {
+			/key 1718185068
+			/showInPalette -1
+			/type (boolean)
+			/value 1
+		}
+		/parameter-3 {
+			/key 1954115685
+			/showInPalette -1
+			/type (enumerated)
+			/name [ 10
+				52474220e9a29ce889b2
+			]
+			/value 2
+		}
+		/parameter-4 {
+			/key 1919247406
+			/showInPalette -1
+			/type (real)
+			/value 255.0
+		}
+		/parameter-5 {
+			/key 1735550318
+			/showInPalette -1
+			/type (real)
+			/value 255.0
+		}
+		/parameter-6 {
+			/key 1651275109
+			/showInPalette -1
+			/type (real)
+			/value 255.0
+		}
+	}
+	/event-4 {
+		/useRulersIn1stQuadrant 0
+		/internalName (ai_plugin_setColor)
+		/localizedName [ 12
+			e8aebee7bdaee9a29ce889b2
+		]
+		/isOpen 0
+		/isOn 1
+		/hasDialog 0
+		/parameterCount 1
+		/parameter-1 {
+			/key 1836349808
+			/showInPalette -1
+			/type (enumerated)
+			/name [ 21
+				e4ba92e68da2e5a1abe889b2e5928ce68f8fe8beb9
+			]
+			/value 7
+		}
+	}
+}

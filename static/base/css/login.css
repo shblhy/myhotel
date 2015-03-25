@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import url("bootstrap-modified.css");
+@import url("bootstrap-responsive-modified.css");
+@import url("reset.css");
+@import url("../components/tipped/tipped.css");
+/*
+ * 本样式表主要用于登录页面样式
+ */
+
+/*登录页面*/
+body {
+	background: url(../images/page/login_bluebg.gif) repeat-x left top #F7F9FB;
+	margin: 0;
+}
+.login {
+	padding-top:300px;
+}
+#login-local {
+	background: url(../images/page/login_map.gif) no-repeat center top;
+}
+#login-fuzhou {
+	background: url(../images/page/login_map-fuzhou.gif) no-repeat center top;
+}
+#login-shenzhen {
+	background: url(../images/page/login_map-shenzhen.gif) no-repeat center top;
+}
+#login-sichuan {
+	background: url(../images/page/login_map-sichuan.gif) no-repeat center top;
+}
+#login-zhangzhou {
+	background: url(../images/page/login_map-zhangzhou.gif) no-repeat center top;
+}
+#login-quanzhou {
+	background: url(../images/page/login_map-quanzhou.gif) no-repeat center top;
+}
+.login form{
+	width: 520px;
+	margin: 0 auto;
+}
+.username{
+	background:url(../images/page/user.gif) no-repeat right center;
+	border:1px solid #c0c0c0;
+	border-radius: 3px;
+}
+.password{
+	background:url(../images/page/password.gif) no-repeat right center;
+	border:1px solid #c0c0c0;
+	border-radius: 3px;
+}
+.login_input{
+	background-color:transparent !important;
+	height:34px !important;
+	font-size:16px !important;
+	margin: 0 !important;
+	border:none !important;
+	padding: 5px 10px !important;
+}
+.login_input:focus{
+	box-shadow: none !important;
+}
+#login_btn{
+	padding: 5px 20px;
+	font-weight: bold;
+}
+
+p.i {
+    background-image: url("../images/info_color.png");
+    background-position: 8px 11px;
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+}
+p.e {
+    background-image: url("../images/error_color.png");
+    background-position: 8px 11px;
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 40px;
+}
+#loading_box{
+    display: inline-block;
+    line-height: 18px;
+    margin-bottom: 5px;
+    margin-right: 7px;
+    vertical-align: middle;
+    width: 38px;
+    height: 40px;
+    margin-top: 7px;
+    position: relative;
+}
+smart_table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.smart_table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.smart_table th,
+.smart_table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.smart_table th {
+  text-align: left;
+  font-weight: bold;
+}
+
+.smart_table thead th {
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.smart_table caption + thead tr:first-child th,
+.smart_table caption + thead tr:first-child td,
+.smart_table colgroup + thead tr:first-child th,
+.smart_table colgroup + thead tr:first-child td,
+.smart_table thead:first-child tr:first-child th,
+.smart_table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.smart_table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.smart_table .table {
+  background-color: #ffffff;
+}

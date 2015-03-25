@@ -1,0 +1,59 @@
+/*******************************************************************************
+ * Copyright 2013 Marc CARRE
+ * https://github.com/marccarre/jquery-multi-status-bar
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
+
+.ui-multistatusbar { 
+    margin:2px !important;
+    border: medium none !important;color: #333333; text-align: center; border-spacing: 0px; border-collapse: collapse; x-border: solid 1px #999999; }
+.ui-multistatusbar td {
+    border: medium none !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    margin: 0;
+    padding: 0 !important;
+    text-align: center;
+    vertical-align: middle;
+}
+.ui-multistatusbar td a { color: #333333; text-decoration: none; display: block; outline: 0; outline-offset: 0; }
+
+.ui-multistatusbar-legend {color:#999999;padding:3px; border-radius: 3px;border:1px solid #999999; margin-top: 1px; background-color: white; display:block; position:absolute; z-index:111;}
+.ui-multistatusbar-legend table { x-border: solid 1px #999999; vertical-align: middle; margin-bottom: 0px; width: auto !important;}
+.ui-multistatusbar-legend td { border-width: 0 !important; border-top: 0px; line-height: 7px; vertical-align: middle; padding: 1px; background-color: white; }
+
+.ui-multistatusbar-legend-icon { border: solid 1px #999999;     display: inline-block;
+    height: 10px;
+    width: 10px;}
+.level_0{
+    background: url(levelColor.gif) left 0 repeat-x;
+}
+.level_1{
+    background: url(levelColor.gif) left -15px repeat-x;
+}
+.level_2{
+    background: url(levelColor.gif) left -30px repeat-x;
+}
+.level_3{
+    background: url(levelColor.gif) left -45px repeat-x;
+}
+.level_4{
+    background: url(levelColor.gif) left -60px repeat-x;
+}
+.level_5{
+    background: url(levelColor.gif) left -75px repeat-x;
+}
+.level_6{
+    background: url(levelColor.gif) left -90px repeat-x;
+}

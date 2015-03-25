@@ -1,0 +1,67 @@
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <script type="text/javascript" src="/static/base/com/jquery.form.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>道县万豪假日酒店</title>
+</head>
+<body>
+    <div>
+        <h3>会员注册</h3>
+        <form id="pop-regist-form1" action="/member/regist/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label for="pop-regist-account">*用户名：</label>
+                        <input type="text" id="pop-regist-username" name="username">
+                        <span style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label for="pop-regist-password">*密码：</label>
+                        <input type="password" id="pop-regist-password" name="password">
+                        <span style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*重复密码：</label>
+                        <input type="password" id="pop-regist-repeat-password">
+                        <span style="display:none;"></span><span class="form-error">再次输入密码!</span> </dd>
+                     <dd>
+                        <label for="pop-regist-password">*手机：</label>
+                        <input type="text" id="pop-phone" name="phone">
+                        <span style="display:none;"></span><span class="form-error">输入10-20位手机</span> </dd>
+                    <dd>
+                        <label for="pop-regist-password">*真实姓名：</label>
+                        <input type="text" id="pop-realname" name="realname">
+                        <span style="display:none;"></span><span class="form-error">输入真实姓名</span> </dd>
+                    <dd>
+                        <label for="pop-regist-password">QQ：</label>
+                        <input type="text" id="pop-qq" name="qq">
+                        <span style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> </dd>
+                    <dd>
+                        <label for="pop-regist-password">Email：</label>
+                        <input type="text"  id="pop-email" name="email">
+                        <span style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+<script language="JavaScript">
+    $('#login-regist-btn').click(function(){
+        $("#pop-regist-form1").ajaxForm({
+                data : {},
+                dataType : "json",
+                success: function(data) {
+                    alert('sucess');
+                    window.location = '/'
+                }
+            }).submit();
+    });
+
+</script>
+</body>
+</html>

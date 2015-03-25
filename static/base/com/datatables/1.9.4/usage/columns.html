@@ -1,0 +1,1123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/usage/columns by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - Usage</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="http://legacy.datatables.net/media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		
+		<style type="text/css" media="screen">
+			@import "http://legacy.datatables.net/media/css/site.ccss";
+		</style>
+		
+		<script type="text/javascript" src="http://legacy.datatables.net/media/javascript/complete.min.js"></script>
+	</head>
+	<body class="grid_2_3">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="http://legacy.datatables.net/index">
+						<img src="http://legacy.datatables.net/media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a class="active" href="http://legacy.datatables.net/usage">Usage</a></li>
+					<li><a  href="http://legacy.datatables.net/examples">Examples</a></li>
+					<li><a  href="http://legacy.datatables.net/styling">Styling</a></li>
+					<li><a  href="http://legacy.datatables.net/api">API</a></li>
+					<li><a  href="http://legacy.datatables.net/development">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="http://legacy.datatables.net/extras">Extras</a></li>
+					<li><a  href="http://legacy.datatables.net/plug-ins">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a  href="http://legacy.datatables.net/faqs">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+									<ul class="submenu submenu_usage">
+						<li><a  href="http://legacy.datatables.net/usage/features">Features</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/options">Options</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/callbacks">Callbacks</a></li>
+						<li><a class="active" href="http://legacy.datatables.net/usage/columns">Columns</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/i18n">Internationalisation</a></li>
+						<li><a  href="http://legacy.datatables.net/usage/server-side">Server-side processing</a></li>
+						<li><a                                                             href="http://legacy.datatables.net/ref">Full reference</a></li>
+					</ul>
+					<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="http://legacy.datatables.net/media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+		<div id="fw_content">
+			<h2>Columns</h2>
+			<p>Although DataTables can obtain information about the table directly from the DOM, you may wish to give DataTables specific instructions for each individual column. This can be done using either the <b>aoColumnDefs</b> parameter, or <b>aoColumns</b> and the object information given for each column.</p>
+			
+			<p>The aoColumnDefs parameter and aoColumns achieve the same aim, but differ in how they work:</p>
+			
+			<ul>
+				<li>
+					<b>aoColumnDefs</b>: This array allows you to target a specific column, multiple columns, or all columns, using the aTargets property of each object in the array (please note that aoColumnDefs was introduced in DataTables 1.7). This allows great flexibility when creating tables, as the aoColumnDefs arrays can be of any length, targeting the columns you specifically want. The aTargets property is an array to target one of many columns and each element in it can be:
+					<ul class="no_spaced_list">
+						<li>a string - class name will be matched on the TH for the column</li>
+						<li>0 or a positive integer - column index counting from the left</li>
+						<li>a negative integer - column index counting from the right</li>
+						<li>the string "_all" - all columns (i.e. assign a default)</li>
+					</ul>
+				</li>
+				<li><b>aoColumns</b>: If specified, then the length of this array <b>must</b> be equal to the number of columns in the original HTML table. Use 'null' where you wish to use only the default values and automatically detected options.</li>
+			</ul>
+			
+			<p>Both aoColumnDefs parameter and aoColumns can be used together, although aoColumnDefs is preferred due to it's flexibility. If both are used, aoColumns definitions will take the highest priority. Likewise, if the same column is targeted multiple times in aoColumnDefs, the first elements in the array will take the highest priority, and the last the lowest.</p>
+				<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="aDataSort"></a><b>aDataSort</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Allows a column's sorting to take multiple columns into account when 
+doing a sort. For example first name / last name columns make sense to 
+do a multi-column sort over the two columns.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Takes the value of the column index automatically</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">array</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [
+         { "aDataSort": [ 0, 1 ], "aTargets": [ 0 ] },
+         { "aDataSort": [ 1, 0 ], "aTargets": [ 1 ] },
+         { "aDataSort": [ 2, 3, 4 ], "aTargets": [ 2 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [
+         { "aDataSort": [ 0, 1 ] },
+         { "aDataSort": [ 1, 0 ] },
+         { "aDataSort": [ 2, 3, 4 ] },
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="asSorting"></a><b>asSorting</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>You can control the default sorting direction, and even alter the behaviour
+of the sort handler (i.e. only allow ascending sorting etc) using this
+parameter.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">[ 'asc', 'desc' ]</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">array</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [
+         { "asSorting": [ "asc" ], "aTargets": [ 1 ] },
+         { "asSorting": [ "desc", "asc", "asc" ], "aTargets": [ 2 ] },
+         { "asSorting": [ "desc" ], "aTargets": [ 3 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [
+         null,
+         { "asSorting": [ "asc" ] },
+         { "asSorting": [ "desc", "asc", "asc" ] },
+         { "asSorting": [ "desc" ] },
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bSearchable"></a><b>bSearchable</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable filtering on the data in this column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "bSearchable": false, "aTargets": [ 0 ] }
+       ] } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "bSearchable": false },
+         null,
+         null,
+         null,
+         null
+       ] } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bSortable"></a><b>bSortable</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable sorting on this column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "bSortable": false, "aTargets": [ 0 ] }
+       ] } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "bSortable": false },
+         null,
+         null,
+         null,
+         null
+       ] } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bUseRendered"></a><b>bUseRendered</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p><code>Deprecated</code> When using fnRender() for a column, you may wish 
+to use the original data (before rendering) for sorting and filtering 
+(the default is to used the rendered data that the user can see). This 
+may be useful for dates etc.</p>
+
+<p>Please note that this option has now been deprecated and will be removed
+in the next version of DataTables. Please use mRender / mData rather than
+fnRender.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%"></pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="bVisible"></a><b>bVisible</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Enable or disable the display of this column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">true</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">boolean</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "bVisible": false, "aTargets": [ 0 ] }
+       ] } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "bVisible": false },
+         null,
+         null,
+         null,
+         null
+       ] } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnCreatedCell"></a><b>fnCreatedCell</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Developer definable function that is called whenever a cell is created (Ajax source,
+etc) or processed for input (DOM source). This can be used as a compliment to mRender
+allowing you to modify the DOM element (add background colour for example) when the
+element is available.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">function</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ {
+         "aTargets": [3],
+         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+           if ( sData == "1.7" ) {
+             $(nTd).css('color', 'blue')
+           }
+         }
+       } ]
+     });
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="fnRender"></a><b>fnRender</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p><code>Deprecated</code> Custom display function that will be called for the 
+display of each cell in this column.</p>
+
+<p>Please note that this option has now been deprecated and will be removed
+in the next version of DataTables. Please use mRender / mData rather than
+fnRender.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">function</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%"></pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="iDataSort"></a><b>iDataSort</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>The column index (starting from 0!) that you wish a sort to be performed
+upon when this column is selected for sorting. This can be used for sorting
+on hidden columns for example.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">-1 <i>Use automatically calculated column index</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">int</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "iDataSort": 1, "aTargets": [ 0 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "iDataSort": 1 },
+         null,
+         null,
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="mData"></a><b>mData</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>This property can be used to read data from any JSON data source property,
+including deeply nested objects / properties. mData can be given in a
+number of different ways which effect its behaviour:
+  <ul>
+    <li>integer - treated as an array index for the data source. This is the
+      default that DataTables uses (incrementally increased for each column).</li>
+    <li>string - read an object property from the data source. Note that you can
+      use Javascript dotted notation to read deep properties / arrays from the
+      data source.</li>
+    <li>null - the sDefaultContent option will be used for the cell (null
+      by default, so you will need to specify the default content you want -
+      typically an empty string). This can be useful on generated columns such 
+      as edit / delete action columns.</li>
+    <li>function - the function given will be executed whenever DataTables 
+      needs to set or get the data for a cell in the column. The function 
+      takes three parameters:
+      <ul>
+        <li>{array|object} The data source for the row</li>
+        <li>{string} The type call data requested - this will be 'set' when
+          setting data or 'filter', 'display', 'type', 'sort' or undefined when 
+          gathering data. Note that when <i>undefined</i> is given for the type
+          DataTables expects to get the raw data for the object back</li>
+        <li>{*} Data to set when the second parameter is 'set'.</li>
+      </ul>
+      The return value from the function is not required when 'set' is the type
+      of call, but otherwise the return is what will be used for the data
+      requested.</li>
+   </ul></p>
+
+<p>Note that prior to DataTables 1.9.2 mData was called mDataProp. The name change
+reflects the flexibility of this property and is consistent with the naming of
+mRender. If 'mDataProp' is given, then it will still be used by DataTables, as
+it automatically maps the old name to the new if required.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Use automatically calculated column index</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Read table data from objects
+   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "sAjaxSource": "sources/deep.txt",
+       "aoColumns": [
+         { "mData": "engine" },
+         { "mData": "browser" },
+         { "mData": "platform.inner" },
+         { "mData": "platform.details.0" },
+         { "mData": "platform.details.1" }
+       ]
+     } );
+   } );
+
+ 
+   // Using mData as a function to provide different information for
+   // sorting, filtering and display. In this case, currency (price)
+   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "aoColumnDefs": [ {
+         "aTargets": [ 0 ],
+         "mData": function ( source, type, val ) {
+           if (type === 'set') {
+             source.price = val;
+             // Store the computed dislay and filter values for efficiency
+             source.price_display = val=="" ? "" : "$"+numberFormat(val);
+             source.price_filter  = val=="" ? "" : "$"+numberFormat(val)+" "+val;
+             return;
+           }
+           else if (type === 'display') {
+             return source.price_display;
+           }
+           else if (type === 'filter') {
+             return source.price_filter;
+           }
+           // 'sort', 'type' and undefined all just use the integer
+           return source.price;
+         }
+       } ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="mRender"></a><b>mRender</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>This property is the rendering partner to mData and it is suggested that
+when you want to manipulate data for display (including filtering, sorting etc)
+but not altering the underlying data for the table, use this property. mData
+can actually do everything this property can and more, but this parameter is
+easier to use since there is no 'set' option. Like mData this can be given
+in a number of different ways to effect its behaviour, with the addition of 
+supporting array syntax for easy outputting of arrays (including arrays of
+objects):
+  <ul>
+    <li>integer - treated as an array index for the data source. This is the
+      default that DataTables uses (incrementally increased for each column).</li>
+    <li>string - read an object property from the data source. Note that you can
+      use Javascript dotted notation to read deep properties / arrays from the
+      data source and also array brackets to indicate that the data reader should
+      loop over the data source array. When characters are given between the array
+      brackets, these characters are used to join the data source array together.
+      For example: "accounts[, ].name" would result in a comma separated list with
+      the 'name' value from the 'accounts' array of objects.</li>
+    <li>function - the function given will be executed whenever DataTables 
+      needs to set or get the data for a cell in the column. The function 
+      takes three parameters:
+      <ul>
+        <li>{array|object} The data source for the row (based on mData)</li>
+        <li>{string} The type call data requested - this will be 'filter', 'display', 
+          'type' or 'sort'.</li>
+        <li>{array|object} The full data source for the row (not based on mData)</li>
+      </ul>
+      The return value from the function is what will be used for the data
+      requested.</li>
+   </ul></p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Use mData</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Create a comma separated list from an array of objects
+   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "sAjaxSource": "sources/deep.txt",
+       "aoColumns": [
+         { "mData": "engine" },
+         { "mData": "browser" },
+         {
+           "mData": "platform",
+           "mRender": "[, ].name"
+         }
+       ]
+     } );
+   } );
+
+ 
+   // Use as a function to create a link from the data source
+   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "aoColumnDefs": [ {
+         "aTargets": [ 0 ],
+         "mData": "download_link",
+         "mRender": function ( data, type, full ) {
+           return '<a href="http://legacy.datatables.net/usage/'+data+'">Download</a>';
+         }
+       } ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sCellType"></a><b>sCellType</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Change the cell type created for the column - either TD cells or TH cells. This
+can be useful as TH cells have semantic meaning in the table body, allowing them
+to act as a header for a row (you may wish to add scope='row' to the TH elements).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">td</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Make the first column use TH cells
+   $(document).ready( function() {
+     var oTable = $('#example').dataTable( {
+       "aoColumnDefs": [ {
+         "aTargets": [ 0 ],
+         "sCellType": "th"
+       } ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sClass"></a><b>sClass</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Class to give to each cell in this column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"><i>Empty string</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "sClass": "my_class", "aTargets": [ 0 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "sClass": "my_class" },
+         null,
+         null,
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sContentPadding"></a><b>sContentPadding</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>When DataTables calculates the column widths to assign to each column,
+it finds the longest string in each column and then constructs a
+temporary table and reads the widths from that. The problem with this
+is that "mmm" is much wider then "iiii", but the latter is a longer 
+string - thus the calculation can go wrong (doing it properly and putting
+it into an DOM object and measuring that is horribly(!) slow). Thus as
+a "work around" we provide this option. It will append its value to the
+text that is found to be the longest string for the column - i.e. padding.
+Generally you shouldn't need this, and it is not documented on the 
+general DataTables.net documentation</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"><i>Empty string<i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         null,
+         null,
+         null,
+         {
+           "sContentPadding": "mmm"
+         }
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sDefaultContent"></a><b>sDefaultContent</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Allows a default value to be given for a column's data, and will be used
+whenever a null data source is encountered (this can be because mData
+is set to null, or because the data source itself is null).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         {
+           "mData": null,
+           "sDefaultContent": "Edit",
+           "aTargets": [ -1 ]
+         }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         null,
+         null,
+         null,
+         {
+           "mData": null,
+           "sDefaultContent": "Edit"
+         }
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sName"></a><b>sName</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>This parameter is only used in DataTables' server-side processing. It can
+be exceptionally useful to know what columns are being displayed on the
+client side, and to map these to database fields. When defined, the names
+also allow DataTables to reorder information from the server if it comes
+back in an unexpected order (i.e. if you switch your columns around on the
+client-side, your server-side code does not also need updating).</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top"><i>Empty string</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "sName": "engine", "aTargets": [ 0 ] },
+         { "sName": "browser", "aTargets": [ 1 ] },
+         { "sName": "platform", "aTargets": [ 2 ] },
+         { "sName": "version", "aTargets": [ 3 ] },
+         { "sName": "grade", "aTargets": [ 4 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "sName": "engine" },
+         { "sName": "browser" },
+         { "sName": "platform" },
+         { "sName": "version" },
+         { "sName": "grade" }
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sSortDataType"></a><b>sSortDataType</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Defines a data source type for the sorting which can be used to read
+real-time information from the table (updating the internally cached
+version) prior to sorting. This allows sorting to occur on user editable
+elements such as form inputs.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">std</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [
+         { "sSortDataType": "dom-text", "aTargets": [ 2, 3 ] },
+         { "sType": "numeric", "aTargets": [ 3 ] },
+         { "sSortDataType": "dom-select", "aTargets": [ 4 ] },
+         { "sSortDataType": "dom-checkbox", "aTargets": [ 5 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [
+         null,
+         null,
+         { "sSortDataType": "dom-text" },
+         { "sSortDataType": "dom-text", "sType": "numeric" },
+         { "sSortDataType": "dom-select" },
+         { "sSortDataType": "dom-checkbox" }
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sTitle"></a><b>sTitle</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>The title of this column.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Derived from the 'TH' value for this column in the 
+   original HTML table.</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "sTitle": "My column title", "aTargets": [ 0 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "sTitle": "My column title" },
+         null,
+         null,
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sType"></a><b>sType</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>The type allows you to specify how the data for this column will be sorted.
+Four types (string, numeric, date and html (which will strip HTML tags
+before sorting)) are currently available. Note that only date formats
+understood by Javascript's Date() object will be accepted as type date. For
+example: "Mar 26, 2008 5:03 PM". May take the values: 'string', 'numeric',
+'date' or 'html' (by default). Further types can be adding through
+plug-ins.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Auto-detected from raw data</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "sType": "html", "aTargets": [ 0 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "sType": "html" },
+         null,
+         null,
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+		<tr>
+			<td class="parameter" valign="top">
+				<a name="sWidth"></a><b>sWidth</b>
+				<br><span class="css_link css_small">Show details</span>
+			</td>
+			<td valign="top"><p>Defining the width of the column, this parameter may take any CSS value
+(3em, 20px etc). DataTables applies 'smart' widths to columns which have not
+been given a specific width through this interface ensuring that the table
+remains readable.</p></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Default:</td>
+			<td valign="top">null <i>Automatic</i></td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Type:</td>
+			<td valign="top">string</td>
+		</tr>
+		<tr class="details">
+			<td class="label" valign="top">Code example:</td>
+			<td valign="top">
+				<pre class="brush: js; font-size: 75%">   // Using aoColumnDefs
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumnDefs": [ 
+         { "sWidth": "20%", "aTargets": [ 0 ] }
+       ]
+     } );
+   } );
+   
+ 
+   // Using aoColumns
+   $(document).ready( function() {
+     $('#example').dataTable( {
+       "aoColumns": [ 
+         { "sWidth": "20%" },
+         null,
+         null,
+         null,
+         null
+       ]
+     } );
+   } );</pre>
+			</td>
+		</tr>
+	</table>
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/usage/columns by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+</html>
