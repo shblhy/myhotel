@@ -19,7 +19,7 @@ class OrderForm(ModelForm):
     
     class Meta:
         model = Order
-        exclue = ['status','insert_time']
+        exclude = ['status', 'insert_time', 'price']
 
 class OrderQForm(QForm):
     sn = forms.CharField(label=u'订单号', required=False)

@@ -9,6 +9,7 @@
     	<li><label style="width: 150px;">*总价:</label><label style="width: 150px;">{{room_type.price}}</label></li>
         <!--li><label style="width: 150px;">*房间:</label><input id="room" name="room" value="{{order.room.name}}"/></li-->
         <input type="hidden" id="room_type" name="room_type" value="{{room_type.pk}}"/>
+        <input type="hidden" id="member" name="member" value="{{request.user.pk}}"/>
         <li><label style="width: 150px;">*顾客姓名:</label><input type="text" id="customer" name="customer" value="{{order.customer|default_if_none:''}}"/></li>
         <li><label style="width: 150px;">*手机:</label><input type="text" id="phone" name="phone" value="{{order.phone|default_if_none:''}}"/></li>
         <li><label style="width: 150px;">*入住日期:</label><input type="text" id="use_time" name="use_time" value='{{order.use_time|date:"Y-m-d H:i:s"}}'/></li>
@@ -24,7 +25,7 @@
                 	$("#order_form").ajaxForm({
 	                    dataType : "json",
 	                    success: function(data) {
-	                        window.href = "/user/center";
+	                        window.location = "/member/center";
 	                    }
 	                }).submit();
                 });

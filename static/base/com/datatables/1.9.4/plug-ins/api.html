@@ -1,0 +1,1690 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/plug-ins/api by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - Plug-ins | API</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="http://legacy.datatables.net/media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		<link rel="stylesheet" href="http://legacy.datatables.net/media/css/site.ccss" type="text/css" media="screen" charset="utf-8">
+		
+		<script type="text/javascript" src="http://legacy.datatables.net/media/javascript/complete.min.js"></script>
+	</head>
+	<body class="grid_2_3">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="http://legacy.datatables.net/index">
+						<img src="http://legacy.datatables.net/media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a  href="http://legacy.datatables.net/usage">Usage</a></li>
+					<li><a  href="http://legacy.datatables.net/examples">Examples</a></li>
+					<li><a  href="http://legacy.datatables.net/styling">Styling</a></li>
+					<li><a  href="http://legacy.datatables.net/api">API</a></li>
+					<li><a  href="http://legacy.datatables.net/development">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="http://legacy.datatables.net/extras">Extras</a></li>
+					<li><a class="active" href="http://legacy.datatables.net/plug-ins">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a  href="http://legacy.datatables.net/faqs">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+									<ul class="submenu submenu_plugins">
+						<li><a  href="http://legacy.datatables.net/plug-ins">Overview</a></li>
+						<li><a  href="http://legacy.datatables.net/plug-ins/sorting">Sorting</a></li>
+						<li><a  href="http://legacy.datatables.net/plug-ins/type-detection">Type detection</a></li>
+						<li><a  href="http://legacy.datatables.net/plug-ins/pagination">Pagination</a></li>
+						<li><a class="active" href="http://legacy.datatables.net/plug-ins/api">API</a></li>
+						<li><a  href="http://legacy.datatables.net/plug-ins/filtering">Filtering</a></li>
+						<li><a  href="http://legacy.datatables.net/plug-ins/i18n">Internationalisation</a></li>
+					</ul>
+					<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="http://legacy.datatables.net/media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+			<div id="fw_content">
+
+
+<h2>Custom API functions</h2>
+
+<p>One of the most common interactions with DataTables for a developer (other than initialisation of the table of course!) is to make use of the <a href="http://legacy.datatables.net/api">API functions</a> provided by DataTables. While allowing for a fairly extensive range of code interactions, the default API set can be greatly enhanced by making use of the functions provided below, as suitable for your application.</p>
+
+<ul>
+	<li><a href="#how_to">How to use DataTables plug-in API functions</a></li>
+	<li><a href="#functions">Plug-in API functions</a></li>
+</ul>
+
+
+<a name="how_to"></a>
+<h3>How to use DataTables plug-in API functions</h3>
+
+<p>To make use of one of the plug-in API functions below, you simply need to include it in the Javascript available for your page, after you load the DataTables library, but before you initialise the DataTable. After that, you will be able to initialise the table, and call the function on the resulting object. As an example the code below makes use of <a href="#fnGetHiddenNodes">fnGetHiddenNodes</a> saved into a file (<a href="http://legacy.datatables.net/examples/plug-ins/plugin_api.html">live example</a>):</p>
+
+<pre class="brush: html">&lt;script type="text/javascript" src="jquery.dataTables.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="dataTables.fnGetHiddenNodes.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		var oTable = $('#example').dataTable();
+		
+		$('#button').click( function () {
+			var nHidden = oTable.fnGetHiddenNodes();
+			alert( nHidden.length +' nodes were returned' );
+		} );
+	} );
+&lt;/script&gt;
+</pre>
+
+<p>Please note that DataTables will automatically pass the settings object as the first parameter. As such, you do not need to pass the settings object, which you will see if you look at the plug-in API's code.</p>
+
+<a name="functions"></a>
+<h3>Plug-in API functions</h3>
+
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnAddDataAndDisplay"></a>
+			<b>fnAddDataAndDisplay</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Add a new row to the table and display it on the screen by jumping the
+pagination to the required location. This function also returns an object
+with the added TR element and it's index in aoData such that you could
+provide an effect (fade for example) to show which row has been added.
+This function is a drop in replacement for fnAddData with one important
+exception, it will only take a 1D array or an object, and not a 2D array
+(i.e. it will not add multiple rows like fnAddData).</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnAddDataAndDisplay = function ( oSettings, aData )
+{
+	/* Add the data */
+	var iAdded = this.oApi._fnAddData( oSettings, aData );
+	var nAdded = oSettings.aoData[ iAdded ].nTr;
+	 
+	/* Need to re-filter and re-sort the table to get positioning correct, not perfect
+	 * as this will actually redraw the table on screen, but the update should be so fast (and
+	 * possibly not alter what is already on display) that the user will not notice
+	 */
+	this.oApi._fnReDraw( oSettings );
+	 
+	/* Find it's position in the table */
+	var iPos = -1;
+	for( var i=0, iLen=oSettings.aiDisplay.length ; i&lt;iLen ; i++ )
+	{
+		if( oSettings.aoData[ oSettings.aiDisplay[i] ].nTr == nAdded )
+		{
+			iPos = i;
+			break;
+		}
+	}
+	 
+	/* Get starting point, taking account of paging */
+	if( iPos &gt;= 0 )
+	{
+		oSettings._iDisplayStart = ( Math.floor(i / oSettings._iDisplayLength) ) * oSettings._iDisplayLength;
+		this.oApi._fnCalculateEnd( oSettings );
+	}
+	 
+	this.oApi._fnDraw( oSettings );
+	return {
+		"nTr": nAdded,
+		"iPos": iAdded
+	};
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+oTable.fnAddDataAndDisplay( [ 1, 2, 3, 4, 5, ... ] );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnAddTr"></a>
+			<b>fnAddTr</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Take a TR element and add it to a DataTables table. Useful for maintaining
+custom classes and other attributes.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnAddTr = function ( oSettings, nTr, bRedraw ) {
+    if ( typeof bRedraw == 'undefined' )
+    {
+        bRedraw = true;
+    }
+
+    var nTds = nTr.getElementsByTagName('td');
+    if ( nTds.length != oSettings.aoColumns.length )
+    {
+        alert( 'Warning: not adding new TR - columns and TD elements must match' );
+        return;
+    }
+
+    var aData = [];
+    var aInvisible = [];
+    for ( var i=0 ; i&lt;nTds.length ; i++ )
+    {
+        aData.push( nTds[i].innerHTML );
+        if (!oSettings.aoColumns[i].bVisible)
+        {
+            aInvisible.push( i );
+        }
+    }
+
+    /* Add the data and then replace DataTable's generated TR with ours */
+    var iIndex = this.oApi._fnAddData( oSettings, aData );
+    nTr._DT_RowIndex = iIndex;
+    oSettings.aoData[ iIndex ].nTr = nTr;
+
+    oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+
+    // Hidding invisible columns
+    for ( var i = (aInvisible.length - 1) ; i &gt;= 0 ; i-- )
+    {
+		oSettings.aoData[iIndex]._anHidden[ i ] = nTds[aInvisible[i]];
+		nTr.removeChild( nTds[aInvisible[i]] );
+    }
+
+	// Redraw
+    if ( bRedraw )
+    {
+        this.oApi._fnReDraw( oSettings );
+    }
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnColumnIndexToVisible"></a>
+			<b>fnColumnIndexToVisible</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">When DataTables removes columns from the display (bVisible or
+fnSetColumnVis) it removes these elements from the DOM, effecting the
+index value for the column positions. This function converts the data
+column index (i.e. all columns regardless of visibility) into a visible
+column index.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnColumnIndexToVisible = function ( oSettings, iMatch )
+{
+  return oSettings.oApi._fnColumnIndexToVisible( oSettings, iMatch );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnDataUpdate"></a>
+			<b>fnDataUpdate</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Update the internal data for a TR element based on what is used in the
+DOM. You will likely want to call fnDraw() after this function.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top">Lior Gerson</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnDataUpdate = function ( oSettings, nRowObject, iRowIndex )
+{
+	$(nRowObject).find("TD").each( function(i) {
+		  var iColIndex = oSettings.oApi._fnVisibleToColumnIndex( oSettings, i );
+		  oSettings.oApi._fnSetCellData( oSettings, iRowIndex, iColIndex, $(this).html() );
+	} );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnDisplayRow"></a>
+			<b>fnDisplayRow</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Take a TR element and alter the table's paging to show the TR in question.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnDisplayRow = function ( oSettings, nRow )
+{
+	// Account for the "display" all case - row is already displayed
+	if ( oSettings._iDisplayLength == -1 )
+	{
+		return;
+	}
+ 
+	// Find the node in the table
+	var iPos = -1;
+	for( var i=0, iLen=oSettings.aiDisplay.length ; i&lt;iLen ; i++ )
+	{
+		if( oSettings.aoData[ oSettings.aiDisplay[i] ].nTr == nRow )
+		{
+			iPos = i;
+			break;
+		}
+	}
+	 
+	// Alter the start point of the paging display
+	if( iPos &gt;= 0 )
+	{
+		oSettings._iDisplayStart = ( Math.floor(i / oSettings._iDisplayLength) ) * oSettings._iDisplayLength;
+		this.oApi._fnCalculateEnd( oSettings );
+	}
+	 
+	this.oApi._fnDraw( oSettings );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+// Display the 21st row in the table
+var oTable = $('#example').dataTable();
+oTable.fnDisplayRow( oTable.fnGetNodes()[20] );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnDisplayStart"></a>
+			<b>fnDisplayStart</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Set the point at which DataTables will start it's display of data in the
+table.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnDisplayStart = function ( oSettings, iStart, bRedraw )
+{
+    if ( typeof bRedraw == 'undefined' )
+    {
+        bRedraw = true;
+    }
+     
+    oSettings._iDisplayStart = iStart;
+    oSettings.oApi._fnCalculateEnd( oSettings );
+     
+    if ( bRedraw )
+    {
+        oSettings.oApi._fnDraw( oSettings );
+    }
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFakeRowspan"></a>
+			<b>fnFakeRowspan</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Creates rowspan cells in a column when there are two or more cells in a
+row with the same content, effectively grouping them together visually.
+<b>Note</b> - this plug-in currently only operates correctly with
+<b>server-side processing</b>.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top">Fredrik Wendel</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnFakeRowspan = function ( oSettings, iColumn, bCaseSensitive ) {
+	/* Fail silently on missing/errorenous parameter data. */
+	if (isNaN(iColumn)) {
+		return false;
+	}
+	 
+	if (iColumn &lt; 0 || iColumn &gt; oSettings.aoColumns.length-1) {
+		alert ('Invalid column number choosen, must be between 0 and ' + (oSettings.aoColumns.length-1));
+		return false;
+	}
+	 
+	var oSettings = oSettings,
+		iColumn = iColumn,
+		bCaseSensitive = (typeof(bCaseSensitive) != 'boolean' ? true : bCaseSensitive);
+ 
+	oSettings.aoDrawCallback.push({ "fn": fakeRowspan, "sName": "fnFakeRowspan" });
+ 
+	function fakeRowspan () {
+		var firstOccurance = null,
+			value = null, 
+			rowspan = 0;
+		jQuery.each(oSettings.aoData, function (i, oData) {
+			var val = oData._aData[iColumn],
+				cell = oData.nTr.childNodes[iColumn];
+			/* Use lowercase comparison if not case-sensitive. */
+			if (!bCaseSensitive) {
+				val = val.toLowerCase();
+			}
+			/* Reset values on new cell data. */
+			if (val != value) {
+				value = val;
+				firstOccurance = cell;
+				rowspan = 0;
+			}
+			 
+			if (val == value) {
+				rowspan++;
+			}
+			 
+			if (firstOccurance !== null &amp;&amp; val == value &amp;&amp; rowspan &gt; 1) {
+				oData.nTr.removeChild(cell);
+				firstOccurance.rowSpan = rowspan;
+			}
+		});
+	}
+	 
+	return this;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$('#example').dataTable().fnFakeRowspan(3);</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFilterAll"></a>
+			<b>fnFilterAll</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Apply the same filter to all DataTable instances on a particular page. The
+function call exactly matches that used by fnFilter() so regular expression
+and individual column sorting can be used.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://www.kmmtiming.se/">Kristoffer Karlström</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnFilterAll = function(oSettings, sInput, iColumn, bRegex, bSmart) {
+    var settings = $.fn.dataTableSettings;
+    
+    for ( var i=0 ; i&lt;settings.length ; i++ ) {
+      settings[i].oInstance.fnFilter( sInput, iColumn, bRegex, bSmart);
+    }
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $(".dataTable").dataTable();
+
+$("#search").keyup( function () {
+// Filter on the column (the index) of this element
+oTable.fnFilterAll(this.value);
+} );
+});</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFilterClear"></a>
+			<b>fnFilterClear</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Remove all filtering that has been applied to a DataTable, be it column
+based filtering or global filtering.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnFilterClear  = function ( oSettings )
+{
+	/* Remove global filter */
+	oSettings.oPreviousSearch.sSearch = "";
+	 
+	/* Remove the text of the global filter in the input boxes */
+	if ( typeof oSettings.aanFeatures.f != 'undefined' )
+	{
+		var n = oSettings.aanFeatures.f;
+		for ( var i=0, iLen=n.length ; i&lt;iLen ; i++ )
+		{
+			$('input', n[i]).val( '' );
+		}
+	}
+	 
+	/* Remove the search text for the column filters - NOTE - if you have input boxes for these
+	 * filters, these will need to be reset
+	 */
+	for ( var i=0, iLen=oSettings.aoPreSearchCols.length ; i&lt;iLen ; i++ )
+	{
+		oSettings.aoPreSearchCols[i].sSearch = "";
+	}
+	 
+	/* Redraw */
+	oSettings.oApi._fnReDraw( oSettings );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+// Perform a filter
+oTable.fnFilter('Win');
+oTable.fnFilter('Trident', 0);
+
+// Remove all filtering
+oTable.fnFilterClear();
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFilterOnReturn"></a>
+			<b>fnFilterOnReturn</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">This plug-in removed the default behaviour of DataTables to filter on each
+keypress, and replaces with it the requirement to press the enter key to
+perform the filter.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://www.mvccms.com/">Jon Ranes</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">jQuery.fn.dataTableExt.oApi.fnFilterOnReturn = function (oSettings) {
+	var _that = this;
+ 
+	this.each(function (i) {
+		$.fn.dataTableExt.iApiIndex = i;
+		var $this = this;
+		var anControl = $('input', _that.fnSettings().aanFeatures.f);
+		anControl.unbind('keyup').bind('keypress', function (e) {
+			if (e.which == 13) {
+				$.fn.dataTableExt.iApiIndex = i;
+				_that.fnFilter(anControl.val());
+			}
+		});
+		return this;
+	});
+	return this;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+$('.dataTable').dataTable().fnFilterOnReturn();
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFindCellRowIndexes"></a>
+			<b>fnFindCellRowIndexes</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Search through a table looking for a given string (optionally the search
+can be restricted to a single column). The return value is an array with
+the data indexes (from DataTables' internal data store) for any rows which
+match.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnFindCellRowIndexes = function ( oSettings, sSearch, iColumn )
+{
+	var
+		i,iLen, j, jLen,
+		aOut = [], aData;
+	 
+	for ( i=0, iLen=oSettings.aoData.length ; i&lt;iLen ; i++ )
+	{
+		aData = oSettings.aoData[i]._aData;
+		 
+		if ( typeof iColumn == 'undefined' )
+		{
+			for ( j=0, jLen=aData.length ; j&lt;jLen ; j++ )
+			{
+				if ( aData[j] == sSearch )
+				{
+					aOut.push( i );
+				}
+			}
+		}
+		else if ( aData[iColumn] == sSearch )
+		{
+			aOut.push( i );
+		}
+	}
+	 
+	return aOut;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+var a = oTable.fnFindCellRowIndexes( '1.7' ); // Search all columns
+
+var b = oTable.fnFindCellRowIndexes( '1.7', 3 );  // Search only column 3
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnFindCellRowNodes"></a>
+			<b>fnFindCellRowNodes</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Much like fnFindCellRowIndexes this plug-in will search a table for
+matching data (optionally the search can be restricted to a single column),
+but in this case the returned array contains TR nodes of the matching rows,
+rather than data indexes.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnFindCellRowNodes = function ( oSettings, sSearch, iColumn )
+{
+	var
+		i,iLen, j, jLen,
+		aOut = [], aData;
+	 
+	for ( i=0, iLen=oSettings.aoData.length ; i&lt;iLen ; i++ )
+	{
+		aData = oSettings.aoData[i]._aData;
+		 
+		if ( typeof iColumn == 'undefined' )
+		{
+			for ( j=0, jLen=aData.length ; j&lt;jLen ; j++ )
+			{
+				if ( aData[j] == sSearch )
+				{
+					aOut.push( oSettings.aoData[i].nTr );
+				}
+			}
+		}
+		else if ( aData[iColumn] == sSearch )
+		{
+			aOut.push( oSettings.aoData[i].nTr );
+		}
+	}
+	 
+	return aOut;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+var a = oTable.fnFindCellRowNodes( '1.7' );    // Search all columns
+
+var b = oTable.fnFindCellRowNodes( '1.7', 3 ); // Search only column 3
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetAdjacentTr"></a>
+			<b>fnGetAdjacentTr</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Due to the fact that DataTables moves DOM elements around (mainly TR
+elements for sorting and filtering) it can at times be a little tricky
+to get the next row based on another, while taking into account pagination,
+filtering, sorting etc. This function is designed to address exactly this
+situation. It takes two parameters, the target node, and a boolean
+indicating if the adjacent row retrieved should be the next (true, or no
+value) or the previous (false).</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnGetAdjacentTr  = function ( oSettings, nTr, bNext )
+{
+	/* Find the node's position in the aoData store */
+	var iCurrent = oSettings.oApi._fnNodeToDataIndex( oSettings, nTr );
+	 
+	/* Convert that to a position in the display array */
+	var iDisplayIndex = $.inArray( iCurrent, oSettings.aiDisplay );
+	if ( iDisplayIndex == -1 )
+	{
+		/* Not in the current display */
+		return null;
+	}
+	 
+	/* Move along the display array as needed */
+	iDisplayIndex += (typeof bNext=='undefined' || bNext) ? 1 : -1;
+	 
+	/* Check that it within bounds */
+	if ( iDisplayIndex &lt; 0 || iDisplayIndex &gt;= oSettings.aiDisplay.length )
+	{
+		/* There is no next/previous element */
+		return null;
+	}
+	 
+	/* Return the target node from the aoData store */
+	return oSettings.aoData[ oSettings.aiDisplay[ iDisplayIndex ] ].nTr;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+var n1 = $('#example tbody tr:eq(2)')[0];
+var nNext = oTable.fnGetAdjacentTr( n1 );
+var nPrev = oTable.fnGetAdjacentTr( n1, false );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetColumnData"></a>
+			<b>fnGetColumnData</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Return an array of table values from a particular column, with various
+filtering options.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://mind2.de/">Benedikt Forchhammer</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">jQuery.fn.dataTableExt.oApi.fnGetColumnData = function ( oSettings, iColumn, bUnique, bFiltered, bIgnoreEmpty ) {
+	// check that we have a column id
+	if ( typeof iColumn == "undefined" ) return [];
+	 
+	// by default we only wany unique data
+	if ( typeof bUnique == "undefined" ) bUnique = true;
+	 
+	// by default we do want to only look at filtered data
+	if ( typeof bFiltered == "undefined" ) bFiltered = true;
+	 
+	// by default we do not wany to include empty values
+	if ( typeof bIgnoreEmpty == "undefined" ) bIgnoreEmpty = true;
+	 
+	// list of rows which we're going to loop through
+	var aiRows;
+	 
+	// use only filtered rows
+	if (bFiltered == true) aiRows = oSettings.aiDisplay; 
+	// use all rows
+	else aiRows = oSettings.aiDisplayMaster; // all row numbers
+ 
+	// set up data array    
+	var asResultData = new Array();
+	 
+	for (var i=0,c=aiRows.length; i&lt;c; i++) {
+		iRow = aiRows[i];
+		var sValue = this.fnGetData(iRow, iColumn);
+		 
+		// ignore empty values?
+		if (bIgnoreEmpty == true &amp;&amp; sValue.length == 0) continue;
+ 
+		// ignore unique values?
+		else if (bUnique == true &amp;&amp; jQuery.inArray(sValue, asResultData) &gt; -1) continue;
+		 
+		// else push the value onto the result data array
+		else asResultData.push(sValue);
+	}
+	 
+	return asResultData;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetColumnIndex"></a>
+			<b>fnGetColumnIndex</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Maintenance of web-sites can often cause unexpected headaches, particularly
+if the hardcoded index of an array (the columns in a DataTables instance)
+needs to change due to an added or removed column. This plug-in function
+will match a given string to the title of a column in the table and return
+the column index, helping to overcome this problem.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://www.rosstechassociates.com/">Michael Ross</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnGetColumnIndex = function ( oSettings, sCol ) 
+{
+	var cols = oSettings.aoColumns;
+	for ( var x=0, xLen=cols.length ; x&lt;xLen ; x++ )
+	{
+		if ( cols[x].sTitle.toLowerCase() == sCol.toLowerCase() )
+		{
+			return x;
+		};
+	}
+	return -1;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetHiddenNodes"></a>
+			<b>fnGetHiddenNodes</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Get a list of all TR nodes in the table which are not currently visible
+(useful for building forms).</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnGetHiddenNodes = function ( oSettings )
+{
+	/* Note the use of a DataTables 'private' function thought the 'oApi' object */
+	var anNodes = this.oApi._fnGetTrNodes( oSettings );
+	var anDisplay = $('tbody tr', oSettings.nTable);
+	 
+	/* Remove nodes which are being displayed */
+	for ( var i=0 ; i&lt;anDisplay.length ; i++ )
+	{
+		var iIndex = jQuery.inArray( anDisplay[i], anNodes );
+		if ( iIndex != -1 )
+		{
+			anNodes.splice( iIndex, 1 );
+		}
+	}
+	 
+	/* Fire back the array to the caller */
+	return anNodes;
+};</pre>
+		</td>
+	</tr>
+	
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetTd"></a>
+			<b>fnGetTd</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Get a TD node from a row, taking into account column visibility. While
+getting a TD node is easy when it is visible on the page by using normal
+DOM methods, jQuery or whatever, it becomes a lot more complicated when
+taking into account hidden rows and columns. This function can be used to
+overcome these difficulties.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnGetTd  = function ( oSettings, mTr, iTd, bVisOnly )
+{
+	/* Take either a TR node or aoData index as the mTr property */
+	var iRow = (typeof mTr == 'object') ? 
+		oSettings.oApi._fnNodeToDataIndex(oSettings, mTr) : mTr;
+	 
+	if ( typeof bVisOnly == 'undefined' &amp;&amp; !bVisOnly )
+	{
+		/* Looking at both visible and hidden TD elements - convert to visible index, if not present
+		 * then it must be hidden. Return as appropriate
+		 */
+		var iCalcVis = oSettings.oApi._fnColumnIndexToVisible( oSettings, iTd );
+		if ( iCalcVis !== null )
+		{
+			return oSettings.aoData[ iRow ].nTr.getElementsByTagName('td')[ iCalcVis ];
+		}
+		else
+		{
+			return oSettings.aoData[ iRow ]._anHidden[ iTd ];
+		}
+	}
+	else
+	{
+		/* Only looking at visible TD elements, so just use getElements... */
+		return oSettings.aoData[ iRow ].nTr.getElementsByTagName('td')[ iTd ];
+	}
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+// Sort in the order that was origially in the HTML
+var nTd = oTable.fnGetTd( $('#example tbody tr:eq(1)')[0], 1 );
+console.log( nTd );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnGetTds"></a>
+			<b>fnGetTds</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Get an array of TD nodes from DataTables for a given row, including any
+column elements which are hidden.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnGetTds  = function ( oSettings, mTr )
+{
+    var anTds = [];
+    var anVisibleTds = [];
+    var iCorrector = 0;
+    var nTd, iColumn, iColumns;
+     
+    /* Take either a TR node or aoData index as the mTr property */
+    var iRow = (typeof mTr == 'object') ? 
+        oSettings.oApi._fnNodeToDataIndex(oSettings, mTr) : mTr;
+    var nTr = oSettings.aoData[iRow].nTr;
+     
+    /* Get an array of the visible TD elements */
+    for ( iColumn=0, iColumns=nTr.childNodes.length ; iColumn&lt;iColumns ; iColumn++ )
+    {
+        nTd = nTr.childNodes[iColumn];
+        if ( nTd.nodeName.toUpperCase() == "TD" )
+        {
+            anVisibleTds.push( nTd );
+        }
+    }
+     
+    /* Construct and array of the combined elements */
+    for ( iColumn=0, iColumns=oSettings.aoColumns.length ; iColumn&lt;iColumns ; iColumn++ )
+    {
+        if ( oSettings.aoColumns[iColumn].bVisible )
+        {
+            anTds.push( anVisibleTds[iColumn-iCorrector] );
+        }
+        else
+        {
+            anTds.push( oSettings.aoData[iRow]._anHidden[iColumn] );
+            iCorrector++;
+        }
+    }
+     
+    return anTds;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+// Sort in the order that was origially in the HTML
+var anTds = oTable.fnGetTds( $('#example tbody tr:eq(1)')[0] );
+console.log( anTds );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnLengthChange"></a>
+			<b>fnLengthChange</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Change the number of records that can be viewed on a single page in
+DataTables.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://www.webdetails.pt/">Pedro Alves</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnLengthChange = function ( oSettings, iDisplay )
+{
+    oSettings._iDisplayLength = iDisplay;
+    oSettings.oApi._fnCalculateEnd( oSettings );
+     
+    /* If we have space to show extra rows (backing up from the end point - then do so */
+    if ( oSettings._iDisplayEnd == oSettings.aiDisplay.length )
+    {
+        oSettings._iDisplayStart = oSettings._iDisplayEnd - oSettings._iDisplayLength;
+        if ( oSettings._iDisplayStart &lt; 0 )
+        {
+            oSettings._iDisplayStart = 0;
+        }
+    }
+     
+    if ( oSettings._iDisplayLength == -1 )
+    {
+        oSettings._iDisplayStart = 0;
+    }
+     
+    oSettings.oApi._fnDraw( oSettings );
+     
+    if ( oSettings.aanFeatures.l )
+    {
+        $('select', oSettings.aanFeatures.l).val( iDisplay );
+    }
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+oTable.fnLengthChange( 100 );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnMultiFilter"></a>
+			<b>fnMultiFilter</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">This plug-in adds to DataTables the ability to set multiple column
+filtering terms in a single call (particularly useful if using server-side
+processing). Used in combination with the column sName parameter, simply
+pass in an object with the key/value pair being the column you wish to
+search on, and the value you wish to search for.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><i>mrkevans</i></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnMultiFilter = function( oSettings, oData ) {
+	for ( var key in oData )
+	{
+		if ( oData.hasOwnProperty(key) )
+		{
+			for ( var i=0, iLen=oSettings.aoColumns.length ; i&lt;iLen ; i++ )
+			{
+				if( oSettings.aoColumns[i].sName == key )
+				{
+					/* Add single column filter */
+					oSettings.aoPreSearchCols[ i ].sSearch = oData[key];
+					break;
+				}
+			}
+		}
+	}
+	this.oApi._fnReDraw( oSettings );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable( {
+"aoColumns": [
+{ "sName": "engine" },
+{ "sName": "browser" },
+{ "sName": "platform" },
+{ "sName": "version" },
+{ "sName": "grade" }
+]
+} );
+oTable.fnMultiFilter( { "engine": "Gecko", "browser": "Cam" } );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnPagingInfo"></a>
+			<b>fnPagingInfo</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Get information about the paging settings that DataTables is currently
+using to display each page, including the number of records shown, start
+and end points in the data set etc.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
+{
+	return {
+		"iStart":         oSettings._iDisplayStart,
+		"iEnd":           oSettings.fnDisplayEnd(),
+		"iLength":        oSettings._iDisplayLength,
+		"iTotal":         oSettings.fnRecordsTotal(),
+		"iFilteredTotal": oSettings.fnRecordsDisplay(),
+		"iPage":          oSettings._iDisplayLength === -1 ?
+			0 : Math.ceil( oSettings._iDisplayStart / oSettings._iDisplayLength ),
+		"iTotalPages":    oSettings._iDisplayLength === -1 ?
+			0 : Math.ceil( oSettings.fnRecordsDisplay() / oSettings._iDisplayLength )
+	};
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+$('#example').dataTable( {
+"fnDrawCallback": function () {
+alert( 'Now on page'+ this.fnPagingInfo().iPage );
+}
+} );
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnProcessingIndicator"></a>
+			<b>fnProcessingIndicator</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">When doing some heavy processing of your own (for example using fnOpen with
+data loading from the server) it can be useful to make use of the
+'processing' indicator built-into DataTables. This plug-in function
+exposes the internal DataTables function so it can be used for exactly this.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top">Allan Chappell</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">jQuery.fn.dataTableExt.oApi.fnProcessingIndicator = function ( oSettings, onoff )
+{
+	if( typeof(onoff) == 'undefined' )
+	{
+		onoff=true;
+	}
+	this.oApi._fnProcessingDisplay( oSettings, onoff );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">oTable.fnProcessingIndicator();      // On
+oTable.fnProcessingIndicator(false); // Off</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnReloadAjax"></a>
+			<b>fnReloadAjax</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">By default DataTables only uses the sAjaxSource variable at initialisation
+time, however it can be useful to re-read an Ajax source and have the table
+update. Typically you would need to use the fnClearTable() and fnAddData()
+functions, however this wraps it all up in a single function call.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, fnCallback, bStandingRedraw )
+{
+	// DataTables 1.10 compatibility - if 1.10 then versionCheck exists.
+	// 1.10s API has ajax reloading built in, so we use those abilities
+	// directly.
+	if ( $.fn.dataTable.versionCheck ) {
+		var api = new $.fn.dataTable.Api( oSettings );
+
+		if ( sNewSource ) {
+			api.ajax.url( sNewSource ).load( fnCallback, !bStandingRedraw );
+		}
+		else {
+			api.ajax.reload( fnCallback, !bStandingRedraw );
+		}
+		return;
+	}
+
+	if ( sNewSource !== undefined &amp;&amp; sNewSource !== null ) {
+		oSettings.sAjaxSource = sNewSource;
+	}
+
+	// Server-side processing should just call fnDraw
+	if ( oSettings.oFeatures.bServerSide ) {
+		this.fnDraw();
+		return;
+	}
+
+	this.oApi._fnProcessingDisplay( oSettings, true );
+	var that = this;
+	var iStart = oSettings._iDisplayStart;
+	var aData = [];
+
+	this.oApi._fnServerParams( oSettings, aData );
+
+	oSettings.fnServerData.call( oSettings.oInstance, oSettings.sAjaxSource, aData, function(json) {
+		/* Clear the old information from the table */
+		that.oApi._fnClearTable( oSettings );
+
+		/* Got the data - add it to the table */
+		var aData =  (oSettings.sAjaxDataProp !== "") ?
+			that.oApi._fnGetObjectDataFn( oSettings.sAjaxDataProp )( json ) : json;
+
+		for ( var i=0 ; i&lt;aData.length ; i++ )
+		{
+			that.oApi._fnAddData( oSettings, aData[i] );
+		}
+		
+		oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+
+		that.fnDraw();
+
+		if ( bStandingRedraw === true )
+		{
+			oSettings._iDisplayStart = iStart;
+			that.oApi._fnCalculateEnd( oSettings );
+			that.fnDraw( false );
+		}
+
+		that.oApi._fnProcessingDisplay( oSettings, false );
+
+		/* Callback user function - for event handlers etc */
+		if ( typeof fnCallback == 'function' &amp;&amp; fnCallback !== null )
+		{
+			fnCallback( oSettings );
+		}
+	}, oSettings );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">// Example call to load a new file
+oTable.fnReloadAjax( 'media/examples_support/json_source2.txt' );
+
+// Example call to reload from original file
+oTable.fnReloadAjax();</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnSetFilteringDelay"></a>
+			<b>fnSetFilteringDelay</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Enables filtration delay for keeping the browser more responsive while
+searching for a longer keyword.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://www.zygimantas.com/">Zygimantas Berziunas</a>, <a href="http://www.sprymedia.co.uk/">Allan Jardine</a> and <i>vex</i></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">jQuery.fn.dataTableExt.oApi.fnSetFilteringDelay = function ( oSettings, iDelay ) {
+	var _that = this;
+
+	if ( iDelay === undefined ) {
+		iDelay = 250;
+	}
+	 
+	this.each( function ( i ) {
+		$.fn.dataTableExt.iApiIndex = i;
+		var
+			$this = this, 
+			oTimerId = null, 
+			sPreviousSearch = null,
+			anControl = $( 'input', _that.fnSettings().aanFeatures.f );
+		 
+			anControl.unbind( 'keyup' ).bind( 'keyup', function() {
+			var $$this = $this;
+ 
+			if (sPreviousSearch === null || sPreviousSearch != anControl.val()) {
+				window.clearTimeout(oTimerId);
+				sPreviousSearch = anControl.val();  
+				oTimerId = window.setTimeout(function() {
+					$.fn.dataTableExt.iApiIndex = i;
+					_that.fnFilter( anControl.val() );
+				}, iDelay);
+			}
+		});
+		 
+		return this;
+	} );
+	return this;
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+$('.dataTable').dataTable().fnSetFilteringDelay();
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnSortNeutral"></a>
+			<b>fnSortNeutral</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">This function will restore the order in which data was read into a
+DataTable (for example from an HTML source). Although you can set
+aaSorting to be an empty array ([ ]) in order to prevent sorting during
+initialisation, it can sometimes be useful to restore the original order
+after sorting has already occurred - which is exactly what this function
+does.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnSortNeutral = function ( oSettings )
+{
+	/* Remove any current sorting */
+	oSettings.aaSorting = [];
+	 
+	/* Sort display arrays so we get them in numerical order */
+	oSettings.aiDisplay.sort( function (x,y) {
+		return x-y;
+	} );
+	oSettings.aiDisplayMaster.sort( function (x,y) {
+		return x-y;
+	} );
+	 
+	/* Redraw */
+	oSettings.oApi._fnReDraw( oSettings );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('#example').dataTable();
+
+// Sort in the order that was originally in the HTML
+oTable.fnSortNeutral();
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnStandingRedraw"></a>
+			<b>fnStandingRedraw</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">Redraw the table (i.e. fnDraw) to take account of sorting and filtering,
+but retain the current pagination settings.</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top">Jonathan Hoguet</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnStandingRedraw = function(oSettings) {
+    if(oSettings.oFeatures.bServerSide === false){
+        var before = oSettings._iDisplayStart;
+
+        oSettings.oApi._fnReDraw(oSettings);
+
+        // iDisplayStart has been reset to zero - so lets change it back
+        oSettings._iDisplayStart = before;
+        oSettings.oApi._fnCalculateEnd(oSettings);
+    }
+     
+    // draw the 'current' page
+    oSettings.oApi._fnDraw(oSettings);
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$(document).ready(function() {
+var oTable = $('.dataTable').dataTable()
+oTable.fnStandingRedraw();
+} );</pre>
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="5" cellpadding="0" class="parameters">
+	<tr>
+		<td class="parameter" valign="top">
+			<a name="fnVisibleToColumnIndex"></a>
+			<b>fnVisibleToColumnIndex</b>
+			<br><span class="css_link css_small">Show details</span>
+		</td>
+		<td valign="top">When DataTables removes columns from the display (bVisible or
+fnSetColumnVis) it removes these elements from the DOM, effecting the index
+value for the column positions. This function converts the visible column
+index into a data column index (i.e. all columns regardless of visibility).</td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Author:</td>
+		<td valign="top"><a href="http://sprymedia.co.uk/">Allan Jardine</a></td>
+	</tr>
+	<tr class="details">
+		<td class="label" valign="top">Code:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%">$.fn.dataTableExt.oApi.fnVisibleToColumnIndex = function ( oSettings, iMatch )
+{
+	return oSettings.oApi._fnVisibleToColumnIndex( oSettings, iMatch );
+};</pre>
+		</td>
+	</tr>
+		<tr class="details">
+		<td class="label" valign="top">Example:</td>
+		<td valign="top">
+			<pre class="brush: js; font-size: 75%"></pre>
+		</td>
+	</tr>
+</table>
+
+
+
+
+			</div>
+			<div class="css_clear"></div>
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/plug-ins/api by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+</html>

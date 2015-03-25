@@ -33,9 +33,11 @@ class OutManager(object):
     OUT_CALL = 'accessors_out'
     object_list = []
     exclude = []
+
+
 #ListView
-class BaseListManager(MultipleObjectMixin,OutManager):
-    
+class BaseListManager(MultipleObjectMixin, OutManager):
+
     def __init__(self, **kwargs):
         for key, value in kwargs.iteritems():
             setattr(self, key, value)
@@ -65,7 +67,7 @@ class BaseListManager(MultipleObjectMixin,OutManager):
         if self._data_cache is None:
             self._data_cache = self.get_context_data(object_list=self.get_queryset())
         return self._data_cache 
-    
+
     def parse_order_by(self):
         """解析排序字符串"""
         order_list = []
@@ -78,7 +80,7 @@ class BaseListManager(MultipleObjectMixin,OutManager):
                 order_list.append(self.columns[int(index)].order_field)
                 self.aaSorting.append([int(index), 'asc'])
         return order_list
-    
+
     def get_line(self,item,excludes=[]):
         '''
         将对象转变为行输出
@@ -100,14 +102,14 @@ class BaseListManager(MultipleObjectMixin,OutManager):
             #attr = func(item) if func else getattr(item,field) if type(item) <> dict else item.get('field','')
             line.append(attr)
         return line
-        
+
     def get_rows_data(self):
         return [self.get_line(item) for item in self.data['object_list']]
-    
+
     @property
     def objs(self):
         return self.data['object_list']
-    
+
     def to_table(self,**kwargs):
         table_args = {
                       'rows':self.get_rows_data(),
@@ -120,13 +122,13 @@ class BaseListManager(MultipleObjectMixin,OutManager):
                       }
         table_args.update(kwargs)
         return self.table_class(**table_args)
-    
+
     def get_field_labels(self):
         '''
             返还域数组，形如[(field,label),]
         '''
         return [(field,type(self).field_label(field))  for field in self.fields]
-    
+
     @classmethod
     def field_label(cls,field):
         if not hasattr(cls,'base_fields'):

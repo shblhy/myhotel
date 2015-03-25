@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	
+<!-- Mirrored from legacy.datatables.net/faqs by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>DataTables - FAQs</title>
+		
+		<link rel="shortcut icon" type="image/ico" href="http://legacy.datatables.net/media/images/favicon.ico">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+		
+		<style type="text/css" media="screen">
+			@import "http://legacy.datatables.net/media/css/site.ccss";
+		</style>
+		
+		<script type="text/javascript" src="http://legacy.datatables.net/media/javascript/complete.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready( function () {
+				if ( window.location.hash && window.location.hash != "" ) {
+					var hash = window.location.hash.replace("#","");
+					if ( hash !== "Licensing" ) {
+						$("a[name="+hash+"]").each( function () {
+							$(this.parentNode).css('backgroundColor', '#FFB3B3');
+						} );
+					}
+				}
+			} );
+		</script>
+	</head>
+	<body class="grid_1_2">
+		<div id="fw_container">
+			
+			
+
+
+			<div id="fw_header">
+				<h1>
+					<a href="http://legacy.datatables.net/index">
+						<img src="http://legacy.datatables.net/media/images/DataTables.jpg" alt="DataTables logo">
+						DataTables
+					</a>
+				</h1>
+				<ul>
+					<li><a  href="http://legacy.datatables.net/usage">Usage</a></li>
+					<li><a  href="http://legacy.datatables.net/examples">Examples</a></li>
+					<li><a  href="http://legacy.datatables.net/styling">Styling</a></li>
+					<li><a  href="http://legacy.datatables.net/api">API</a></li>
+					<li><a  href="http://legacy.datatables.net/development">Development</a></li>
+					<li><a  href="http://editor.datatables.net/">Editor</a></li>
+					<li><a  href="http://legacy.datatables.net/extras">Extras</a></li>
+					<li><a  href="http://legacy.datatables.net/plug-ins">Plug-ins</a></li>
+					<li><a  href="http://datatables.net/blog">Blog</a></li>
+					<li><a class="active" href="http://legacy.datatables.net/faqs">FAQs</a></li>
+					<li><a  href="http://datatables.net/forums">Forums</a></li>
+									</ul>
+				<div class="css_clear"></div>
+								
+								
+				
+				<div id="header_options">
+					<div id="options_donate" class="option">
+						<a href="http://datatables.net/purchase">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/beer.png" alt="Donate icon">
+									</td>
+									<td style="line-height:16px;">
+										Purchase
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_download" class="option">
+						<a href="http://datatables.net/download">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/download.png" alt="Download icon">
+									</td>
+									<td style="line-height:16px;">
+										Download
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+					<div id="options_support" class="option">
+						<a href="http://datatables.net/support">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td>
+										<img src="http://legacy.datatables.net/media/images/support.png" alt="Support icon">
+									</td>
+									<td style="line-height: 16px;">
+										Support
+									</td>
+								</tr>
+							</table>
+						</a>
+					</div>
+			 		<div id="options_search" class="option">
+			 			<form action="http://datatables.net/search" id="cse-search-box">
+			 				<img src="http://legacy.datatables.net/media/images/search.png" alt="Search icon">
+		   				<input type="hidden" name="cx" value="004673356914326163298:bcgejkcchl4" />
+			 				<input type="hidden" name="cof" value="FORID:9" />
+			 				<input type="hidden" name="ie" value="UTF-8" />
+			 				<input type="text" name="q" size="31" />
+			 				<input type="submit" name="sa" value="Search" />
+			 			</form>
+			 			<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+			 		</div>
+				</div>
+				
+				<div id="header_advert">
+					<script type="text/javascript" src="http://cdn.adpacks.com/adpacks.js?legacyid=1266180&amp;zoneid=1386&amp;key=4b4cb470d035b673ad498e2a46300b4d&amp;serve=C6SD52Y&amp;placement=datatablesnet&amp;circle=dev" id="_adpacks_js"></script>
+									</div>
+			</div>
+			
+			<div class="box css_small" style="text-align:center; margin-top: 10px; clear:both; width:600px; margin: 0 auto; height: auto; margin-top:1em;">	This site contains the legacy documentation for DataTables v1.9 and earlier for reference only.<br>DataTables 1.10 is the current release and is <a href="http://datatables.net/download">now available</a>.</div>			
+			<div id="fw_content">
+				<h2>Frequently Asked Questions</h2>
+				<p>DataTables is a complex piece of software and undoubtedly questions will arise from it's use. Some of these questions have already been posed and answered, and most common of which are shown here.</p>
+				
+				
+				<div class="grid_column_1">
+					<h3>Getting help</h3>
+					
+					<p>
+						<b>Q. I have a question - how can I get help?</b><br>
+						A. The best place to get help for DataTables is on this site. There is extensive documentation, examples, these FAQs and the forum for help. If you can't find the answer to your question on the site already, please post it in the <a href="http://legacy.datatables.net/forums">forum</a>. When posting a question about an exisiting table, please use the <a href="http://debug.datatables.net/">DataTables debugger</a> to provide information about the table to assist in getting an answer.
+					</p>
+					
+					<p>
+						<b>Q. I need to get an answer to this question as soon as possible!</b><br>
+						A. Post your question in the forum as normal, and then use the <a href="http://legacy.datatables.net/support">support</a> page to purchase a support package for DataTables. Purchasing support ensures you will receive assistance with the problem you are having, and also helps support the DataTables project as a whole.
+					</p>
+					
+					<p>
+						<b>Q. How quickly can I expect a reply to my forum post?</b><br>
+						A. The best way to ensure that you get a reply to your question is to <a href="http://legacy.datatables.net/support">purchase a support option</a>. Response times will of course vary, but one will come normally within a day, but it can sometimes take longer (for example if people are away on holiday or have other commitments etc). If this is the case please don't be offended!
+					</p>
+
+
+					<a name="Licensing" class="nohighlight"></a>
+					<h3>Licensing</h3>
+					
+					<p>
+						<b>Q. DataTables is great! How much is it?</b><br>
+						A. DataTables is free, open source software that you can download and use for whatever purpose you wish, on any and as many sites you want. It is free for you to use! DataTables is available under two licenses: <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>, with which you must comply (to do this, basically keep the copyright notices in the software).
+					</p>
+					
+					<p>
+						<b>Q. Which license applies to DataTables?</b><br>
+						A. You can pick which of the two available licenses you wish to use DataTables under - pick whichever one suits your project.
+					</p>
+					
+					<p>
+						<b>Q. Really - its free, even for commercial sites?!</b><br>
+						A. Yes! I'm very proud of what has been achieved with DataTables and the fantastic community that has helped it to get to where it is today, and I'm delighted to make it available as open source. Obviously if you benefit from DataTables then any reciprocation is very welcome, be it as a plug-in for DataTables, a donation to future development or a blog post saying you enjoy using DataTables.
+					</p>
+					
+					<p>
+						<b>Q. We can't use GPLv2 or BSD (3-point) licensed software. What do we do?</b><br>
+						A. In the rare case that you can't use DataTables under either of the available licenses, please <a href="http://legacy.datatables.net/contact">get in touch</a> to discuss alternative licensing arrangements.
+					</p>
+					
+					
+					<h3>Development FAQs</h3>
+					<p>
+						<b>Q. This is great software - how can contribute?</b>
+					</p>
+					<ul>
+						<li>Write about DataTables on your blog and spread the word!</li>
+						<li>Create <a href="http://legacy.datatables.net/plug-ins">plug-ins</a> for DataTables which can be show-cased on this site.</li>
+						<li>Answer support questions in the forums.</li>
+						<li>Contribute patches to any bugs you find - test for bugs.</li>
+						<li>Make a <a href="http://legacy.datatables.net/donate">donation</a>!</li>
+					</ul>
+					
+					<p>
+						<b>Q. Can I pay for integration support?</b><br>
+						A. Yes! There are <a href="http://legacy.datatables.net/support">support packages</a> for DataTables integration available.
+					</p>
+					
+					<p>
+						<b>Q. I have created a plug-in - how can I share it with everyone else?</b><br>
+						A. Please <a href="http://legacy.datatables.net/contact">send it to me</a> direct, or post it in the forum.
+					</p>
+					
+					<p>
+						<b>Q. I think I have found a bug - how do I report it?</b><br>
+						A. Please post your bug, along with as much information as possible for how to recreate it, in the forum.
+					</p>
+					
+					<p>
+						<a name="hungarian"></a>
+						<b>Q. You use Hungarian notation - why?!?</b><br>
+						A. When I wrote the first version of DataTables, the company I was working for then had strict coding standards that required the use of Hungarian notation, so I was "trained" in its use, hence why it is present. DataTables 1.10 will favour camel-case (Hungarian notation will still be supported for backwards compatibility, but camel-case will be the documented interface).
+					</p>
+				</div>
+				
+				<div class="grid_column_2">
+					<h3>Most common FAQs</h3>
+					<p>
+						<a name="events"></a>
+						<b>Q. My events don't work on the second page</b> (events in general)<br>
+						A. When attaching events to cells in a table controlled by DataTables, you need to be careful how it is done. Because DataTables removes nodes from the DOM, event's might not be applied. To over come this, is quite simple, as shown in these examples: <a href="http://legacy.datatables.net/examples/advanced_init/events_pre_init.html">pre-initialisation</a>, <a href="http://legacy.datatables.net/examples/advanced_init/events_post_init.html">post-initialisation</a>. <code>$().on()</code> delegated events can also help. Finally you use my <a href="http://www.sprymedia.co.uk/article/Visual+Event+2">Visual Event</a> bookmarklet to help debug event issues.
+					</p>
+					
+					<p>
+						<a name="json"></a>
+						<b>Q. I get a JSON parsing error</b><br>
+						A. This is due to incorrect JSON data being passed back from the server. Please test your JSON return with <a href="http://www.jsonlint.com/">JSON Lint</a> before posting in the forum (the return can be viewed by using Firebug, or the like).
+					</p>
+					
+					<p>
+						<a name="unknown_parameter"></a>
+						<b>Q. "Requested unknown parameter" error</b><br>
+						A. When DataTables requests a property that is not present in the data source for the table, you get this error. It can be caused by specifying an incorrect number of columns, missing parameters and colspan / rowspan in the body. If these points don't help address the issue, please use the <a href="http://debug.datatables.net/">DataTables debugger</a> and post a question in the forum.
+					</p>
+					
+					<p>
+						<a name="unknown_parameter_fnRender"></a>
+						<b>Q. "Requested unknown parameter" error when using fnRender</b><br>
+						A. The fnRender function is passed in two parameters - an object with details about the cell, and the value of the cell. Often fnRender is used to create the value, but DataTables still needs a default value to pass into the function or an error is given. For this the <a href="http://datatables.net/ref#sDefaultContent">sDefaultContent</a> parameter can be used and simply set to be an empty string.
+					</p>
+					
+					<p>
+						<a name="comma"></a>
+						<b>Q. I get a Javascript error in IE, but not in Firefox, Chrome etc.</b><br>
+						A. The majority of the time, this is caused by a 'floating' comma at the end of an array. IE will throw a warning for this, other will delete it.
+					</p>
+					
+					<p>
+						<a name="append"></a>
+						<b>Q. I append a row to the table using DOM/jQuery, but it is removed on redraw.</b><br>
+						A. The issue here is that DataTables doesn't "know" about your manipulation of the DOM structure - i.e. it doesn't know that you've added a new row, and when it does a redraw it will remove the unknown row. To add, edit or delete information from a DataTable you must use the <a href="http://legacy.datatables.net/api">DataTables API</a> (specifically the fnAddData, fnUpdate and fnDeleteRow methods - <a href="http://legacy.datatables.net/plug-ins/api">plug-ins are also available</a> to provide additional options).
+					</p>
+					
+					
+					<h3>General initialisation</h3>
+					
+					<p>
+						<a name="speed"></a>
+						<b>Q. DataTables is running slow. How can I speed it up?</b><br>
+						A. There are several ways in which you can speed up DataTables. The method you are using for loading the data will typically have the most significant impact on performance.
+						<ul>
+							<li>Client-side processing - DOM sourced data: ~5'000 rows. Speed options: <a href="http://legacy.datatables.net/usage/features#bSortClasses">bSortClasses</a></li>
+							<li>Client-side processing - Ajax sourced data: ~50'000 rows. Speed options: <a href="http://legacy.datatables.net/usage/features#bDeferRender">bDeferRender</a></li>
+							<li>Server-side processing: millions of rows.</li>
+						</ul>
+						Note that older browsers such as IE6/7 might have lower numbers than those given above. Additionally, if you are using Firefox, turn off Firebug as this can have a negative impact on performance.
+					</p>
+					
+					<p>
+						<b>Q. My table isn't working!?</b><br>
+						A. Have you got a &lt;thead&gt; and &lt;tbody&gt; defined as DataTables requires (<a href="http://legacy.datatables.net/usage">basic usage</a>)? Is your HTML valid (<a href="http://validator.w3.org/">W3C validator</a>)? Are you seeing any Javascript errors?
+					</p>
+					
+					<p>
+						<b>Q. My styles aren't showing up / my table isn't styled.</b><br>
+						A. Have you included the demo CSS for DataTables on your page (and got the paths correct!)? As a side-note I would strongly encourage customisation of the DataTables demo CSS.
+					</p>
+					
+					<p>
+						<b>Q. How can I move the table controls?</b><br>
+						A. You can move the elements that DataTables puts around the table by using the <a href="http://legacy.datatables.net/usage/options#sDom">sDom</a> initialisation parameter.
+					</p>
+					
+					
+					<h3>Server-side processing</h3>
+					
+					<p>
+						<a name="ss_stuck"></a>
+						<b>Q. Its not working... (stuck on processing)</b><br>
+						A. This is usually down to incorrect JSON data being passed back from the server. Please test your JSON return with <a href="http://www.jsonlint.com/">JSON Lint</a> before posting in the forum.
+					</p>
+					
+					<p>
+						<b>Q. Its still not working...</b><br>
+						A. The next most common reason for server-side processing not working is the sEcho variable not being returned as it was set in the request. DataTables uses sEcho to keep a draw count, so this is an important parameter. See <a href="http://legacy.datatables.net/usage/server-side">server-side usage</a>.
+					</p>
+					
+					<p>
+						<b>Q. Pagination is not enabled, or the information text shows the wrong data set count</b><br>
+						A. This is likely to be caused by the incorrect use of <i>iTotalDisplayRecords</i>. <i>iTotalDisplayRecords</i> is the total number of records in the data set after filtering - not just the data array length (which DataTables can do itself!). So if you have no filtering <i>iTotalDisplayRecords</i> should be exactly the same as <i>iTotalRecords</i>.
+					</p>
+					
+					<p>
+						<a name="ss_events"></a>
+						<b>Q. My events aren't being applied</b><br>
+						A. What happens is that for each draw, DataTables will create the required display nodes (TR, TD etc), so old events are lost. You can either use $.live, or <a href="http://legacy.datatables.net/usage/callbacks#fnDrawCallback">fnDrawCallback</a> to re-add the events. You can also use my <a href="http://www.sprymedia.co.uk/article/Visual+Event">Visual Event</a> bookmarklet to help debug event issues.
+					</p>
+				</div>
+				
+			</div>
+			<div class="css_clear"></div>
+			
+						<div id="fw_footer">
+				<div class="css_center">
+					DataTables designed and created by <a href="http://www.sprymedia.co.uk/">SpryMedia</a> &copy; 2008-2014<br>
+					DataTables is dual licensed under the <a href="http://legacy.datatables.net/license_gpl2">GPL v2 license</a> or a <a href="http://legacy.datatables.net/license_bsd">BSD (3-point) license</a>.
+				</div>
+			</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-365466-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+		</div>
+		
+	</body>
+
+<!-- Mirrored from legacy.datatables.net/faqs by HTTrack Website Copier/3.x [XR&CO'2010], Sat, 10 May 2014 07:52:08 GMT -->
+</html>
