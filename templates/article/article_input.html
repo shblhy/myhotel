@@ -4,8 +4,8 @@
     <label id="article_form_errmsg"></label>
     <ul>
         <li><label>*标题</label><input type="text"  id="title" name="title" value="{{article.title}}"/></li>
-        <li><label>*内容</label><textarea id="content" name="content" value="{{article.content}}"> </textarea></li>
-        <li><label>*图片</label><input type="text" id="picture" name="picture" value="{{article.picture|default_if_none:''}}"/></li>
+        <li><label>*内容</label><textarea id="content" name="content" style="width: 500px;height: 300px;"> {{article.content}}</textarea></li>
+        <li><label>图片</label><input type="text" id="picture" name="picture" value="{{article.picture|default_if_none:''}}"/></li>
     </ul>
  </form>
  <button id="submit-article-btn">提交</button>

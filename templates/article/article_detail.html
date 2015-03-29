@@ -1,0 +1,9 @@
+{% extends "baseheadpic.html" %}
+{% block content %}
+    <label id="article_form_errmsg"></label>
+    <ul>
+        <h4 type="text"  id="title" name="title">{{article.title}}</h4>
+        <li><label id="content" name="content"> {{article.content}}</label></li>
+        <li><label type="text" id="picture" name="picture">{{article.picture|default_if_none:''}}</label></li>
+    </ul>
+ {% endblock %}

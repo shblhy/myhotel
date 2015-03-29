@@ -4,17 +4,20 @@ from django.http import HttpResponse, HttpResponseBadRequest
 from django.template import RequestContext
 from libs.yhwork.response import HttpJsonResponse, render_to_csv_response
 from apps.article.models import Article
-from apps.article.forms import ArticleForm
+from apps.article.forms import ArticleForm, ArticleQForm
 from apps.article.admin import ArticleListManager
 
 
+#@admin_required
 def articles(request, contype='html'):
-    condition = {}
-    q = Article.objects.filter(**condition)
+    form = ArticleQForm(request.GET)
+    if form.is_valid():
+        conditions = form.get_conditions()
+    q = Article.objects.filter(**conditions)
     table = ArticleListManager(
         queryset=q,
-        paginate_by=30,
-        page=1,
+        paginate_by=form.cleaned_data['iDisplayLength'],
+        page=form.cleaned_data['iDisplayStart'] + 1,
         accessors_out={'action': lambda x: ArticleListManager.get_action(x, request.user)},
     ).to_table()
     print table.get_columns()
@@ -29,21 +32,8 @@ def articles(request, contype='html'):
 
 def article_list(request, contype='html'):
     condition = {}
-    q = Article.objects.filter(**condition)
-    table = ArticleListManager(
-        queryset=q,
-        paginate_by=30,
-        page=1,
-        accessors_out={'action': lambda x: ArticleListManager.get_action(x, request.user)},
-    ).to_table()
-    print table.get_columns()
-    print table.get_rows()
-    if contype == 'html':
-        return render_to_response('article/article_list.html', RequestContext(request,locals()))
-    elif contype == 'table':
-        return HttpResponse(table.get_rows(), content_type='application/json; charset=UTF-8')
-    elif contype == 'csv':
-        return render_to_csv_response(u"店面列表.csv", table.to_csv())
+    articles = Article.objects.filter(**condition).order_by('-edit_time')[:20]
+    return render_to_response('article/article_list.html', RequestContext(request, locals()))
 
 
 def article_input(request, article_id=None):

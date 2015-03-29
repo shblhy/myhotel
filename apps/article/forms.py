@@ -21,10 +21,8 @@ class ArticleForm(ModelForm):
 class ArticleQForm(QForm):
     #支持,分隔多项
     id = forms.CharField(label='id', required=False)
-    username = forms.CharField(label='username', required=False)
-    real_name = forms.CharField(label='real_name', required=False)
-    qq = forms.CharField(label='', required=False)
-    phone = forms.CharField(label='', required=False)
-    page = PageField(default=0)
-    page_size = PageField(default=30)
+    title_like = forms.CharField(label='标题', required=False)
+    author = forms.ModelChoiceField(User.objects, required=False)
+    iDisplayStart = PageField(default=0, required=False)
+    iDisplayLength = PageField(default=30, required=False)
     orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)
