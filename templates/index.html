@@ -16,8 +16,8 @@
 		<div class="header" >
 			<div class="logo"><a href='/'><img src="/static/base/images/LOGO.jpg" alt='首页' width="218" height="46"></a></div>
 			<div style="float:right;position:relative;right:1%;top:10px;">
+				<img src="/static/base/images/icon-crown.png" width="12" height="12">
 				<span id="member-entrance">
-					<img src="/static/base/images/icon-crown.png" width="12" height="12">&nbsp;&nbsp;
 					<a href="javascript:;" id="show-login-btn" data-logined={%if request.user.is_authenticated%}true{%else%}false{%endif%} data-superuser={%if request.user.is_superuser%}true{%else%}false{%endif%} >登录</a>|
 					<a href="javascript:;" id="show-regist-btn" >注册</a>| 
 					<a href="javascript:void(0)">收藏</a>				
@@ -105,9 +105,12 @@
 	</div>
 
 <div id="pop-login-content" class="floatblock popup-module common_window" style="display: none;">
+	<div class="popup-close">
+		<a href="javascript:;" class="login-cancel-btn">关闭</a>
+	</div>
     <div class="popup-content">
         <h3 class="popup-content-title">会员登录</h3>
-        <form id="pop-login-form1" action="/member/login/" method="post">
+        <form id="pop-login-form1" class="popup-content-form" action="/member/login/" method="post">
             {% csrf_token %}
              <fieldset>
                 <dl>
@@ -121,7 +124,7 @@
                         <span class="text-error-info text-error-pop-login-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
                     <dd class="pop-submit-application">
                         <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
-                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer login-cancel-btn" id="login-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
                     </dd>
                 </dl>
             </fieldset>
@@ -129,7 +132,10 @@
     </div>
 </div>
 
-<div id="pop-regist-content" class="floatblock" style="display: none;">
+<div id="pop-regist-content" class="floatblock2" style="display: none;">
+	<div class="popup-close">
+		<a href="javascript:;" class="regist-cancel-btn">关闭</a>
+	</div>
     <div class="popup-content">
         <h3 class="popup-content-title">会员注册</h3>
         <form id="pop-regist-form1" action="/member/regist/" method="post">
@@ -166,7 +172,7 @@
                         <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
                     <dd class="pop-submit-application">
                         <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
-                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer regist-cancel-btn" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
                     </dd>
                 </dl>
             </fieldset>
@@ -208,8 +214,11 @@
 						}
 					}).submit();
 				});
-                $('#regist-cancel-btn').click(function(){
+				$('.login-cancel-btn').click(function(){
                     $("#pop-login-content").hide();
+                });
+                $('.regist-cancel-btn').click(function(){
+                    $("#pop-regist-content").hide();
                 });
 				$('#show-regist-btn').click(function(){
 	                //alert("展示注册框");
@@ -223,6 +232,7 @@
 				$('#regist-submit-btn').click(function(){
 					if ($("#pop-regist-repeat-password").val()!=$("#pop-regist-password").val()){
 						alert("两次输入的密码必须一致！")
+						return false;
 					}
 					$("#pop-regist-form1").ajaxForm({
 						data : {},

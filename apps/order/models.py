@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from apps.room.models import Room, RoomType
@@ -29,3 +30,9 @@ class Order(models.Model):
         self.customer = user.real_name
         self.phone = user.phone
         return
+
+    def set_sn(self):
+        s = str(self.id)[:5]
+        makeup = ''.join(['0'] * (6 - len(s)))
+        self.sn = datetime.now().strftime('%y%m%d%H') + makeup + s
+        self.save()

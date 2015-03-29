@@ -72,6 +72,8 @@ def input_order(request):
         if not order.room:
             order.room = order.room_type.get_ready_room()
         order.save()
+        if not order_id:
+            order.set_sn()
         result = {'status': 'success', 'add_user': add_user}
         return HttpJsonResponse(result)
     else:

@@ -69,21 +69,6 @@ a.newfooter-nav {
     width: 550px;
 }
 
-.floatblock{
-	background-color: #fff;
-    display: block;
-    height: 300px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 500px;
-    z-index: 995;
-} 
-.popup-content-title {
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
 
 li.list_item {
 	display:inline-block;
@@ -510,3 +495,47 @@ a:hover .icon-color{
 .icon-open{
   background-position: -80px -100px;  
 }
+/*login */
+.popup-close {
+    border-bottom: 1px solid #999;
+    height: 24px;
+    left: 18px;
+    margin-bottom: 4px;
+    position: absolute;
+    right: 18px;
+    text-align: right;
+    top: 5px;
+    float: left;
+}
+.popup-content-title {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.popup-content {
+    padding: 34px 18px 30px;
+    float:left;
+}
+.popup-content-form {
+    float:left;
+}
+.floatblock{
+	background-color: #fff;
+    display: block;
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    z-index: 995;
+} 
+.floatblock2{
+	background-color: #fff;
+    display: block;
+    height: 400px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    z-index: 998;
+} 
