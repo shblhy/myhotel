@@ -1,0 +1,2 @@
+1、forms.ModelForm将外部传入的值都变为''，在null=True时不一定合适，在unique=True时引发异常。
+2、
