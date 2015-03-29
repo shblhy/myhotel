@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import subprocess
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from apps.member.models import User
@@ -59,3 +60,10 @@ def sitemap(request):
 
 def easy_page(request, template):
     return render_to_response(template, RequestContext(request, locals()))
+
+
+def site_update(request):
+    command = '/tor.sh'
+    data = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    data.wait()
+    return render_to_response('main/site_update.html', RequestContext(request, locals()))

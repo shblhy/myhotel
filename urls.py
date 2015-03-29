@@ -25,5 +25,6 @@ urlpatterns = patterns('',
     url(r'^recruit.html$', 'hehotel.views.easy_page', {'template': 'main/recruit.html'}, name='recruit'),
     url(r'^privacy.html$', 'hehotel.views.easy_page', {'template': 'main/privacy.html'}, name='privacy'),
     url(r'^usage_clause.html$', 'hehotel.views.easy_page', {'template': 'main/usage_clause.html'}, name='privacy'),
-    url(r'^map.html$', 'hehotel.views.easy_page', {'template': 'main/map.html'}, name='privacy')
+    url(r'^map.html$', 'hehotel.views.easy_page', {'template': 'main/map.html'}, name='privacy'),
+    url(r'^site_update$', 'hehotel.views.site_update', name='site_update'),
 )
