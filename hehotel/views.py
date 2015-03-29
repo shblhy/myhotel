@@ -65,7 +65,7 @@ def easy_page(request, template):
 
 
 def site_update(request):
-    command = '/tor.sh'
+    command = '/tor.sh > /tor.log'
     log = logging.getLogger('log')
     timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info('run command2:' + timestr)
