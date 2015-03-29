@@ -11,7 +11,7 @@ class Order(models.Model):
     phone = models.CharField(_(u'手机号'), max_length=64, blank=True, null=True)
     #member_id = models.CharField(max_length=32, null=True, verbose_name=u'用户ID，关联已注册用户')
     member = models.ForeignKey(User, verbose_name=u'顾客', null=True)
-    note = models.CharField(_(u'备注'), max_length=2000, default='')
+    note = models.CharField(_(u'备注'), max_length=2000, default='',blank=True)
     room_type = models.ForeignKey(RoomType, verbose_name=u'房型')
     room = models.ForeignKey(Room, null=True, blank=True)
     StatusChoices = {0: u'未支付', 1: u'已支付', 2: u'已使用'}

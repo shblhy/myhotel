@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.contrib import admin 
 from libs.yhwork.admin import BaseListManager
 from apps.article.models import Article
 from apps.article.forms import ArticleQForm
@@ -25,6 +26,9 @@ class ArticleListManager(BaseListManager):
     @staticmethod
     def get_action(item, user):
         actions = ['view']
-        actions.append('edit')
-        actions.append('delete')
-        actions.append('add')
+        if user.is_superuser or item.author == user:
+            actions.append('edit')
+            actions.append('delete')
+        return ','.join(actions)
+
+admin.site.register(Article)

@@ -1,3 +1,5 @@
+{% extends "baseadmin.html" %}
+{% block content %}
 <form id="form_room_type" method="post">
     <label id="form_room_type_errmsg"></label>
     <ul>
@@ -45,7 +47,7 @@ require(["jquery","functions","form"], function($,functions) {
                     url : "/room/room_type/add_room_type", 
                     dataType : "json",
                     success: function(data) {
-                        functions.base.load_page("/room/room_types");
+                        window.location = "/room/room_types";
                     },
                     error: function(data){
                         $("#form_room_type_errmsg").html(data);
@@ -65,3 +67,4 @@ require(["jquery","functions","form"], function($,functions) {
     });
 });
 </script>
+{% endblock %}

@@ -53,5 +53,4 @@ class GroupListManager(BaseListManager):
         actions.append('delete')
         return ','.join(actions)
 
-
 admin.site.register(User)

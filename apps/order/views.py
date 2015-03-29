@@ -3,11 +3,13 @@ import json
 from datetime import datetime, timedelta
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseBadRequest, HttpResponse
+from django.contrib.auth import login, authenticate
 from libs.yhwork.response import HttpJsonResponse
 from apps.order.admin import OrderListManager
 from apps.order.form import OrderForm, OrderQForm
 from apps.order.models import Order
 from apps.room.models import RoomType
+from apps.member.models import User
 
 
 def orders(request, contype='html'):
@@ -15,9 +17,9 @@ def orders(request, contype='html'):
     if not form.is_valid():
         return HttpResponseBadRequest(form.errors.as_text())
     condition = form.get_condition()
-    q = Order.objects.filter(**condition)
+    q = Order.objects.select_related('room_type__name').filter(**condition)
     table = OrderListManager(
-         query=q,
+         queryset=q,
          paginate_by=form.cleaned_data['iDisplayLength'],
          page=form.cleaned_data['iDisplayStart'] + 1,
          accessors_out={
@@ -56,12 +58,29 @@ def input_order(request):
     form = OrderForm(request.POST, instance=order)
     if form.is_valid():
         order = form.instance
-        order.operator = request.user
+        if not order.member:
+            user, username, password = User.easy_create_user(form.cleaned_data['customer'],
+                form.cleaned_data['phone'])
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            add_user = True
+        else:
+            user = request.user
+            add_user = False
+        order.operator = user
         order.editdate = datetime.now()
         if not order.room:
             order.room = order.room_type.get_ready_room()
         order.save()
-        result = {'status': 'success'}
+        result = {'status': 'success', 'add_user': add_user}
         return HttpJsonResponse(result)
     else:
         return HttpResponseBadRequest(form.errors_as_text())
+
+
+def delete_orders(request):
+    try:
+        Order.objects.filter(id__in=request.POST['ids'].split(',')).delete()
+        return HttpJsonResponse('')
+    except Exception, e0:
+        return HttpResponseBadRequest(u'删除失败:' + e0.message, content_type='application/javascript')

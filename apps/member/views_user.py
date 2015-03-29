@@ -16,7 +16,7 @@ def users(request, contype='html'):
     condition = form.get_conditions()
     q = User.objects.filter(**condition)
     table = UserListManager(
-        query=q,
+        queryset=q,
         paginate_by=form.cleaned_data['iDisplayLength'],
         page=form.cleaned_data['iDisplayStart'] + 1,
         accessors_out={'action': lambda x: UserListManager.get_action(x, request.user)}
@@ -74,7 +74,7 @@ def regist(request):
         user = form.instance
         user.set_password(user.password)
         user.save()
-        return HttpJsonResponse({'status':'success'})
+        return HttpJsonResponse({'status': 'success'})
     return HttpResponseBadRequest(form.errors.as_text())
 
 
@@ -85,5 +85,6 @@ def import_users(request):
 def delete_users(request):
     try:
         User.objects.filter(id__in=request.POST['ids'].split(',')).delete()
+        return HttpJsonResponse('')
     except Exception,e0:
-        return HttpResponseBadRequest(u'删除失败:' + e0.message, mimetype='application/javascript')
+        return HttpResponseBadRequest(u'删除失败:' + e0.message, content_type='application/javascript')

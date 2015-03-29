@@ -15,7 +15,6 @@ encoding//apps/member/views_user.py=utf-8
 encoding//apps/order/admin.py=utf-8
 encoding//apps/order/form.py=utf-8
 encoding//apps/order/models.py=utf-8
-encoding//apps/order/table.py=utf-8
 encoding//apps/order/urls.py=utf-8
 encoding//apps/order/views.py=utf-8
 encoding//apps/room/admin.py=utf-8

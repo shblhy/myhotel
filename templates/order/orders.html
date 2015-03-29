@@ -20,7 +20,7 @@
                 "initData" :{{table.get_rows|safe}},
                 "aoColumns":{{table.get_columns|safe}},
                 "sAjaxSource": '/order/orders.table',
-                "buttons": [],
+                "buttons": [{'type':'del','text':'删除','url':'/order/delete_orders'}],
                 "actions":[{
                     type:"view",
                     text:"详情",
@@ -34,13 +34,13 @@
                     url:"/order/edit",
                     style: 'restful',
                     target: '_blank',
-                    iconClass:'icon-detail icon-color'
+                    iconClass:'icon-edit icon-color'
                 },{
                     type:"delete",
                     text:"删除",
                     url:"/order/delete",
                     style: 'restful',
-                    iconClass:'icon-detail icon-color'
+                    iconClass:'icon-delete icon-color'
                 }]
             }; 
             var t = new table.Table('tb_orders',o);

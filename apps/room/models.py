@@ -71,4 +71,4 @@ class RoomHistory(models.Model):
     opertor = models.ForeignKey(User)
 
     class Meta:
-        db_table = 'room_histor'
+        db_table = 'room_history'

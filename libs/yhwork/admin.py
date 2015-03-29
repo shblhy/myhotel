@@ -16,6 +16,7 @@ class OutManager(object):
     目标：将数据转变为json等常规格式，以提供给前端处理。
     原计划模拟View编写，可同时处理django orm与sqlalchemy等多种格式数据，但考虑到开发难度目前只支持Model。
     from django.views.generic.base import View
+    'query set'
     """
     fields = [] #需要产生的域，例如表格头行数据
     visible_fields = [] #不可见的域
@@ -86,7 +87,7 @@ class BaseListManager(MultipleObjectMixin, OutManager):
         将对象转变为行输出
         '''
         line = []
-        for field in self.fields+self.visible_fields:
+        for field in self.fields + self.visible_fields:
             if field in excludes:
                 continue
             func = self.accessors.get(field,None)

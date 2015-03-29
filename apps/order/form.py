@@ -9,6 +9,8 @@ from apps.member.models import User
 
 
 class OrderForm(ModelForm):
+    member = forms.ModelChoiceField(User.objects, required=False)
+
     class Meta:
         model = Order
         exclude = ['status', 'insert_time', 'price']

@@ -1,13 +1,15 @@
+{% extends "baseadmin.html" %}
+{% block content %}
 <form id="room_form" method="post">
     <label id="room_form_errmsg"></label>
     <ul>
-        <li><label>*房号</label><input id="sn" name="sn" value="{{room.sn}}"/></li>
-        <li><label>*名称</label><input id="name" name="name" value="{{room.name}}"/></li>
-        <li><label>*状态</label><input id="status" name="status" value="{{room.status}}"/></li>
-        <li><label>*类型</label><input id="rtype" name="rtype" value="{{room.rtype}}"/></li>
-        <li><label>*介绍</label><input id="comment" name="comment" value="{{room.comment}}"/></li>
-        <li><label>备注</label><input id="note" name="note" value="{{room.note}}"/></li>
-        <li><label>照片</label><input id="photo" name="photo" value="{{room.photo}}"/></li>
+        <li><label>*房号</label><input type="text" id="sn" name="sn" value="{{room.sn}}"/></li>
+        <li><label>*名称</label><input type="text" id="name" name="name" value="{{room.name}}"/></li>
+        <li><label>*状态</label><input type="text" id="status" name="status" value="{{room.status}}"/></li>
+        <li><label>*类型</label><input type="text" id="rtype" name="rtype" value="{{room.rtype}}"/></li>
+        <li><label>*介绍</label><input type="text" id="comment" name="comment" value="{{room.comment}}"/></li>
+        <li><label>备注</label><input type="text" id="note" name="note" value="{{room.note}}"/></li>
+        <li><label>照片</label><input type="text" id="photo" name="photo" value="{{room.photo}}"/></li>
     </ul>
     <button id="submit-room-btn">提交</button>
  </form>
@@ -36,3 +38,4 @@ require(["jquery","functions","form"], function($,functions) {
     });
 });
 </script>
+{% endblock %}
