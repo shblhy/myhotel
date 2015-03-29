@@ -1,23 +1,5 @@
 ﻿@charset "utf-8";
 
-@import url("bootstrap-modified.css");
-@import url("reset.css");
-
-@import url("../com/tree/jquery.tree-1.3.css");
-
-@import url("../com/multipleSelect/multiple-select.css");
-@import url("../com/multiselect2side/jquery.multiselect2side.css");
-@import url("../com/tipped/tipped.css");
-@import url("../com/daterangepicker/daterangepicker-bs3.css");
-@import url("../com/select2/select2.css");
-@import url("../com/svgMap/svgMap.css");
-@import url("../com/multistatusbar/jquery-ui-multistatusbar.css");
-@import url("../com/datatables/DT_bootstrap.css");
-@import url("../com/datatables/ColVis.css");
-@import url("../com/formeter/formeter.1.1.css");
-@import url("../com/smartAutoComplete/jquery.smart_autocomplete.css");
-@import url("../com/smartWizard/smart_wizard.css");
-@import url("../com/fileupload/jquery.fileupload.css");
 
 /***highcharts***/
 /***end***/

@@ -22,8 +22,11 @@ class RoomQForm(QForm):
     sn = forms.CharField(label='id', required=False)
     name_like = forms.CharField(label='name_like', required=False)
     status = forms.CharField(label='status', required=False)
-    using = forms.CharField(label='using', required=False)
-    status_time = forms.CharField(label='status_time', required=False)
+    #using = forms.CharField(label='using', required=False)
+    #status_time = forms.CharField(label='status_time', required=False)
+    iDisplayStart = PageField(default=0, required=False)
+    iDisplayLength = PageField(default=30, required=False)
+    orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)
 
     def get_condition(self):
         form = self

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import random
+from datetime import datetime
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
 from django.db import models
 from django.core import validators
@@ -38,3 +39,19 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('user')
         verbose_name_plural = _('users')
         db_table = 'auth_user'
+
+    def get_short_name(self):
+        return self.username
+
+    @staticmethod
+    def easy_create_user(real_name, phone):
+        def get_unique_username(name):
+            for _i in range(0, 10):
+                unique_name = name + '_' + str(random.randint(0, 10))
+                if not User.objects.filter(username=unique_name).exists():
+                    return unique_name
+            raise Exception(u'无法自动生成用户名')
+        username = get_unique_username(phone)
+        datestr = datetime.now().strftime('%Y%m%d')
+        password = datestr + phone[-4:]
+        return User.objects.create_user(username, real_name=real_name, password=password, phone=phone), username, password

@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, include, url
 from settings import RESOURCE_ROOT_PATH, STATIC_ROOT_PATH
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/$', 'hehotel.views.admin', name='admin'),  # 后台主页
-    url(r'^$', 'hehotel.views.index', name='index'),
     url(r'^templates/(?P<path>.*)$', 'django.views.static.serve', {'document_root': RESOURCE_ROOT_PATH}),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': STATIC_ROOT_PATH}),
+    url(r'^admin/', 'hehotel.views.admin', name='admin'),  # 后台
+    url(r'^backend/', include(admin.site.urls), name='backend'),  # 后台
+    url(r'^$', 'hehotel.views.index', name='index'),
     url(r'^hotel$', 'hehotel.views.hotel', name='hotel'),
     url(r'^pictures$', 'hehotel.views.pictures', name='pictures'),
     url(r'^order$', 'hehotel.views.order', name='order'),

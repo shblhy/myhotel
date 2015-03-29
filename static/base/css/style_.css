@@ -270,9 +270,101 @@ ul.test_ul {
 
 .content_tab_title{ margin:10px; /*font-size:24px; text-decoration:none; */; }
 .content_tab_title_a{ font-size:24px; float: left; margin: 10px 0 0 12px; }
-
-
 .content_tab_title_line{ height:50px; /*font-size:24px; text-decoration:none; */; }
+
+/*表格查询*/
+.gray-background-color {
+    background-color: #f5f5f5;
+}
+.small-padding {
+    padding: 5px 10px !important;
+}
+.mini-width {
+    width: 70px;
+}
+.pull-left {
+    float: left;
+}
+.text-right {
+    text-align: right;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 4px;
+    color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+.input-small {
+    padding: 2px 6px !important;
+    width: inherit;
+}
+.btn-primary {
+    background-color: #278de0;
+    border: medium none;
+    color: #ffffff;
+}
+/*表格分页*/
+.pagination ul > li {
+  display: inline;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: #f5f5f5;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #999999;
+  cursor: default;
+}
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {
+  color: #999999;
+  cursor: default;
+  background-color: transparent;
+}
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+  border-left-width: 1px;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
 
 .form-inline .width_100px{ width: 100px !important; }
 
@@ -291,4 +383,130 @@ ul.test_ul {
 .tip-fall.s-success{background: #ADD6AE; background-image: -webkit-linear-gradient(to bottom, #ADD6AE 0px, #91C892 100%); background-image: -moz-linear-gradient(to bottom, #ADD6AE 0px, #91C892 100%); background-image: linear-gradient(to bottom, #ADD6AE 0px, #91C892 100%); border: 1px solid #56A958; color: #3c763d;}
 .tip-fall.s-error{background: #f2dede; background-image: -webkit-linear-gradient(to bottom, #f2dede 0px, #e7c3c3 100%); background-image: -moz-linear-gradient(to bottom, #f2dede 0px, #e7c3c3 100%); background-image: linear-gradient(to bottom, #f2dede 0px, #e7c3c3 100%); border-color: #dca7a7; color: #a94442;}
 
-
+/********************************3.删除旧icons样式，重定义************************************/
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    margin-right:3px;
+    margin-top: -2px;
+    background-image: url("../images/icons/icons.png");
+    display: inline-block;
+}
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:focus > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > li > a:focus > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: url("../images/icons/icons-white.png");
+}
+.icon-color{
+    background-image: url("../images/icons/icons-color.png");
+}
+a:hover .icon-color{
+    background-image: url("../images/icons/icons-color-hover.png");
+}
+.icon-loading{
+  background-image: url("../images/icons/icons-loading.gif");
+  background-position: 0 0;
+}
+.icon-check{
+  background-position: 0 0;
+}
+.icon-arrow-up{
+  background-position: -20px 0;
+}
+.icon-arrow-down{
+  background-position: -40px 0;
+}
+.icon-filter{
+  background-position: -60px 0;
+}
+.icon-status{
+  background-position: -80px 0;
+}
+.icon-detail{
+  background-position: 0 -20px;
+}
+.icon-setting{
+  background-position: -20px -20px;
+}
+.icon-alarm{
+  background-position: -40px -20px;
+}
+.icon-overall-state{
+  background-position: -60px -20px;
+}
+.icon-alarm-state{
+  background-position: -80px -20px;
+}
+.icon-execute-state{
+  background-position: 0 -40px;
+}
+.icon-refresh{
+  background-position: -20px -40px;
+}
+.icon-delete{
+  background-position: -40px -40px;
+}
+.icon-home{
+  background-position: -60px -40px;
+}
+.icon-star{
+  background-position: -80px -40px;
+}
+.icon-calendar{
+  background-position: 0px -60px;
+}
+.icon-add{
+  background-position: -20px -60px;
+}
+.icon-item{
+  background-position: -60px -60px;
+}
+.icon-edit{
+  background-position: -80px -60px;
+}
+.icon-bell{
+  background-position: 0px -80px;
+}
+.icon-has-bell{
+  background-position: -20px -80px;
+}
+.icon-no-bell{
+  background-position: -40px -80px;
+}
+.icon-more{
+  background-position: -60px -80px;
+}
+.icon-down{
+  background-position: -80px -80px;
+}
+.icon-arrow-left{
+  background-position: 0px -100px;
+}
+.icon-arrow-right{
+  background-position: -20px -100px;
+}
+.icon-allot{
+  background-position: -40px -100px;  
+}
+.icon-lock{
+  background-position: -60px -100px;  
+}
+.icon-open{
+  background-position: -80px -100px;  
+}

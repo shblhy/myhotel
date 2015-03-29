@@ -17,7 +17,7 @@ def rooms(request, contype='html'):
     condition = form.get_condition()
     q = Room.objects.filter(**condition)
     table = RoomListManager(
-        query=q,
+        queryset=q,
         paginate_by=form.cleaned_data['iDisplayLength'],
         page=form.cleaned_data['iDisplayStart'] + 1,
         accessors_out={
@@ -74,7 +74,7 @@ def add_room(request):
     return HttpResponse('')
 
 
-def input_room(request, action='add'):
+def input_room(request):
     form = RoomForm(request.POST)
     if form.is_valid():
         form.save()

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
 from django.contrib.auth.models import Group
-from django.contrib.auth.views import  login as auth_login, password_change, password_change_done,logout
 from django.http import HttpResponse, HttpResponseForbidden, HttpResponseBadRequest
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -12,7 +11,7 @@ def groups(request, contype='html'):
     condition = {}
     q = Group.objects.filter(**condition)
     table = GroupListManager(
-        query=q,
+        queryset=q,
         page=1,
         order_by='0',
         accessors_out={

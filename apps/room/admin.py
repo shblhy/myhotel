@@ -6,7 +6,7 @@ from apps.room.models import Room, RoomType
 
 class RoomListManager(BaseListManager):
     paginate_by = 100
-    fields = ['id', 'sn', 'name', 'status', 'using', 'status_time', 'action']
+    fields = ['id', 'sn', 'name', 'status', 'action']
     labels = {
               'action': u'操作'
               }
@@ -24,6 +24,7 @@ class RoomListManager(BaseListManager):
         actions.append('edit')
         actions.append('delete')
         actions.append('add')
+        return ','.join(actions)
 
 
 class RoomTypeListManager(BaseListManager):
