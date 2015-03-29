@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import subprocess
 import logging
 from datetime import datetime
@@ -69,5 +70,7 @@ def site_update(request):
     log = logging.getLogger('log')
     timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info('run command3:' + timestr)
-    subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    os.system(command)
+    #p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    #p.wait()
     return render_to_response('main/site_update.html', RequestContext(request, locals()))
