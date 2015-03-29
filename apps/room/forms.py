@@ -15,6 +15,7 @@ class RoomForm(ModelForm):
 
     class Meta:
         model = Room
+        exclude = ['status']
 
 
 class RoomQForm(QForm):
