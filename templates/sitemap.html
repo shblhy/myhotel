@@ -1,15 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站地图</title>
-</head>
-
-<body>
+{% extends "basecustomer.html" %}
+{% block content %}
 <ul>
-<li>首页</li>
 <li>酒店介绍</li>
-<li>房间预订</li>
+<li>房间预订>>填写订单</li>
 <li>图文活动</li>
 <li>个人中心
   <ul>
@@ -20,14 +13,5 @@
 <ul>
     <li>订单列表</li>
   </ul>
-<li>后台
-  <ul>
-    <li>房间管理</li>
-      <li>房型管理</li>
-      <li>会员管理</li>
-      <li>图文管理</li>
-    </ul>
-</li>
 </ul>
-</body>
-</html>
+{% endblock %}

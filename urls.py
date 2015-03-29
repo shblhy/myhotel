@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': STATIC_ROOT_PATH}),
     url(r'^admin/', 'hehotel.views.admin', name='admin'),  # 后台
     url(r'^backend/', include(admin.site.urls), name='backend'),  # 后台
+    url(r'^backdocs/', include('django.contrib.admindocs.urls'), name='backdocs'),  # 后台
     url(r'^$', 'hehotel.views.index', name='index'),
     url(r'^hotel$', 'hehotel.views.hotel', name='hotel'),
     url(r'^pictures$', 'hehotel.views.pictures', name='pictures'),
@@ -19,8 +20,10 @@ urlpatterns = patterns('',
     url(r'^room/', include('apps.room.urls')),  # 房间模块
     url(r'^order/', include('apps.order.urls')),  # 订单模块
     url(r'^article/', include('apps.article.urls')),  # 文章模块
-    url(r'^sitemap$', 'hehotel.views.sitemap', name='sitemap'),
-    url(r'^contactus$', 'hehotel.views.easy_page', {'template': 'main/contactus.html'}, name='contactus'),
-    url(r'^recruit$', 'hehotel.views.easy_page', {'template': 'main/recruit.html'}, name='recruit'),
-    url(r'^privacy$', 'hehotel.views.easy_page', {'template': 'main/privacy.html'}, name='privacy'),
+    url(r'^site_map.html$', 'hehotel.views.sitemap', name='sitemap'),
+    url(r'^contactus.html$', 'hehotel.views.easy_page', {'template': 'main/contactus.html'}, name='contactus'),
+    url(r'^recruit.html$', 'hehotel.views.easy_page', {'template': 'main/recruit.html'}, name='recruit'),
+    url(r'^privacy.html$', 'hehotel.views.easy_page', {'template': 'main/privacy.html'}, name='privacy'),
+    url(r'^usage_clause.html$', 'hehotel.views.easy_page', {'template': 'main/usage_clause.html'}, name='privacy'),
+    url(r'^map.html$', 'hehotel.views.easy_page', {'template': 'main/map.html'}, name='privacy')
 )
