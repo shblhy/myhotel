@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import subprocess
+import logging
+from datetime import datetime
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from apps.member.models import User
@@ -64,6 +66,8 @@ def easy_page(request, template):
 
 def site_update(request):
     command = '/tor.sh'
-    data = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    data.wait()
+    log = logging.getLogger('log')
+    timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log.info('run command:' + timestr)
+    #subprocess.call(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     return render_to_response('main/site_update.html', RequestContext(request, locals()))
