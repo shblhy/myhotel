@@ -71,6 +71,5 @@ def site_update(request):
     timestr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     log.info('run command3:' + timestr)
     os.system(command)
-    #p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    #p.wait()
+    #subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     return render_to_response('main/site_update.html', RequestContext(request, locals()))
