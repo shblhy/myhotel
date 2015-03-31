@@ -110,7 +110,84 @@
 			</div>
 		</div>
     </div>
-    <script type="text/javascript">
+
+<div id="pop-login-content" class="floatblock popup-module common_window" style="display: none;">
+	<div class="popup-close">
+		<a href="javascript:;" class="login-cancel-btn">关闭</a>
+	</div>
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员登录</h3>
+        <form id="pop-login-form1" class="popup-content-form" action="/member/login/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-login-account">用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-login-account" name="username">
+                        <span class="text-error-info text-error-pop-login-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-login-password">密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-login-password" name="password">
+                        <span class="text-error-info text-error-pop-login-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-submit" id="login-submit-btn">登录<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-login-cancer login-cancel-btn" id="login-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="pop-regist-content" class="floatblock2" style="display: none;">
+	<div class="popup-close">
+		<a href="javascript:;" class="regist-cancel-btn">关闭</a>
+	</div>
+    <div class="popup-content">
+        <h3 class="popup-content-title">会员注册</h3>
+        <form id="pop-regist-form1" action="/member/regist/" method="post">
+            {% csrf_token %}
+             <fieldset>
+                <dl>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-account">*用户名：</label>
+                        <input type="text" class="validate[empty] input input-text" id="pop-regist-username" name="username">
+                        <span class="text-error-info text-error-pop-regist-account" style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-password" name="password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*重复密码：</label>
+                        <input type="password"  class="validate[empty] input input-text" id="pop-regist-repeat-password">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">再次输入密码!</span> </dd>
+                     <dd>
+                        <label class="pop-title" for="pop-regist-password">*手机：</label>
+                        <input type="text"  class="input input-text" id="pop-phone" name="phone">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入10-20位手机</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">*真实姓名：</label>
+                        <input type="text"  class="input input-text" id="pop-realname" name="realname">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入真实姓名</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">QQ：</label>
+                        <input type="text"  class="input input-text" id="pop-qq" name="qq">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> </dd>
+                    <dd>
+                        <label class="pop-title" for="pop-regist-password">Email：</label>
+                        <input type="text"  class="input input-text" id="pop-email" name="email">
+                        <span class="text-error-info text-error-pop-regist-password" style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
+                    <dd class="pop-submit-application">
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
+                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer regist-cancel-btn" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+	<script type="text/javascript">
 		require(["jquery","functions","form"], function($) {
 			$(function() {
 				//window.functions=functions;
@@ -144,8 +221,11 @@
 						}
 					}).submit();
 				});
-                $('#regist-cancel-btn').click(function(){
+				$('.login-cancel-btn').click(function(){
                     $("#pop-login-content").hide();
+                });
+                $('.regist-cancel-btn').click(function(){
+                    $("#pop-regist-content").hide();
                 });
 				$('#show-regist-btn').click(function(){
 	                //alert("展示注册框");
@@ -159,6 +239,7 @@
 				$('#regist-submit-btn').click(function(){
 					if ($("#pop-regist-repeat-password").val()!=$("#pop-regist-password").val()){
 						alert("两次输入的密码必须一致！")
+						return false;
 					}
 					$("#pop-regist-form1").ajaxForm({
 						data : {},
