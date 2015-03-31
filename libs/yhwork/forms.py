@@ -36,11 +36,11 @@ class MyErrorList(list, StrAndUnicode):
 class ExtendBaseForm(object):
     
     def errors_as_text(self):
-        errorList = [u'* %s(%s)%s' % (self.fields[k].label,k, v) for k, v in self.errors.items()] 
+        errorList = [u'* %s(%s)%s' % (self.fields[k].label,k, v.as_text()) for k, v in self.errors.items()] 
         return u'\n'.join(errorList)
     
     def errors_as_json(self):
-        return [(self.fields[k].label,k, v) for k, v in self.errors.items()]
+        return [(self.fields[k].label,k, v.as_text()) for k, v in self.errors.items()]
     
     @classmethod
     def get_model_field(cls,field):

@@ -20,25 +20,18 @@
                 "initData" :{{table.get_rows|safe}},
                 "aoColumns":{{table.get_columns|safe}},
                 "sAjaxSource": '/order/orders.table',
-                "buttons": [{'type':'del','text':'删除','url':'/order/delete_orders'}],
+                "buttons": [{'type':'del','text':'删除','url':'/order/admin/delete_orders'}],
                 "actions":[{
                     type:"view",
                     text:"详情",
-                    url:"/order/detail",
+                    url:"/order/admin/detail",
                     style: 'restful',
                     target: '_blank',
                     iconClass:'icon-detail icon-color'
                 },{
-                    type:"edit",
-                    text:"编辑",
-                    url:"/order/edit",
-                    style: 'restful',
-                    target: '_blank',
-                    iconClass:'icon-edit icon-color'
-                },{
                     type:"delete",
                     text:"删除",
-                    url:"/order/delete",
+                    url:"/order/admin/delete_orders",
                     style: 'restful',
                     iconClass:'icon-delete icon-color'
                 }]

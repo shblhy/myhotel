@@ -17,11 +17,11 @@ def orders(request, contype='html'):
     if not form.is_valid():
         return HttpResponseBadRequest(form.errors.as_text())
     condition = form.get_condition()
-    q = Order.objects.select_related('room_type__name').filter(**condition)
+    q = Order.objects.select_related('room_type', 'member').filter(**condition)
     table = OrderListManager(
          queryset=q,
          paginate_by=form.cleaned_data['iDisplayLength'],
-         page=form.cleaned_data['iDisplayStart'] + 1,
+         page=form.cleaned_data['iDisplayStart'] / form.cleaned_data['iDisplayLength'] + 1,
          accessors_out={
             'action': lambda x: OrderListManager.get_action(x, request.user)
             }
@@ -50,6 +50,11 @@ def order_input(request, order_id=None, room_type=None):
 def order_detail(request, order_id=None):
     order = get_object_or_404(Order, pk=order_id)
     return render_to_response('order/order_detail.html', locals())
+
+
+def order_detail_admin(request, order_id=None):
+    order = get_object_or_404(Order, pk=order_id)
+    return render_to_response('order/admin/order_detail.html', locals())
 
 
 def input_order(request):

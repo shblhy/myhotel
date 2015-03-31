@@ -3,6 +3,7 @@
 <form id="form_room_type" method="post">
     <label id="form_room_type_errmsg"></label>
     <ul>
+    	<input type="hidden" id="room_type_id" name="room_type_id" value="{{room_type.id|default_if_none:''}}"/>
         <li><label>*名称</label><input type="text" id="name" name="name" value="{{room_type.name}}"/></li>
         <li><label>*状态</label><input type="text" id="status" name="status" value="{{room_type.status}}"/></li>
         <li><label>*介绍</label><input type="text" id="comment" name="comment" value="{{room_type.comment}}"/></li>

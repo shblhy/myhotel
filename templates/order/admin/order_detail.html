@@ -1,0 +1,15 @@
+{% extends "baseadmin.html" %}
+{% block content %}
+<!--用户下订单页面-->
+<label id="order_form_errmsg"></label>
+<ul>
+	<li><label style="width: 150px;">*房型:</label><label style="width: 150px;">{{order.room_type.name}}</label></li>
+	<li><label style="width: 150px;">*价格(每日):</label><label style="width: 150px;">{{order.room_type.price}}</label></li>
+	<li><label style="width: 150px;">*总价:</label><label style="width: 150px;">{{order.room_type.price}}</label></li>
+    <li><label style="width: 150px;">*顾客姓名:</label><label id="customer" name="customer" >{{order.member.real_name}}</label></li>
+    <li><label style="width: 150px;">*手机:</label><label id="phone" name="phone" >{{order.member.phone|default_if_none:''}}</label></li>
+    <li><label style="width: 150px;">*入住日期:</label><label id="use_time" name="use_time">{{order.use_time|date:"Y-m-d H:i:s"}}</label></li>
+    <li><label style="width: 150px;">*入住天数:</label><label id="use_days" name="use_days">{{order.use_days}}</label></li>
+    <li><label style="width: 150px;">备注:</label><label id="note" name="note">{{order.note|default_if_none:''}}</label></li>
+</ul>
+{% endblock %}

@@ -72,11 +72,13 @@ def add_room_type(request):
 
 
 def input_room_type(request, action='add'):
-    form = RoomTypeForm(request.POST)
+    room_type_id = request.POST.get('room_type_id', None)
+    room_type = get_object_or_404(RoomType, pk=room_type_id) if room_type_id else None
+    form = RoomTypeForm(request.POST, instance=room_type)
     if form.is_valid():
         form.save()
         return HttpJsonResponse(form.instance.id)
-    return HttpResponseBadRequest(form.errors.as_text())
+    return HttpResponseBadRequest(form.errors_as_text())
 
 
 def delete_room_types(request):

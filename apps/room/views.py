@@ -19,7 +19,7 @@ def rooms(request, contype='html'):
     table = RoomListManager(
         queryset=q,
         paginate_by=form.cleaned_data['iDisplayLength'],
-        page=form.cleaned_data['iDisplayStart'] + 1,
+        page=form.cleaned_data['iDisplayStart'] / form.cleaned_data['iDisplayLength'] + 1,
         accessors_out={
             'action': lambda x: RoomListManager.get_action(x, request.user)
             }

@@ -3,6 +3,7 @@
 <form id="article_form" action="/article/input_article" method="post">
     <label id="article_form_errmsg"></label>
     <ul>
+    	<input type="hidden"  id="article_id" name="article_id" value="{{article.id|default_if_none:''}}"/>
         <li><label>*标题</label><input type="text"  id="title" name="title" value="{{article.title}}"/></li>
         <li><label>*内容</label><textarea id="content" name="content" style="width: 500px;height: 300px;"> {{article.content}}</textarea></li>
         <li><label>图片</label><input type="text" id="picture" name="picture" value="{{article.picture|default_if_none:''}}"/></li>

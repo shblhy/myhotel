@@ -18,7 +18,7 @@ def users(request, contype='html'):
     table = UserListManager(
         queryset=q,
         paginate_by=form.cleaned_data['iDisplayLength'],
-        page=form.cleaned_data['iDisplayStart'] + 1,
+        page=form.cleaned_data['iDisplayStart'] / form.cleaned_data['iDisplayLength'] + 1,
         accessors_out={'action': lambda x: UserListManager.get_action(x, request.user)}
     ).to_table()
     #print table.get_columns()

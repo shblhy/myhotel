@@ -9,16 +9,18 @@ from apps.room.models import RoomType
 
 class OrderListManager(BaseListManager):
     paginate_by = 100
-    fields = ['sn', 'status', 'use_time', 'room_type', 'use_days', 'note', 'price', 'action']
+    fields = ['sn', 'status', 'customer', 'use_time', 'room_type', 'use_days', 'note', 'price', 'action']
     visible_fields = ['id']
     labels = {
-              'use_time': u'使用天数',# TODO 怪哉
+              'customer': u'顾客姓名',
+              'use_time': u'使用天数',
               'action': u'操作'
               }
     exclude = []
     order_fields = ['id', 'room_type', 'status']
     accessors = {
                  'action': BaseListManager.OUT_CALL,
+                 'customer': lambda x: x.member.real_name if x.member else '',
                  'status': lambda x: x.get_status_display(),
                  'room_type': lambda x: x.room_type.name
                  }
