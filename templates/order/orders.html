@@ -3,6 +3,7 @@
 <label>订单管理</label>>><label>订单列表</label>
  <div class="small-padding gray-background-color">
     <form id="tb_orders_search" name="tb_orders_search">
+    	{% csrf_token %}
         <label>
             <span class="pull-left mini-width text-right">房间：</span>
             <input type="text" name="room_id" class="small-width input-small" id="room_id"></label>

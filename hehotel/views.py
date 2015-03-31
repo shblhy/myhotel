@@ -13,11 +13,11 @@ from common import render_to_basehtml_response
 
 
 def index(request):
-    return render_to_response('index.html',locals())
+    return render_to_response('index.html', RequestContext(request, locals()))
 
 
 def hotel(request):
-    return render_to_basehtml_response('main/hotel.html',locals())
+    return render_to_basehtml_response('main/hotel.html', RequestContext(request, locals()))
 
 
 def order(request):

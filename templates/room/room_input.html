@@ -1,6 +1,7 @@
 {% extends "baseadmin.html" %}
 {% block content %}
 <form id="room_form" method="post">
+	{% csrf_token %}
     <label id="room_form_errmsg"></label>
     <ul>
         <li><label>*房号</label><input type="text" id="sn" name="sn" value="{{room.sn}}"/></li>

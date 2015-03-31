@@ -2,6 +2,7 @@
 {% block content %}
 <!--用户下订单页面-->
 <form id="order_form" action="/order/input_order" method="post">
+	{% csrf_token %}
     <label id="order_form_errmsg"></label>
     <ul>
     	<li><label style="width: 150px;">*房型:</label><label style="width: 150px;">{{room_type.name}}</label></li>

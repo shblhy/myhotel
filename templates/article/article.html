@@ -1,4 +1,5 @@
 <form id="article_form" action="/article/add_article" method="post">
+	{% csrf_token %}
     <label id="article_form_errmsg"></label>
     <ul>
         <li><label>*标题</label><input type="text"  id="title" name="title" value="{{article.title}}"/></li>

@@ -1,6 +1,7 @@
 {% extends "baseadmin.html" %}
 {% block content %}
 <form id="user_form" action="/member/input_user" method="post">
+	{% csrf_token %}
     <ul>
         <li><label>*用户名</label><input type="text" id="username" name="username" value="{{user.usernme}}"/></li>
         <li><label>*密码</label><input type="password" id="password" name="password" value=""/></li>

@@ -1,6 +1,7 @@
 {% extends "baseadmin.html" %}
 {% block content %}
 <form id="article_form" action="/article/input_article" method="post">
+	{% csrf_token %}
     <label id="article_form_errmsg"></label>
     <ul>
     	<input type="hidden"  id="article_id" name="article_id" value="{{article.id|default_if_none:''}}"/>

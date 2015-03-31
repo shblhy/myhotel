@@ -1,5 +1,6 @@
 <div class="small-padding gray-background-color">
     <form id="tb_groups_search" name="tb_groups_search">
+    	{% csrf_token %}
         <label>
             <span class="pull-left mini-width text-right">名称：</span>
             <input type="text" name="name" class="small-width input-small" id="name"></label> 

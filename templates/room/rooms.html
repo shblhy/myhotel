@@ -3,6 +3,7 @@
 <label>房间管理</label>>><label>房间列表</label>
  <div class="small-padding gray-background-color">
     <form id="tb_rooms_search" name="tb_rooms_search">
+    	{% csrf_token %}
         <label>
             <span class="pull-left mini-width text-right">名称：</span>
             <input type="text" name="name_like" class="small-width input-small" id="name_like"></label>

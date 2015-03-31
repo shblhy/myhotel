@@ -1,5 +1,6 @@
 <!--预订页面，选择房间点预订后跳转至此-->
 <form id="order_form" method="post">
+	{% csrf_token %}
     <label id="order_form_errmsg"></label>
     <ul>
         <input type="hidden" id="member" name="member" value="{{request.user.id}}" />

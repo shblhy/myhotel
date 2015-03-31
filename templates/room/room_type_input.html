@@ -1,6 +1,7 @@
 {% extends "baseadmin.html" %}
 {% block content %}
 <form id="form_room_type" method="post">
+	{% csrf_token %}
     <label id="form_room_type_errmsg"></label>
     <ul>
     	<input type="hidden" id="room_type_id" name="room_type_id" value="{{room_type.id|default_if_none:''}}"/>
@@ -18,6 +19,7 @@
  </form>
  <div>
      <form id="form_upload_room_type" method="post" enctype="multipart/form-data">
+     	{% csrf_token %}
             <label id="form_upload_room_type_errmsg"></label>
             <input type="file" id="photo" name="photo" value="{{room_type.photo}}"/>
             <button id="submit_room_type_photo_btn">提交</button>

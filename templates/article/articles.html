@@ -3,6 +3,7 @@
 <label>文章管理</label>>><label>文章列表</label>
  <div class="small-padding gray-background-color">
     <form id="tb_articles_search" name="tb_articles_search">
+    	{% csrf_token %}
         <label>
             <span class="pull-left mini-width text-right">标题：</span>
             <input type="text" name="article_like" class="small-width input-small" id="article_like" value="{{form.article_like.value}}"></label>

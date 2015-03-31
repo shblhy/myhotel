@@ -3,6 +3,7 @@
 <label>用户管理</label>>><label>用户列表</label>
  <div class="small-padding gray-background-color">
     <form id="tb_users_search" name="tb_users_search">
+    	{% csrf_token %}
         <label>
             <span class="pull-left mini-width text-right">用户名：</span>
             <input type="text" name="username" class="small-width input-small" id="username"></label>
