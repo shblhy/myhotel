@@ -33,28 +33,25 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-SITE_ID = 1
 
 AUTH_USER_MODEL = 'member.User'
 
 INSTALLED_APPS = (
     'apps.member',
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
     'hehotel',
     'apps.room',
     'apps.order',
-    'apps.article',
+    'apps.article'
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,18 +71,18 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'hehotel',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'password',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3808'                    # Set to empty string for default. Not used with sqlite3.
-        },
-    #'easy':{
-    #   'ENGINE': 'django.db.backends.sqlite3',
-    #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #},
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#        'NAME': 'hehotel',                      # Or path to database file if using sqlite3.
+#        'USER': 'root',                      # Not used with sqlite3.
+#        'PASSWORD': 'password',                  # Not used with sqlite3.
+#        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+#        'PORT': '3808'                    # Set to empty string for default. Not used with sqlite3.
+#        },
+    'default':{
+       'ENGINE': 'django.db.backends.sqlite3',
+      'NAME': os.path.join(os.path.join(BASE_DIR,'data'), 'db.sqlite3'),
+    },
 }
 
 # Internationalization

@@ -13,6 +13,7 @@ class RoomListManager(BaseListManager):
     exclude = []
     order_fields = ['store_id', 'province', 'store_name']
     accessors = {
+                 'status': lambda x: x.get_status_display(),
                  'action': BaseListManager.OUT_CALL
                  }
     model = Room

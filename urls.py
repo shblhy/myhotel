@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^templates/(?P<path>.*)$', 'django.views.static.serve', {'document_root': RESOURCE_ROOT_PATH}),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': STATIC_ROOT_PATH}),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^admin/', 'hehotel.views.admin', name='admin'),  # 后台
     url(r'^backend/', include(admin.site.urls), name='backend'),  # 后台
     url(r'^backdocs/', include('django.contrib.admindocs.urls'), name='backdocs'),  # 后台
