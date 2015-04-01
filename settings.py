@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(__file__)
 SECRET_KEY = '6@j!6%foulnrume$wc7i5cwc2ppf6hcxoa&xh_vtanfy_rc@yc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #结束开发状态应该切为False
 EXCEPTION_INGORE_AJAX = True #异常信息即便是ajax请求也直接返回Html页面
 
 TEMPLATE_DEBUG = True
@@ -59,7 +59,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -129,13 +129,3 @@ LOGGING = {
         }  
     }
 }
-if SHOW_SQL:
-    LOGGING['handlers']['console']={
-        'level':'DEBUG',
-        'class':'logging.StreamHandler',
-    }
-    LOGGING['loggers']['django.db.backends']= {
-                'handlers': ['console'],
-                'propagate': True,
-                'level':'DEBUG',
-            }

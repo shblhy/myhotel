@@ -1,3 +1,10 @@
+源码使用说明
+================================================================
+本地网站启动命令：
+	python manage.py runserver 0.0.0.0:80 --settings=settings_light
+	settings_light 使用sqlite3数据库，settings_dev使用mysql数据库，settings为线上在用配置，无需更改
+	首次使用时需要获取数据库并完成部署动作。
+		
 产品说明
 ================================================================
 
@@ -38,7 +45,7 @@ git地址：https://github.com/shblhy/myhotel.git
 三、环境部署
 	参见deploy文件夹
 	网站当前使用Mysql或sqllite3数据库。
-
+	
 四、命名规范
 通用
 1、尽可能简洁的URL描述方式，一般为模块名+对象名+动作+id（模块名与对象名相同时省略一个），例如：/room/detail/1 表示1号房间详情，/room/edit/1 表示1号房间编辑，/room/add表达新增房间
