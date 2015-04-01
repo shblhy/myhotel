@@ -1,0 +1,31 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block coltype %}colSM{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'django-autodocs-docroot' %}">{% trans 'Documentation' %}</a>
+&rsaquo; {% trans 'Urls' %}
+</div>
+{% endblock %}
+{% block title %}Urls{% endblock %}
+
+{% block content %}
+
+<h1>Url documentation</h1>
+描述url的组织，以助项目理解，待完善。<br/>
+{%for line in res%}
+    {%for urlitem in line%}
+        {{urlitem.regex.pattern}}
+        {%if forloop.last%}
+            {%if urlitem.callbackstr%}
+            <h4><a href="/admin/doc/views/{{urlitem.callbackstr}}/">{{urlitem.callbackstr}}</a></h4>
+            {%endif%}<br/>
+        {%endif%}
+    {%endfor%}
+{%endfor%}
+{% endblock %}
+
+
