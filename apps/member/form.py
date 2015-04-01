@@ -1,8 +1,6 @@
-#!/usr/bin/env python
 #-*- coding:utf-8 -*-
-
 from django import forms
-from libs.yhwork.forms import Form, ModelForm, QForm, PageField
+from libs.djex.forms import ModelForm, QForm, PageField
 from apps.member.models import User
 
 
@@ -18,6 +16,6 @@ class UserQForm(QForm):
     real_name = forms.CharField(label='real_name', required=False)
     qq = forms.CharField(label='', required=False)
     phone = forms.CharField(label='', required=False)
-    iDisplayStart = PageField(default=0)
-    iDisplayLength = PageField(default=30)
+    iDisplayStart = PageField(label='记录起始点', default=0, required=False)
+    iDisplayLength = PageField(label='记录长', default=30, required=False)
     orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)

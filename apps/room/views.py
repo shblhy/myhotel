@@ -1,10 +1,10 @@
 #-*- coding:utf-8 -*-
-import json, csv
+import csv
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
-from com.mylib.reader import read_csv
-from libs.yhwork.response import HttpJsonResponse, render_to_csv_response
+from libs.utils.reader import read_csv
+from libs.djex.response import HttpJsonResponse, render_to_csv_response
 from apps.room.admin import RoomListManager
 from apps.room.forms import RoomQForm, RoomForm, RoomType
 from apps.room.models import Room
@@ -24,8 +24,6 @@ def rooms(request, contype='html'):
             'action': lambda x: RoomListManager.get_action(x, request.user)
             }
     ).to_table()
-    #print table.get_columns()
-    #print table.get_rows()
     if contype == 'html':
         return render_to_response('room/rooms.html', RequestContext(request, locals()))
     elif contype == 'table':
@@ -43,7 +41,7 @@ def room_list(request, contype='html'):
     为了数据传出，做了模板渲染机制
     但我的开发思想，前后端分离，各做各的事，数据以json方式传递前端，与此渲染机制不相符。
     table.Table 实际的作用：1是描述输出项，2是描述输出格式对齐前端所需，3是分页取数，
-    应该可以用django 分页类 + 输出描述器 两者完成同类功能，并能扩展到任意控件。 
+    应该可以用django 分页类 + 输出描述器 两者完成同类功能，并能扩展到任意控件。
     输出描述器的开发 预计在此项目之后 暂时分开写。
     '''
     form = RoomQForm(request.GET)
@@ -54,10 +52,12 @@ def room_list(request, contype='html'):
     return render_to_response('room/room_list.html', RequestContext(request, locals()))
 
 
-def room_input(request,action='add', room_id=None):
+def room_input(request, room_id=None):
     if room_id:
+        action = 'edit'
         room = get_object_or_404(Room, pk=room_id)
     else:
+        action = 'add'
         room = Room()
     return render_to_response('room/room_input.html', RequestContext(request, locals()))
 

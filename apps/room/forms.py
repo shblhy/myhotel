@@ -1,8 +1,7 @@
-#!/usr/bin/env python
 #-*- coding:utf-8 -*-
 from django import forms
 from apps.room.models import Room, RoomType
-from libs.yhwork.forms import QForm, ModelForm, PageField
+from libs.djex.forms import QForm, ModelForm, PageField
 
 
 class RoomForm(ModelForm):
@@ -25,8 +24,8 @@ class RoomQForm(QForm):
     status = forms.CharField(label='status', required=False)
     #using = forms.CharField(label='using', required=False)
     #status_time = forms.CharField(label='status_time', required=False)
-    iDisplayStart = PageField(default=0, required=False)
-    iDisplayLength = PageField(default=30, required=False)
+    iDisplayStart = PageField(label='记录起始点', default=0, required=False)
+    iDisplayLength = PageField(label='记录长', default=30, required=False)
     orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)
 
     def get_condition(self):

@@ -2,7 +2,7 @@
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from libs.yhwork.response import render_to_csv_response, HttpJsonResponse
+from libs.djex.response import render_to_csv_response, HttpJsonResponse
 from apps.member.models import User
 from apps.member.admin import UserListManager
 from apps.member.form import UserForm, UserQForm
@@ -21,8 +21,6 @@ def users(request, contype='html'):
         page=form.cleaned_data['iDisplayStart'] / form.cleaned_data['iDisplayLength'] + 1,
         accessors_out={'action': lambda x: UserListManager.get_action(x, request.user)}
     ).to_table()
-    #print table.get_columns()
-    #print table.get_rows()
     if contype == 'html':
         return render_to_response('member/users.html', RequestContext(request, locals()))
     elif contype == 'table':
@@ -31,10 +29,12 @@ def users(request, contype='html'):
         return render_to_csv_response(u"用户列表.csv", table.to_csv())
 
 
-def user_input(request, action='add', user_id=None):
+def user_input(request, user_id=None):
     if user_id:
+        action = 'edit'
         user = get_object_or_404(User, pk=user_id)
     else:
+        action = 'add'
         user = User()
     return render_to_response('member/user_input.html', RequestContext(request, locals()))
 
@@ -53,8 +53,6 @@ def user_center(request):
         page=1,
         accessors_out={'action': lambda x: OrderListManager.get_action(x, request.user)},
     ).to_table()
-    print table.get_columns()
-    print table.get_rows()
     return render_to_response('member/center.html', RequestContext(request, locals()))
 
 

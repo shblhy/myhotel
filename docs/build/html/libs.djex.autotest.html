@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>libs.djex.autotest package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="libs-djex-autotest-package">
+<h1>libs.djex.autotest package<a class="headerlink" href="#libs-djex-autotest-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="libs.djex.autotest.rstr.html">libs.djex.autotest.rstr package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="libs.djex.autotest.rstr.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs.djex.autotest.rstr.html#module-libs.djex.autotest.rstr.rstr_base">libs.djex.autotest.rstr.rstr_base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs.djex.autotest.rstr.html#module-libs.djex.autotest.rstr.xeger">libs.djex.autotest.rstr.xeger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libs.djex.autotest.rstr.html#module-libs.djex.autotest.rstr">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="libs-djex-autotest-autotest-module">
+<h2>libs.djex.autotest.autotest module<a class="headerlink" href="#libs-djex-autotest-autotest-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autotest.autotestconf">
+<span id="libs-djex-autotest-autotestconf-module"></span><h2>libs.djex.autotest.autotestconf module<a class="headerlink" href="#module-libs.djex.autotest.autotestconf" title="Permalink to this headline">¶</a></h2>
+<p>&#64;author:hy
+自动测试，只要研发遵循django标准，不需写任何测试代码即可进行测试
+测试结果保存在logs/autotest.log当中
+利用前后台接口信息（form）自动产生request,预期response，并比较实际结果与预期结果，两者有差异时，记录日志
+扫描urls获取对应views，辨识views代码识别Form，利用Form生成Request，从而获得批量request
+可以设定每个request是否进行数据回滚、是否只测试正确数据。
+参数说明：
+rollback 数据回滚
+testright 尽量测正确数据（required=true的必然产生，field有validate的自动按照校验正则进行，但对自定义field无效，不保证必然产生正确数据）
+times 测试次数
+thread 模拟测试    用户数（未来实现）
+forbidcookie 禁止自动cookie
+-f requests.conf</p>
+<blockquote>
+<div><p>在requests.conf中配置对每个request进行配置
+requests:
+whitelist
+backlist</p>
+<p>rollback
+params:{</p>
+<blockquote>
+<div>xx:{randgen:true  #randgen(随机决定是否生成本数据)
+randmode #随机数据数据描述
+}
+par</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="module-libs.djex.autotest.randobj_gen">
+<span id="libs-djex-autotest-randobj-gen-module"></span><h2>libs.djex.autotest.randobj_gen module<a class="headerlink" href="#module-libs.djex.autotest.randobj_gen" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autotest.random_gen">
+<span id="libs-djex-autotest-random-gen-module"></span><h2>libs.djex.autotest.random_gen module<a class="headerlink" href="#module-libs.djex.autotest.random_gen" title="Permalink to this headline">¶</a></h2>
+<p>&#64;author:hy
+随机数据生成器，生产随机测试数据供自动化测试使用。
+使用了rstr（Copyright (c) 2011, Leapfrog Direct Response, LLC）以生产随机字串，部署考虑直接将其源码复制至此。</p>
+<dl class="class">
+<dt id="libs.djex.autotest.random_gen.RandVar">
+<em class="property">class </em><tt class="descclassname">libs.djex.autotest.random_gen.</tt><tt class="descname">RandVar</tt><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>本类用于解析变量类型(mode)描述。
+变量描述
+int
+notins_float
+int表示该变量为int型，notins 为 not instance的缩写，即不是该类型的实例
+num 包含 int float long 三种类型 (不支持complex)
+string 包含cstr regex rstr_xx四种类型  另外astr等同为rstr_printable 即可输入的任意字符
+rstr_xx这里的xx可以为
+&#8216;digits&#8217;,&#8217;domainsafe&#8217;,&#8217;letters&#8217;,&#8217;lowercase&#8217;,&#8217;nondigits&#8217;,&#8217;nonletters&#8217;,&#8217;nonwhitespace&#8217;,&#8217;nonword&#8217;,&#8217;normal&#8217;,&#8217;postalsafe&#8217;,&#8217;printable&#8217;,&#8217;punctuation&#8217;,&#8217;uppercase&#8217;,&#8217;urlsafe&#8217;,&#8217;whitespace&#8217;,&#8217;word&#8217; 这些rstr的简便方法
+datetime 包含 time time_1_month
+为了便于编译器理解（你可以.出来），将这些大写，直接作为RandVar的静态变量
+高级扩展（肯定.不出来^_^） 比较：gt lt et bet
+gt 即greater than 大于 lt 即 less than 小于 gte 即大于等于
+bet为两者之间（含等于），此时param为元组
+随机都有范围，默认类型与范围值如下：
+类型 gt极值 lt极值
+int 65536 -65536
+float 1024.0 -1024.0
+long 134217728 -134217728
+允许自定义mode，形如int_lt_0,float_lt_1,这种写法不支持notins
+高级扩展（肯定.不出来^_^）  组合：
+int_float 表述int与float，不允许用带包含关系的两者，例如int_num是错误的。
+编码成本原因暂时不对string实现高级扩展</p>
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.ASTR">
+<tt class="descname">ASTR</tt><em class="property"> = ('rstr_printable', None)</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.ASTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.CN_WORD">
+<tt class="descname">CN_WORD</tt><em class="property"> = ('regex', u'[\u4e00-\u9fa5]{1,8}')</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.CN_WORD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.COMPLEX">
+<tt class="descname">COMPLEX</tt><em class="property"> = 'complex'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.COMPLEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.CSTR">
+<tt class="descname">CSTR</tt><em class="property"> = 'cstr'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.CSTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.DEFAULT_STR">
+<tt class="descname">DEFAULT_STR</tt><em class="property"> = 'rstr_letters'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.DEFAULT_STR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.DIGITS">
+<tt class="descname">DIGITS</tt><em class="property"> = 'rstr_digits'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.DIGITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.DOMAINSAFE">
+<tt class="descname">DOMAINSAFE</tt><em class="property"> = 'rstr_domainsafe'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.DOMAINSAFE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.FLOAT">
+<tt class="descname">FLOAT</tt><em class="property"> = 'float'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.FLOAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.INT">
+<tt class="descname">INT</tt><em class="property"> = 'int'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.INT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.INT_GT_0">
+<tt class="descname">INT_GT_0</tt><em class="property"> = ('int_gt_0', None)</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.INT_GT_0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.LETTERS">
+<tt class="descname">LETTERS</tt><em class="property"> = 'rstr_letters'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.LETTERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.LONG">
+<tt class="descname">LONG</tt><em class="property"> = 'long'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.LONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.LOWERCASE">
+<tt class="descname">LOWERCASE</tt><em class="property"> = 'rstr_lowercase'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.LOWERCASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NONDIGITS">
+<tt class="descname">NONDIGITS</tt><em class="property"> = 'rstr_nondigits'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NONDIGITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NONLETTERS">
+<tt class="descname">NONLETTERS</tt><em class="property"> = 'rstr_nonletters'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NONLETTERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NONWHITESPACE">
+<tt class="descname">NONWHITESPACE</tt><em class="property"> = 'rstr_nonwhitespace'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NONWHITESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NONWORD">
+<tt class="descname">NONWORD</tt><em class="property"> = 'rstr_nonword'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NONWORD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NORMAL">
+<tt class="descname">NORMAL</tt><em class="property"> = 'rstr_normal'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NORMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_ASTR">
+<tt class="descname">NOTINS_ASTR</tt><em class="property"> = 'notins_astr'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_ASTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_COMPLEX">
+<tt class="descname">NOTINS_COMPLEX</tt><em class="property"> = 'notins_complex'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_COMPLEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_CSTR">
+<tt class="descname">NOTINS_CSTR</tt><em class="property"> = 'notins_cstr'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_CSTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_FLOAT">
+<tt class="descname">NOTINS_FLOAT</tt><em class="property"> = 'notins_float'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_FLOAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_INT">
+<tt class="descname">NOTINS_INT</tt><em class="property"> = 'notins_int'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_INT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_LONG">
+<tt class="descname">NOTINS_LONG</tt><em class="property"> = 'notins_long'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_LONG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_NUM">
+<tt class="descname">NOTINS_NUM</tt><em class="property"> = 'notins_num'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_NUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_REGEX">
+<tt class="descname">NOTINS_REGEX</tt><em class="property"> = 'notins_regex'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_REGEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_RSTR">
+<tt class="descname">NOTINS_RSTR</tt><em class="property"> = 'notins_rstr'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_RSTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NOTINS_STRING">
+<tt class="descname">NOTINS_STRING</tt><em class="property"> = 'notins_string'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NOTINS_STRING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.NUM">
+<tt class="descname">NUM</tt><em class="property"> = 'num'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.NUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.POSTALSAFE">
+<tt class="descname">POSTALSAFE</tt><em class="property"> = 'rstr_postalsafe'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.POSTALSAFE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.PRINTABLE">
+<tt class="descname">PRINTABLE</tt><em class="property"> = 'rstr_printable'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.PRINTABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.PUNCTUATION">
+<tt class="descname">PUNCTUATION</tt><em class="property"> = 'rstr_punctuation'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.PUNCTUATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.REGEX">
+<tt class="descname">REGEX</tt><em class="property"> = 'regex'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.REGEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.RIGHT_LIMIT">
+<tt class="descname">RIGHT_LIMIT</tt><em class="property"> = 1</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.RIGHT_LIMIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.RSTR">
+<tt class="descname">RSTR</tt><em class="property"> = 'rstr'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.RSTR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.STRING">
+<tt class="descname">STRING</tt><em class="property"> = 'string'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.STRING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.TIME">
+<tt class="descname">TIME</tt><em class="property"> = ('time', 604800)</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.TIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.TIME_B_1_WEEK">
+<tt class="descname">TIME_B_1_WEEK</tt><em class="property"> = ('time', 604800)</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.TIME_B_1_WEEK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.UPPERCASE">
+<tt class="descname">UPPERCASE</tt><em class="property"> = 'rstr_uppercase'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.UPPERCASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.URLSAFE">
+<tt class="descname">URLSAFE</tt><em class="property"> = 'rstr_urlsafe'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.URLSAFE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.WHITESPACE">
+<tt class="descname">WHITESPACE</tt><em class="property"> = 'rstr_whitespace'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.WHITESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autotest.random_gen.RandVar.WORD">
+<tt class="descname">WORD</tt><em class="property"> = 'rstr_word'</em><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.WORD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="libs.djex.autotest.random_gen.RandVar.gen_data">
+<em class="property">static </em><tt class="descname">gen_data</tt><big>(</big><em>mode</em>, <em>regex_param=None</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.gen_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>解析mode，获取类型、参数
+regex_exprs 允许为None,正则字串
+支持多正则，多正则时直接加()并用|分隔正则即可
+生成参数</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="libs.djex.autotest.random_gen.RandVar.get_type_desc">
+<em class="property">static </em><tt class="descname">get_type_desc</tt><big>(</big><em>mode</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.get_type_desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取类型</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="libs.djex.autotest.random_gen.RandVar.parse_mod">
+<em class="property">static </em><tt class="descname">parse_mod</tt><big>(</big><em>mode</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.parse_mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>检查模式，返回类型type_need及标志语sign，如果类型为rstr，则调用resr.sign指向的方法，如果类型为gt lt et则必有参数Param依据param生成相应值
+return type_need,sign,param,notins</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="libs.djex.autotest.random_gen.RandVar.print_self_constant">
+<em class="property">static </em><tt class="descname">print_self_constant</tt><big>(</big><big>)</big><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.print_self_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="libs.djex.autotest.random_gen.RandVar.shortcuts">
+<em class="property">static </em><tt class="descname">shortcuts</tt><big>(</big><big>)</big><a class="headerlink" href="#libs.djex.autotest.random_gen.RandVar.shortcuts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="libs-djex-autotest-request-gen-module">
+<h2>libs.djex.autotest.request_gen module<a class="headerlink" href="#libs-djex-autotest-request-gen-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="libs-djex-autotest-utest-form-module">
+<h2>libs.djex.autotest.utest_form module<a class="headerlink" href="#libs-djex-autotest-utest-form-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autotest">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-libs.djex.autotest" title="Permalink to this headline">¶</a></h2>
+<p>对以form写的views方法，可进行冒烟测试</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">libs.djex.autotest package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#libs-djex-autotest-autotest-module">libs.djex.autotest.autotest module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.autotestconf">libs.djex.autotest.autotestconf module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.randobj_gen">libs.djex.autotest.randobj_gen module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.random_gen">libs.djex.autotest.random_gen module</a></li>
+<li><a class="reference internal" href="#libs-djex-autotest-request-gen-module">libs.djex.autotest.request_gen module</a></li>
+<li><a class="reference internal" href="#libs-djex-autotest-utest-form-module">libs.djex.autotest.utest_form module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/libs.djex.autotest.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>libs.djex.autodocs package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="libs-djex-autodocs-package">
+<h1>libs.djex.autodocs package<a class="headerlink" href="#libs-djex-autodocs-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autodocs.models">
+<span id="libs-djex-autodocs-models-module"></span><h2>libs.djex.autodocs.models module<a class="headerlink" href="#module-libs.djex.autodocs.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autodocs.urls">
+<span id="libs-djex-autodocs-urls-module"></span><h2>libs.djex.autodocs.urls module<a class="headerlink" href="#module-libs.djex.autodocs.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autodocs.utils">
+<span id="libs-djex-autodocs-utils-module"></span><h2>libs.djex.autodocs.utils module<a class="headerlink" href="#module-libs.djex.autodocs.utils" title="Permalink to this headline">¶</a></h2>
+<p>Misc. utility functions/classes for admin documentation generator.</p>
+<dl class="function">
+<dt id="libs.djex.autodocs.utils.create_reference_role">
+<tt class="descclassname">libs.djex.autodocs.utils.</tt><tt class="descname">create_reference_role</tt><big>(</big><em>rolename</em>, <em>urlbase</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.utils.create_reference_role" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.utils.default_reference_role">
+<tt class="descclassname">libs.djex.autodocs.utils.</tt><tt class="descname">default_reference_role</tt><big>(</big><em>name</em>, <em>rawtext</em>, <em>text</em>, <em>lineno</em>, <em>inliner</em>, <em>options=None</em>, <em>content=None</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.utils.default_reference_role" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.utils.parse_docstring">
+<tt class="descclassname">libs.djex.autodocs.utils.</tt><tt class="descname">parse_docstring</tt><big>(</big><em>docstring</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.utils.parse_docstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse out the parts of a docstring.  Returns (title, body, metadata).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.utils.parse_rst">
+<tt class="descclassname">libs.djex.autodocs.utils.</tt><tt class="descname">parse_rst</tt><big>(</big><em>text</em>, <em>default_reference_context</em>, <em>thing_being_parsed=None</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.utils.parse_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the string from reST to an XHTML fragment.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.utils.trim_docstring">
+<tt class="descclassname">libs.djex.autodocs.utils.</tt><tt class="descname">trim_docstring</tt><big>(</big><em>docstring</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.utils.trim_docstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uniformly trims leading/trailing whitespace from docstrings.</p>
+<p>Based on <a class="reference external" href="http://www.python.org/peps/pep-0257.html#handling-docstring-indentation">http://www.python.org/peps/pep-0257.html#handling-docstring-indentation</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-libs.djex.autodocs.views">
+<span id="libs-djex-autodocs-views-module"></span><h2>libs.djex.autodocs.views module<a class="headerlink" href="#module-libs.djex.autodocs.views" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="libs.djex.autodocs.views.GenericSite">
+<em class="property">class </em><tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">GenericSite</tt><a class="headerlink" href="#libs.djex.autodocs.views.GenericSite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="libs.djex.autodocs.views.GenericSite.domain">
+<tt class="descname">domain</tt><em class="property"> = 'example.com'</em><a class="headerlink" href="#libs.djex.autodocs.views.GenericSite.domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libs.djex.autodocs.views.GenericSite.name">
+<tt class="descname">name</tt><em class="property"> = 'my site'</em><a class="headerlink" href="#libs.djex.autodocs.views.GenericSite.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.bookmarklets">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">bookmarklets</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.bookmarklets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.doc_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">doc_index</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.doc_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.extract_views_from_urlpatterns">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">extract_views_from_urlpatterns</tt><big>(</big><em>urlpatterns</em>, <em>base=''</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.extract_views_from_urlpatterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of views from a list of urlpatterns.</p>
+<p>Each object in the returned list is a two-tuple: (view_func, regex)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.get_readable_field_data_type">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">get_readable_field_data_type</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.get_readable_field_data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the description for a given field type, if it exists,
+Fields&#8217; descriptions can contain format strings, which will be interpolated
+against the values of field.__dict__ before being output.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.get_return_data_type">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">get_return_data_type</tt><big>(</big><em>func_name</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.get_return_data_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a somewhat-helpful data type given a function name</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.import_module_without_decorators">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">import_module_without_decorators</tt><big>(</big><em>mod</em>, <em>func</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.import_module_without_decorators" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO 由于载入在装饰器将导致func中无法识别内部元素（找不到Form），因此注释了装饰器才载入方法
+如有办法能在带有django装饰器的情况下依然准确获取func内容，可以删除这个丑陋的方法。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.load_all_installed_template_libraries">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">load_all_installed_template_libraries</tt><big>(</big><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.load_all_installed_template_libraries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.missing_docutils_page">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">missing_docutils_page</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.missing_docutils_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display an error message for people without docutils</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.model_detail">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">model_detail</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.model_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.model_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">model_index</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.model_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.simplify_regex">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">simplify_regex</tt><big>(</big><em>pattern</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.simplify_regex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean up urlpattern regexes into something somewhat readable by Mere Humans:
+turns something like &#8220;^(?P&lt;sport_slug&gt;w+)/athletes/(?P&lt;athlete_slug&gt;w+)/$&#8221;
+into &#8220;&lt;sport_slug&gt;/athletes/&lt;athlete_slug&gt;/&#8221;</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.template_detail">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">template_detail</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.template_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.template_filter_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">template_filter_index</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.template_filter_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.template_tag_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">template_tag_index</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.template_tag_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.url_detail">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">url_detail</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.url_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.url_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">url_index</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.url_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.view_detail">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">view_detail</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.view_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autodocs.views.view_index">
+<tt class="descclassname">libs.djex.autodocs.views.</tt><tt class="descname">view_index</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#libs.djex.autodocs.views.view_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-libs.djex.autodocs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-libs.djex.autodocs" title="Permalink to this headline">¶</a></h2>
+<p>自动提取注释生成文档，基于django admindocs
+对以form接收参数的views方法，可进一步生成前后端交互参数文档
+由于目前基本不是使用form写的views方法，暂时不启用</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">libs.djex.autodocs package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autodocs.models">libs.djex.autodocs.models module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autodocs.urls">libs.djex.autodocs.urls module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autodocs.utils">libs.djex.autodocs.utils module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autodocs.views">libs.djex.autodocs.views module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autodocs">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/libs.djex.autodocs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

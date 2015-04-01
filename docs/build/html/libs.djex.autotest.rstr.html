@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>libs.djex.autotest.rstr package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="libs-djex-autotest-rstr-package">
+<h1>libs.djex.autotest.rstr package<a class="headerlink" href="#libs-djex-autotest-rstr-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.djex.autotest.rstr.rstr_base">
+<span id="libs-djex-autotest-rstr-rstr-base-module"></span><h2>libs.djex.autotest.rstr.rstr_base module<a class="headerlink" href="#module-libs.djex.autotest.rstr.rstr_base" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="libs.djex.autotest.rstr.rstr_base.Rstr">
+<em class="property">class </em><tt class="descclassname">libs.djex.autotest.rstr.rstr_base.</tt><tt class="descname">Rstr</tt><big>(</big><em>**custom_alphabets</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.Rstr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libs.djex.autotest.rstr.rstr_base.RstrBase" title="libs.djex.autotest.rstr.rstr_base.RstrBase"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.autotest.rstr.rstr_base.RstrBase</span></tt></a>, <a class="reference internal" href="#libs.djex.autotest.rstr.xeger.Xeger" title="libs.djex.autotest.rstr.xeger.Xeger"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.autotest.rstr.xeger.Xeger</span></tt></a></p>
+<dl class="method">
+<dt id="libs.djex.autotest.rstr.rstr_base.Rstr.init">
+<tt class="descname">init</tt><big>(</big><em>**alphabets</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.Rstr.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libs.djex.autotest.rstr.rstr_base.RstrBase">
+<em class="property">class </em><tt class="descclassname">libs.djex.autotest.rstr.rstr_base.</tt><tt class="descname">RstrBase</tt><big>(</big><em>**custom_alphabets</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.RstrBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Create random strings from a variety of alphabets.</p>
+<p>The alphabets for printable(), uppercase(), lowercase(), digits(), and
+punctuation() are equivalent to the constants by those same names in the
+standard library string module.</p>
+<p>nondigits() uses an alphabet of string.letters + string.punctuation</p>
+<p>nonletters() uses an alphabet of string.digits + string.punctuation</p>
+<p>nonwhitespace() uses an alphabet of string.printable.strip()</p>
+<p>normal() uses an alphabet of string.letters + string.digits + &#8216; &#8216; (the
+space character)</p>
+<p>postalsafe() is based on USPS Publication 28 - Postal Addressing Standards:
+<a class="reference external" href="http://pe.usps.com/text/pub28/pub28c2.html">http://pe.usps.com/text/pub28/pub28c2.html</a>
+The characters allowed in postal addresses are letters and digits, periods,
+slashes, the pound sign, and the hyphen.</p>
+<p>urlsafe() uses an alphabet of unreserved characters safe for use in URLs.
+From section 2.3 of RFC 3986: &#8220;Characters that are allowed in a URI but
+do not have a reserved purpose are called unreserved. These include
+uppercase and lowercase letters, decimal digits, hyphen, period,
+underscore, and tilde.</p>
+<p>domainsafe() uses an alphabet of characters allowed in hostnames, and
+consequently, in internet domains: letters, digits, and the hyphen.</p>
+<dl class="method">
+<dt id="libs.djex.autotest.rstr.rstr_base.RstrBase.add_alphabet">
+<tt class="descname">add_alphabet</tt><big>(</big><em>alpha_name</em>, <em>characters</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.RstrBase.add_alphabet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an additional alphabet to an Rstr instance and make it available
+via method calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libs.djex.autotest.rstr.rstr_base.RstrBase.rstr">
+<tt class="descname">rstr</tt><big>(</big><em>alphabet</em>, <em>start_range=None</em>, <em>end_range=None</em>, <em>include=''</em>, <em>exclude=''</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.RstrBase.rstr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random string containing elements from &#8216;alphabet&#8217;</p>
+<p>By default, rstr() will return a string between 1 and 10 characters.
+You can specify a second argument to get an exact length of string.</p>
+<p>If you want a string in a range of lengths, specify the start and end
+of that range as the second and third arguments.</p>
+<p>If you want to make certain that particular characters appear in the
+generated string, specify them as &#8220;include&#8221;.</p>
+<p>If you want to <em>prevent</em> certain characters from appearing, pass them
+as &#8216;exclude&#8217;.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.djex.autotest.rstr.rstr_base.sample_wr">
+<tt class="descclassname">libs.djex.autotest.rstr.rstr_base.</tt><tt class="descname">sample_wr</tt><big>(</big><em>population</em>, <em>k</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.rstr_base.sample_wr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples k random elements (with replacement) from a population</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-libs.djex.autotest.rstr.xeger">
+<span id="libs-djex-autotest-rstr-xeger-module"></span><h2>libs.djex.autotest.rstr.xeger module<a class="headerlink" href="#module-libs.djex.autotest.rstr.xeger" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="libs.djex.autotest.rstr.xeger.Xeger">
+<em class="property">class </em><tt class="descclassname">libs.djex.autotest.rstr.xeger.</tt><tt class="descname">Xeger</tt><a class="headerlink" href="#libs.djex.autotest.rstr.xeger.Xeger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Inspired by the Java library Xeger: <a class="reference external" href="http://code.google.com/p/xeger/">http://code.google.com/p/xeger/</a>
+This class adds functionality to Rstr allowing users to generate a
+semi-random string from a regular expression.</p>
+<dl class="method">
+<dt id="libs.djex.autotest.rstr.xeger.Xeger.xeger">
+<tt class="descname">xeger</tt><big>(</big><em>string_or_regex</em><big>)</big><a class="headerlink" href="#libs.djex.autotest.rstr.xeger.Xeger.xeger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-libs.djex.autotest.rstr">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-libs.djex.autotest.rstr" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">libs.djex.autotest.rstr package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.rstr.rstr_base">libs.djex.autotest.rstr.rstr_base module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.rstr.xeger">libs.djex.autotest.rstr.xeger module</a></li>
+<li><a class="reference internal" href="#module-libs.djex.autotest.rstr">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/libs.djex.autotest.rstr.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

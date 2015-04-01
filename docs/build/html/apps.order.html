@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>apps.order package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="apps-order-package">
+<h1>apps.order package<a class="headerlink" href="#apps-order-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-apps.order.admin">
+<span id="apps-order-admin-module"></span><h2>apps.order.admin module<a class="headerlink" href="#module-apps.order.admin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apps.order.admin.OrderListManager">
+<em class="property">class </em><tt class="descclassname">apps.order.admin.</tt><tt class="descname">OrderListManager</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.order.admin.OrderListManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.localdjex.html#libs.localdjex.admin.BaseListManager" title="libs.localdjex.admin.BaseListManager"><tt class="xref py py-class docutils literal"><span class="pre">libs.localdjex.admin.BaseListManager</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.accessors">
+<tt class="descname">accessors</tt><em class="property"> = {'action': 'accessors_out', 'customer': &lt;function &lt;lambda&gt; at 0x0000000004E5C2E8&gt;, 'status': &lt;function &lt;lambda&gt; at 0x0000000004E5C358&gt;, 'room_type': &lt;function &lt;lambda&gt; at 0x0000000004E5C3C8&gt;}</em><a class="headerlink" href="#apps.order.admin.OrderListManager.accessors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.fields">
+<tt class="descname">fields</tt><em class="property"> = ['id', 'sn', 'status', 'customer', 'use_time', 'room_type', 'use_days', 'note', 'price', 'action']</em><a class="headerlink" href="#apps.order.admin.OrderListManager.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="apps.order.admin.OrderListManager.get_action">
+<em class="property">static </em><tt class="descname">get_action</tt><big>(</big><em>item</em>, <em>user</em><big>)</big><a class="headerlink" href="#apps.order.admin.OrderListManager.get_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.labels">
+<tt class="descname">labels</tt><em class="property"> = {'customer': u'\u987e\u5ba2\u59d3\u540d', 'action': u'\u64cd\u4f5c', 'use_time': u'\u4f7f\u7528\u5929\u6570'}</em><a class="headerlink" href="#apps.order.admin.OrderListManager.labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.order.admin.OrderListManager.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Order</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.order_fields">
+<tt class="descname">order_fields</tt><em class="property"> = ['id', 'sn', 'room_type', 'status']</em><a class="headerlink" href="#apps.order.admin.OrderListManager.order_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.admin.OrderListManager.visible_fields">
+<tt class="descname">visible_fields</tt><em class="property"> = ['id']</em><a class="headerlink" href="#apps.order.admin.OrderListManager.visible_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.order.admin.OrderListManagerTest">
+<em class="property">class </em><tt class="descclassname">apps.order.admin.</tt><tt class="descname">OrderListManagerTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="headerlink" href="#apps.order.admin.OrderListManagerTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></tt></p>
+<dl class="method">
+<dt id="apps.order.admin.OrderListManagerTest.runTest">
+<tt class="descname">runTest</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.order.admin.OrderListManagerTest.runTest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.admin.OrderListManagerTest.test_roomtype_nomanysql">
+<tt class="descname">test_roomtype_nomanysql</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.order.admin.OrderListManagerTest.test_roomtype_nomanysql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apps.order.form">
+<span id="apps-order-form-module"></span><h2>apps.order.form module<a class="headerlink" href="#module-apps.order.form" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apps.order.form.OrderForm">
+<em class="property">class </em><tt class="descclassname">apps.order.form.</tt><tt class="descname">OrderForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.order.form.OrderForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.djex.html#libs.djex.forms.ModelForm" title="libs.djex.forms.ModelForm"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.forms.ModelForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.order.form.OrderForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.order.form.OrderForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.order.form.OrderForm.Meta.exclude">
+<tt class="descname">exclude</tt><em class="property"> = ['status', 'insert_time', 'price']</em><a class="headerlink" href="#apps.order.form.OrderForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.order.form.OrderForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Order</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderForm.base_fields">
+<tt class="descclassname">OrderForm.</tt><tt class="descname">base_fields</tt><em class="property"> = OrderedDict([('sn', &lt;django.forms.fields.CharField object at 0x0000000004B6E5F8&gt;), ('customer', &lt;django.forms.fields.CharField object at 0x0000000004C561D0&gt;), ('phone', &lt;django.forms.fields.CharField object at 0x0000000004BF8748&gt;), ('member', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B6EAC8&gt;), ('note', &lt;django.forms.fields.CharField object at 0x0000000004BF8668&gt;), ('room_type', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B799B0&gt;), ('room', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B790B8&gt;), ('use_days', &lt;django.forms.fields.IntegerField object at 0x0000000004B79668&gt;)])</em><a class="headerlink" href="#apps.order.form.OrderForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderForm.declared_fields">
+<tt class="descclassname">OrderForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = OrderedDict([('member', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B6EAC8&gt;)])</em><a class="headerlink" href="#apps.order.form.OrderForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderForm.media">
+<tt class="descclassname">OrderForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.order.form.OrderForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.order.form.OrderQForm">
+<em class="property">class </em><tt class="descclassname">apps.order.form.</tt><tt class="descname">OrderQForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.order.form.OrderQForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.djex.html#libs.djex.forms.QForm" title="libs.djex.forms.QForm"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.forms.QForm</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.order.form.OrderQForm.base_fields">
+<tt class="descname">base_fields</tt><em class="property"> = OrderedDict([('page', &lt;libs.djex.fields.PageField object at 0x000000000499B828&gt;), ('page_size', &lt;libs.djex.fields.PageField object at 0x000000000499B5F8&gt;), ('order_by', &lt;django.forms.fields.CharField object at 0x000000000499B6D8&gt;), ('sn', &lt;django.forms.fields.CharField object at 0x0000000004B79E10&gt;), ('customer', &lt;django.forms.fields.CharField object at 0x0000000004B79E48&gt;), ('phone', &lt;django.forms.fields.CharField object at 0x0000000004B796D8&gt;), ('member', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B795C0&gt;), ('note', &lt;django.forms.fields.CharField object at 0x0000000004B79BA8&gt;), ('room_type', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B79C18&gt;), ('room', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B79518&gt;), ('status', &lt;django.forms.fields.IntegerField object at 0x0000000004B79A20&gt;), ('note_like', &lt;django.forms.fields.CharField object at 0x0000000004B79940&gt;), ('iDisplayStart', &lt;libs.djex.fields.PageField object at 0x0000000004B79128&gt;), ('iDisplayLength', &lt;libs.djex.fields.PageField object at 0x0000000004B79198&gt;), ('orderBy', &lt;django.forms.fields.CharField object at 0x0000000004B79160&gt;)])</em><a class="headerlink" href="#apps.order.form.OrderQForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderQForm.declared_fields">
+<tt class="descname">declared_fields</tt><em class="property"> = OrderedDict([('page', &lt;libs.djex.fields.PageField object at 0x000000000499B828&gt;), ('page_size', &lt;libs.djex.fields.PageField object at 0x000000000499B5F8&gt;), ('order_by', &lt;django.forms.fields.CharField object at 0x000000000499B6D8&gt;), ('sn', &lt;django.forms.fields.CharField object at 0x0000000004B79E10&gt;), ('customer', &lt;django.forms.fields.CharField object at 0x0000000004B79E48&gt;), ('phone', &lt;django.forms.fields.CharField object at 0x0000000004B796D8&gt;), ('member', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B795C0&gt;), ('note', &lt;django.forms.fields.CharField object at 0x0000000004B79BA8&gt;), ('room_type', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B79C18&gt;), ('room', &lt;django.forms.models.ModelChoiceField object at 0x0000000004B79518&gt;), ('status', &lt;django.forms.fields.IntegerField object at 0x0000000004B79A20&gt;), ('note_like', &lt;django.forms.fields.CharField object at 0x0000000004B79940&gt;), ('iDisplayStart', &lt;libs.djex.fields.PageField object at 0x0000000004B79128&gt;), ('iDisplayLength', &lt;libs.djex.fields.PageField object at 0x0000000004B79198&gt;), ('orderBy', &lt;django.forms.fields.CharField object at 0x0000000004B79160&gt;)])</em><a class="headerlink" href="#apps.order.form.OrderQForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.form.OrderQForm.get_condition">
+<tt class="descname">get_condition</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.order.form.OrderQForm.get_condition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.form.OrderQForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.order.form.OrderQForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apps.order.models">
+<span id="apps-order-models-module"></span><h2>apps.order.models module<a class="headerlink" href="#module-apps.order.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apps.order.models.Order">
+<em class="property">class </em><tt class="descclassname">apps.order.models.</tt><tt class="descname">Order</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>Order(id, sn, customer, phone, member_id, note, room_type_id, room_id, status, use_time, use_days, price, insert_time)</p>
+<dl class="exception">
+<dt id="apps.order.models.Order.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.order.models.Order.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.order.models.Order.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Order.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.order.models.Order.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.models.Order.StatusChoices">
+<tt class="descclassname">Order.</tt><tt class="descname">StatusChoices</tt><em class="property"> = {0: u'\u672a\u652f\u4ed8', 1: u'\u5df2\u652f\u4ed8', 2: u'\u5df2\u4f7f\u7528'}</em><a class="headerlink" href="#apps.order.models.Order.StatusChoices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.get_next_by_insert_time">
+<tt class="descclassname">Order.</tt><tt class="descname">get_next_by_insert_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.get_next_by_insert_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.get_next_by_use_time">
+<tt class="descclassname">Order.</tt><tt class="descname">get_next_by_use_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.get_next_by_use_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.get_previous_by_insert_time">
+<tt class="descclassname">Order.</tt><tt class="descname">get_previous_by_insert_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.get_previous_by_insert_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.get_previous_by_use_time">
+<tt class="descclassname">Order.</tt><tt class="descname">get_previous_by_use_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.get_previous_by_use_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.get_status_display">
+<tt class="descclassname">Order.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.models.Order.member">
+<tt class="descclassname">Order.</tt><tt class="descname">member</tt><a class="headerlink" href="#apps.order.models.Order.member" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.models.Order.objects">
+<tt class="descclassname">Order.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0000000004E5DB00&gt;</em><a class="headerlink" href="#apps.order.models.Order.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.payed">
+<tt class="descclassname">Order.</tt><tt class="descname">payed</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.order.models.Order.payed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.models.Order.room">
+<tt class="descclassname">Order.</tt><tt class="descname">room</tt><a class="headerlink" href="#apps.order.models.Order.room" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.order.models.Order.room_type">
+<tt class="descclassname">Order.</tt><tt class="descname">room_type</tt><a class="headerlink" href="#apps.order.models.Order.room_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.set_creater">
+<tt class="descclassname">Order.</tt><tt class="descname">set_creater</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#apps.order.models.Order.set_creater" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.order.models.Order.set_sn">
+<tt class="descclassname">Order.</tt><tt class="descname">set_sn</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.order.models.Order.set_sn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apps.order.urls">
+<span id="apps-order-urls-module"></span><h2>apps.order.urls module<a class="headerlink" href="#module-apps.order.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-apps.order.views">
+<span id="apps-order-views-module"></span><h2>apps.order.views module<a class="headerlink" href="#module-apps.order.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="apps.order.views.delete_orders">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">delete_orders</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.order.views.delete_orders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.order.views.input_order">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">input_order</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.order.views.input_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.order.views.order_detail">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">order_detail</tt><big>(</big><em>request</em>, <em>order_id=None</em><big>)</big><a class="headerlink" href="#apps.order.views.order_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.order.views.order_detail_admin">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">order_detail_admin</tt><big>(</big><em>request</em>, <em>order_id=None</em><big>)</big><a class="headerlink" href="#apps.order.views.order_detail_admin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.order.views.order_input">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">order_input</tt><big>(</big><em>request</em>, <em>order_id=None</em>, <em>room_type=None</em><big>)</big><a class="headerlink" href="#apps.order.views.order_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.order.views.orders">
+<tt class="descclassname">apps.order.views.</tt><tt class="descname">orders</tt><big>(</big><em>request</em>, <em>contype='html'</em><big>)</big><a class="headerlink" href="#apps.order.views.orders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-apps.order">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-apps.order" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">apps.order package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-apps.order.admin">apps.order.admin module</a></li>
+<li><a class="reference internal" href="#module-apps.order.form">apps.order.form module</a></li>
+<li><a class="reference internal" href="#module-apps.order.models">apps.order.models module</a></li>
+<li><a class="reference internal" href="#module-apps.order.urls">apps.order.urls module</a></li>
+<li><a class="reference internal" href="#module-apps.order.views">apps.order.views module</a></li>
+<li><a class="reference internal" href="#module-apps.order">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/apps.order.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

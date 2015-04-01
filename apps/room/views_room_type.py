@@ -4,13 +4,12 @@ from datetime import datetime
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from libs.yhwork.response import HttpJsonResponse, render_to_csv_response
-from com.mylib.mytime import datetime_to_timestamp
-from PIL import Image
+from libs.djex.response import HttpJsonResponse, render_to_csv_response
+from libs.utils.mytime import datetime_to_timestamp
 from settings import STATIC_ROOT_PATH
 from apps.room.admin import RoomListManager, RoomTypeListManager
 from apps.room.forms import RoomTypeForm
-from apps.room.models import Room, RoomType
+from apps.room.models import RoomType
 
 
 def room_types(request, contype='html'):
@@ -24,8 +23,6 @@ def room_types(request, contype='html'):
                        RoomListManager.get_action(x, request.user)
                          },
     ).to_table()
-    print table.get_columns()
-    print table.get_rows()
     if contype == 'html':
         return render_to_response('room/room_types.html', RequestContext(request, locals()))
     elif contype == 'table':
@@ -35,26 +32,17 @@ def room_types(request, contype='html'):
 
 
 def room_type_list(request, contype='html'):
-    '''
-    todo.hy
-    同一个内容只需要一个方法。该方法在后续重构优化中将与rooms整合。
-    之所以出现难于处理不得不分开的原因是：
-    django 为了参数接收，做了form机制
-    为了数据传出，做了模板渲染机制
-    但我的开发思想，前后端分离，各做各的事，数据以json方式传递前端，与此渲染机制不相符。
-    table.Table 实际的作用：1是描述输出项，2是描述输出格式对齐前端所需，3是分页取数，
-    应该可以用django 分页类 + 输出描述器 两者完成同类功能，并能扩展到任意控件。 
-    输出描述器的开发 预计在此项目之后 暂时分开写。
-    '''
     condition = {}
     room_types = RoomType.objects.filter(**condition)
     return render_to_response('room/room_type_list.html', RequestContext(request, locals()))
 
 
-def room_type_input(request, action='add', room_type_id=None):
+def room_type_input(request, room_type_id=None):
     if room_type_id:
+        action = 'edit'
         room_type = get_object_or_404(RoomType, pk=room_type_id)
     else:
+        action = 'add'
         room_type = RoomType()
     return render_to_response('room/room_type_input.html', RequestContext(request, locals()))
 
@@ -83,13 +71,14 @@ def input_room_type(request, action='add'):
 
 def delete_room_types(request):
     try:
-        RoomType.objects.filter(id__in = request.POST['ids'].split(',')).delete()
+        RoomType.objects.filter(id__in=request.POST['ids'].split(',')).delete()
         return HttpJsonResponse('')
-    except Exception,e0:
-        return HttpResponseBadRequest(u'删除失败:'+e0.message, content_type='application/javascript')
+    except Exception, e0:
+        return HttpResponseBadRequest(u'删除失败:' + e0.message, content_type='application/javascript')
 
 
 def upload_photo(request):
+    from PIL import Image
     photoFile = request.FILES.get('photo', None)
     filename = os.path.basename(photoFile.name)
     suffix = filename.split('.')[-1:][0]

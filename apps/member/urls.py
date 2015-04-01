@@ -13,9 +13,9 @@ urlpatterns = patterns('',
         url(r'^password_change/done/$', views.password_change_done),
         url(r'^center$', views_user.user_center, name="user_center"),
         #-------------------------管理员管理用户--------------------------------------------
-        url(r'^users$', views_user.users,name="admin_member_users"),
+        url(r'^users$', views_user.users, name="admin_member_users"),
         url(r'^users\.(?P<contype>(html|table|csv))', views_user.users, name="admin_member_users_table"),
-        url(r'^user/add$',views_user.user_input, name="admin_user_add"),
+        url(r'^user/add$', views_user.user_input, name="admin_user_add"),
         url(r'^user/edit/(?P<user_id>[\d]+)$', views_user.user_input, name="admin_user_input"),
         url(r'^user/detail/(?P<user_id>[\d]+)$', views_user.user_detail, name="admin_user_detail"),
         url(r'^input_user$', views_user.input_user, name="admin_user_input_action"),
@@ -26,5 +26,4 @@ urlpatterns = patterns('',
         url(r'^delete_users', views_user.delete_users, name="admin_user_delete"),
         url(r'^groups$', views_group.groups),
         url(r'^groups.?(?P<contype>(table|csv))$', views_group.groups),
-
     )

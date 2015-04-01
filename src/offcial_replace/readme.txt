@@ -1,3 +1,0 @@
-替换官方内容，以实现某些功能。
-django.views.debug
-在settings中新增了EXCEPTION_INGORE_AJAX选项，debug模式下无论是否ajax请求都以页面形式返回异常。

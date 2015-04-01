@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from libs.yhwork.admin import BaseListManager
+from libs.localdjex.admin import BaseListManager
 from apps.room.models import Room, RoomType
 
 

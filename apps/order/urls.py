@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
-from apps.order import views 
+from apps.order import views
 
 urlpatterns = patterns('',
     #---------------customer---------------------------------------------------

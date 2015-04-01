@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^admin/', 'hehotel.views.admin', name='admin'),  # 后台
     url(r'^backend/', include(admin.site.urls), name='backend'),  # 后台
-    url(r'^backdocs/', include('django.contrib.admindocs.urls'), name='backdocs'),  # 后台
+    url(r'^backdocs/', include('libs.djex.autodocs.urls'), name='backdocs'),  # 后台
     url(r'^$', 'hehotel.views.index', name='index'),
     url(r'^hotel$', 'hehotel.views.hotel', name='hotel'),
     url(r'^pictures$', 'hehotel.views.pictures', name='pictures'),

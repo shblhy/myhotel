@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>libs.utils package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="libs-utils-package">
+<h1>libs.utils package<a class="headerlink" href="#libs-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-libs.utils.mytime">
+<span id="libs-utils-mytime-module"></span><h2>libs.utils.mytime module<a class="headerlink" href="#module-libs.utils.mytime" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="libs.utils.mytime.TimeTest">
+<em class="property">class </em><tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">TimeTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.TimeTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></tt></p>
+<dl class="method">
+<dt id="libs.utils.mytime.TimeTest.runTest">
+<tt class="descname">runTest</tt><big>(</big><big>)</big><a class="headerlink" href="#libs.utils.mytime.TimeTest.runTest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.datetime_to_timestamp">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">datetime_to_timestamp</tt><big>(</big><em>datetime_</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.datetime_to_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_duration">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_duration</tt><big>(</big><em>start_time</em>, <em>end_time</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>用于根据开始结束时间获取时间趋势图的时间粒度，单位为秒</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_duration_by_str">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_duration_by_str</tt><big>(</big><em>duration_str</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_duration_by_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_last_month_begin_day">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_last_month_begin_day</tt><big>(</big><em>pre_time</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_last_month_begin_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_next_month_begin_day">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_next_month_begin_day</tt><big>(</big><em>pre_time</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_next_month_begin_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_relative_time">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_relative_time</tt><big>(</big><em>time_str</em>, <em>start_time</em>, <em>end_time</em>, <em>rnd=False</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_relative_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>last_1_days 前一天(昨天此时到现在)
+round_last_1_days 昨天（昨天0:00至24:00）
+last_3_days 前三天（三天前此时到现在）
+last_7_days 前七天（上周此时到本周此时）
+round_last_1_weeks 上周(上上周一0:00到上周一0:00)
+ast_2_days  最近两天
+after_2_days 在start_time后的两天
+before_2_day2 在end_time前的两天</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_sta_point">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_sta_point</tt><big>(</big><em>start_time</em>, <em>end_time</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_sta_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取统计时间点, 供SQL语句查询时间趋势统计数据用。</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>start_time: 开始时间
+end_time: 结束时间</dd>
+<dt>Example:</dt>
+<dd><ol class="first last arabic simple">
+<li>Input: start_time=8:10, end_time=8:30
+Return: duration=1_hours, sta_point=[(&#8216;2013-10-12 9:00&#8217;， 201338182)]</li>
+<li>Input: start_time=8:10, end_time=9:20
+Return: duration=1_hours, sta_point=[(&#8216;2013-10-12 9:00&#8217;, 201338182), (&#8216;2013-10-12 10:00&#8217;, 201333182)]</li>
+<li>Input: start_time=10-10 8:10, end_time=10-12 9:20
+Return: duration=6_hours, sta_point=[(&#8216;2013-10-10 12:00, 201338182&#8217;), (&#8216;2013-10-10 18:00, 201338182&#8217;), ...]</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.get_timedelta">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">get_timedelta</tt><big>(</big><em>time_str</em>, <em>time_=datetime.datetime(2015</em>, <em>4</em>, <em>1</em>, <em>22</em>, <em>19</em>, <em>13</em>, <em>168000)</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.get_timedelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>处理after_1_weeks等</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.rndtime">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">rndtime</tt><big>(</big><em>time_</em>, <em>unit</em>, <em>next_=False</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.rndtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.str_start_end_time">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">str_start_end_time</tt><big>(</big><em>time_str</em>, <em>end_time=datetime.datetime(2015</em>, <em>4</em>, <em>1</em>, <em>22</em>, <em>19</em>, <em>13</em>, <em>168000)</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.str_start_end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>根据相对时间字符串获取开始结束时间，结果是,分隔的字符串</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>参见get_relative_time函数</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.str_timedelta">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">str_timedelta</tt><big>(</big><em>td</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.str_timedelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>将时间间隔对象timedelta转为中文描述</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libs.utils.mytime.timestamp_to_datetime">
+<tt class="descclassname">libs.utils.mytime.</tt><tt class="descname">timestamp_to_datetime</tt><big>(</big><em>timestamp</em><big>)</big><a class="headerlink" href="#libs.utils.mytime.timestamp_to_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-libs.utils.reader">
+<span id="libs-utils-reader-module"></span><h2>libs.utils.reader module<a class="headerlink" href="#module-libs.utils.reader" title="Permalink to this headline">¶</a></h2>
+<p>&#64;author:hy 
+读取器，常见读取动作</p>
+<dl class="function">
+<dt id="libs.utils.reader.read_csv">
+<tt class="descclassname">libs.utils.reader.</tt><tt class="descname">read_csv</tt><big>(</big><em>reader</em>, <em>col_name_dict</em><big>)</big><a class="headerlink" href="#libs.utils.reader.read_csv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-libs.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-libs.utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">libs.utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-libs.utils.mytime">libs.utils.mytime module</a></li>
+<li><a class="reference internal" href="#module-libs.utils.reader">libs.utils.reader module</a></li>
+<li><a class="reference internal" href="#module-libs.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/libs.utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

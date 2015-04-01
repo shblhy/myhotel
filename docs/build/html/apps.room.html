@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>apps.room package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="apps-room-package">
+<h1>apps.room package<a class="headerlink" href="#apps-room-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-apps.room.admin">
+<span id="apps-room-admin-module"></span><h2>apps.room.admin module<a class="headerlink" href="#module-apps.room.admin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apps.room.admin.RoomListManager">
+<em class="property">class </em><tt class="descclassname">apps.room.admin.</tt><tt class="descname">RoomListManager</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.room.admin.RoomListManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.localdjex.html#libs.localdjex.admin.BaseListManager" title="libs.localdjex.admin.BaseListManager"><tt class="xref py py-class docutils literal"><span class="pre">libs.localdjex.admin.BaseListManager</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.accessors">
+<tt class="descname">accessors</tt><em class="property"> = {'status': &lt;function &lt;lambda&gt; at 0x00000000049ECC18&gt;, 'action': 'accessors_out'}</em><a class="headerlink" href="#apps.room.admin.RoomListManager.accessors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.exclude">
+<tt class="descname">exclude</tt><em class="property"> = []</em><a class="headerlink" href="#apps.room.admin.RoomListManager.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.fields">
+<tt class="descname">fields</tt><em class="property"> = ['id', 'sn', 'name', 'status', 'action']</em><a class="headerlink" href="#apps.room.admin.RoomListManager.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="apps.room.admin.RoomListManager.get_action">
+<em class="property">static </em><tt class="descname">get_action</tt><big>(</big><em>item</em>, <em>user</em><big>)</big><a class="headerlink" href="#apps.room.admin.RoomListManager.get_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.labels">
+<tt class="descname">labels</tt><em class="property"> = {'action': u'\u64cd\u4f5c'}</em><a class="headerlink" href="#apps.room.admin.RoomListManager.labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.room.admin.RoomListManager.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Room</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.order_by">
+<tt class="descname">order_by</tt><em class="property"> = '-1'</em><a class="headerlink" href="#apps.room.admin.RoomListManager.order_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.order_fields">
+<tt class="descname">order_fields</tt><em class="property"> = ['store_id', 'province', 'store_name']</em><a class="headerlink" href="#apps.room.admin.RoomListManager.order_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomListManager.paginate_by">
+<tt class="descname">paginate_by</tt><em class="property"> = 100</em><a class="headerlink" href="#apps.room.admin.RoomListManager.paginate_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.room.admin.RoomTypeListManager">
+<em class="property">class </em><tt class="descclassname">apps.room.admin.</tt><tt class="descname">RoomTypeListManager</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.room.admin.RoomTypeListManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.localdjex.html#libs.localdjex.admin.BaseListManager" title="libs.localdjex.admin.BaseListManager"><tt class="xref py py-class docutils literal"><span class="pre">libs.localdjex.admin.BaseListManager</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.accessors">
+<tt class="descname">accessors</tt><em class="property"> = {'action': 'accessors_out'}</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.accessors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.fields">
+<tt class="descname">fields</tt><em class="property"> = ['id', 'name', 'status', 'comment', 'price', 'action']</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="apps.room.admin.RoomTypeListManager.get_action">
+<em class="property">classmethod </em><tt class="descname">get_action</tt><big>(</big><em>room_type</em>, <em>user=None</em><big>)</big><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.get_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.labels">
+<tt class="descname">labels</tt><em class="property"> = {'action': u'\u64cd\u4f5c'}</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">RoomType</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.order_by">
+<tt class="descname">order_by</tt><em class="property"> = '-1'</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.order_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.order_fields">
+<tt class="descname">order_fields</tt><em class="property"> = ['id']</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.order_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.admin.RoomTypeListManager.paginate_by">
+<tt class="descname">paginate_by</tt><em class="property"> = 100</em><a class="headerlink" href="#apps.room.admin.RoomTypeListManager.paginate_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apps.room.forms">
+<span id="apps-room-forms-module"></span><h2>apps.room.forms module<a class="headerlink" href="#module-apps.room.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apps.room.forms.RoomForm">
+<em class="property">class </em><tt class="descclassname">apps.room.forms.</tt><tt class="descname">RoomForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.room.forms.RoomForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.djex.html#libs.djex.forms.ModelForm" title="libs.djex.forms.ModelForm"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.forms.ModelForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.room.forms.RoomForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.room.forms.RoomForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.room.forms.RoomForm.Meta.exclude">
+<tt class="descname">exclude</tt><em class="property"> = ['status']</em><a class="headerlink" href="#apps.room.forms.RoomForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.room.forms.RoomForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Room</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomForm.base_fields">
+<tt class="descclassname">RoomForm.</tt><tt class="descname">base_fields</tt><em class="property"> = OrderedDict([('sn', &lt;django.forms.fields.CharField object at 0x0000000004AEF7F0&gt;), ('name', &lt;django.forms.fields.CharField object at 0x0000000004AEFB70&gt;), ('photo', &lt;django.forms.fields.CharField object at 0x0000000004AEF390&gt;), ('comment', &lt;django.forms.fields.CharField object at 0x0000000004AEF400&gt;), ('room_type', &lt;django.forms.models.ModelChoiceField object at 0x0000000004AD1A20&gt;), ('ref_id', &lt;django.forms.fields.IntegerField object at 0x0000000004AEF4E0&gt;), ('note', &lt;django.forms.fields.CharField object at 0x0000000004AEF470&gt;), ('status', &lt;django.forms.fields.IntegerField object at 0x0000000004AEF320&gt;)])</em><a class="headerlink" href="#apps.room.forms.RoomForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomForm.declared_fields">
+<tt class="descclassname">RoomForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = OrderedDict([('room_type', &lt;django.forms.models.ModelChoiceField object at 0x0000000004AD1A20&gt;), ('status', &lt;django.forms.fields.IntegerField object at 0x0000000004AEF320&gt;), ('photo', &lt;django.forms.fields.CharField object at 0x0000000004AEF390&gt;), ('comment', &lt;django.forms.fields.CharField object at 0x0000000004AEF400&gt;), ('note', &lt;django.forms.fields.CharField object at 0x0000000004AEF470&gt;), ('ref_id', &lt;django.forms.fields.IntegerField object at 0x0000000004AEF4E0&gt;)])</em><a class="headerlink" href="#apps.room.forms.RoomForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomForm.media">
+<tt class="descclassname">RoomForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.room.forms.RoomForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.room.forms.RoomQForm">
+<em class="property">class </em><tt class="descclassname">apps.room.forms.</tt><tt class="descname">RoomQForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.room.forms.RoomQForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.djex.html#libs.djex.forms.QForm" title="libs.djex.forms.QForm"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.forms.QForm</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.room.forms.RoomQForm.base_fields">
+<tt class="descname">base_fields</tt><em class="property"> = OrderedDict([('page', &lt;libs.djex.fields.PageField object at 0x0000000004AD1F28&gt;), ('page_size', &lt;libs.djex.fields.PageField object at 0x0000000004AD1FD0&gt;), ('order_by', &lt;django.forms.fields.CharField object at 0x0000000004AEF0F0&gt;), ('id', &lt;django.forms.fields.CharField object at 0x0000000004AEFEF0&gt;), ('sn', &lt;django.forms.fields.CharField object at 0x0000000004AEFF60&gt;), ('name_like', &lt;django.forms.fields.CharField object at 0x0000000004B03B38&gt;), ('status', &lt;django.forms.fields.CharField object at 0x0000000004B03B00&gt;), ('iDisplayStart', &lt;libs.djex.fields.PageField object at 0x0000000004B03668&gt;), ('iDisplayLength', &lt;libs.djex.fields.PageField object at 0x0000000004B032E8&gt;), ('orderBy', &lt;django.forms.fields.CharField object at 0x0000000004B03BA8&gt;)])</em><a class="headerlink" href="#apps.room.forms.RoomQForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomQForm.declared_fields">
+<tt class="descname">declared_fields</tt><em class="property"> = OrderedDict([('page', &lt;libs.djex.fields.PageField object at 0x0000000004AD1F28&gt;), ('page_size', &lt;libs.djex.fields.PageField object at 0x0000000004AD1FD0&gt;), ('order_by', &lt;django.forms.fields.CharField object at 0x0000000004AEF0F0&gt;), ('id', &lt;django.forms.fields.CharField object at 0x0000000004AEFEF0&gt;), ('sn', &lt;django.forms.fields.CharField object at 0x0000000004AEFF60&gt;), ('name_like', &lt;django.forms.fields.CharField object at 0x0000000004B03B38&gt;), ('status', &lt;django.forms.fields.CharField object at 0x0000000004B03B00&gt;), ('iDisplayStart', &lt;libs.djex.fields.PageField object at 0x0000000004B03668&gt;), ('iDisplayLength', &lt;libs.djex.fields.PageField object at 0x0000000004B032E8&gt;), ('orderBy', &lt;django.forms.fields.CharField object at 0x0000000004B03BA8&gt;)])</em><a class="headerlink" href="#apps.room.forms.RoomQForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.forms.RoomQForm.get_condition">
+<tt class="descname">get_condition</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.room.forms.RoomQForm.get_condition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomQForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.room.forms.RoomQForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.room.forms.RoomTypeForm">
+<em class="property">class </em><tt class="descclassname">apps.room.forms.</tt><tt class="descname">RoomTypeForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id=u'id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em>label_suffix=None</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.room.forms.RoomTypeForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="libs.djex.html#libs.djex.forms.ModelForm" title="libs.djex.forms.ModelForm"><tt class="xref py py-class docutils literal"><span class="pre">libs.djex.forms.ModelForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.room.forms.RoomTypeForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.room.forms.RoomTypeForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.room.forms.RoomTypeForm.Meta.exclude">
+<tt class="descname">exclude</tt><em class="property"> = ['status']</em><a class="headerlink" href="#apps.room.forms.RoomTypeForm.Meta.exclude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomTypeForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.room.forms.RoomTypeForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">RoomType</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomTypeForm.base_fields">
+<tt class="descclassname">RoomTypeForm.</tt><tt class="descname">base_fields</tt><em class="property"> = OrderedDict([('name', &lt;django.forms.fields.CharField object at 0x0000000004B03EB8&gt;), ('photo', &lt;django.forms.fields.CharField object at 0x0000000004B18278&gt;), ('comment', &lt;django.forms.fields.CharField object at 0x0000000004B185F8&gt;), ('price', &lt;django.forms.fields.IntegerField object at 0x0000000004B18978&gt;)])</em><a class="headerlink" href="#apps.room.forms.RoomTypeForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomTypeForm.declared_fields">
+<tt class="descclassname">RoomTypeForm.</tt><tt class="descname">declared_fields</tt><em class="property"> = OrderedDict()</em><a class="headerlink" href="#apps.room.forms.RoomTypeForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.forms.RoomTypeForm.media">
+<tt class="descclassname">RoomTypeForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.room.forms.RoomTypeForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="apps-room-models-module">
+<h2>apps.room.models module<a class="headerlink" href="#apps-room-models-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-apps.room.models"></span><dl class="class">
+<dt id="apps.room.models.Room">
+<em class="property">class </em><tt class="descclassname">apps.room.models.</tt><tt class="descname">Room</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.Room" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>Room(id, sn, name, photo, comment, status, room_type_id, ref_id, note)</p>
+<dl class="exception">
+<dt id="apps.room.models.Room.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.room.models.Room.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.room.models.Room.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Room.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.room.models.Room.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.Room.RoomStatusChoices">
+<tt class="descclassname">Room.</tt><tt class="descname">RoomStatusChoices</tt><em class="property"> = {0: u'\u7a7a\u95f2', 1: u'\u9884\u8ba2', 2: u'\u5728\u4f4f', -1: u'\u9884\u5907', -2: u'\u5df2\u5220\u9664'}</em><a class="headerlink" href="#apps.room.models.Room.RoomStatusChoices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.Room.get_status_display">
+<tt class="descclassname">Room.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.Room.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.Room.objects">
+<tt class="descclassname">Room.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x00000000049F79B0&gt;</em><a class="headerlink" href="#apps.room.models.Room.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.Room.room_type">
+<tt class="descclassname">Room.</tt><tt class="descname">room_type</tt><a class="headerlink" href="#apps.room.models.Room.room_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.Room.roomhistory_set">
+<tt class="descclassname">Room.</tt><tt class="descname">roomhistory_set</tt><a class="headerlink" href="#apps.room.models.Room.roomhistory_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.Room.status">
+<tt class="descclassname">Room.</tt><tt class="descname">status</tt><em class="property"> = None</em><a class="headerlink" href="#apps.room.models.Room.status" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>RoomTypeChoices = {</dt>
+<dd>0:u&#8217;单人房&#8217;,
+1:u&#8217;双人房&#8217;,
+2:u&#8217;贵宾房&#8217;,
+3:u&#8217;特惠房&#8217;,
+}</dd>
+</dl>
+<p>rtype = models.SmallIntegerField(_(u&#8217;类别&#8217;), choices=RoomTypeChoices.items(), default=0)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.room.models.RoomHistory">
+<em class="property">class </em><tt class="descclassname">apps.room.models.</tt><tt class="descname">RoomHistory</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>RoomHistory(id, room_id_id, sn, photo, comment, status, type, ref_id, insert_time, opertor_id)</p>
+<dl class="exception">
+<dt id="apps.room.models.RoomHistory.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.room.models.RoomHistory.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomHistory.HistoryTypeChoices">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">HistoryTypeChoices</tt><em class="property"> = {0: '\xe4\xbd\xbf\xe7\x94\xa8', 1: '\xe7\xbc\x96\xe8\xbe\x91'}</em><a class="headerlink" href="#apps.room.models.RoomHistory.HistoryTypeChoices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="apps.room.models.RoomHistory.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">RoomHistory.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.room.models.RoomHistory.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomHistory.get_next_by_insert_time">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">get_next_by_insert_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomHistory.get_next_by_insert_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomHistory.get_previous_by_insert_time">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">get_previous_by_insert_time</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomHistory.get_previous_by_insert_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomHistory.get_status_display">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomHistory.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomHistory.get_type_display">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">get_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomHistory.get_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomHistory.objects">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0000000004A023C8&gt;</em><a class="headerlink" href="#apps.room.models.RoomHistory.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomHistory.opertor">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">opertor</tt><a class="headerlink" href="#apps.room.models.RoomHistory.opertor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomHistory.room_id">
+<tt class="descclassname">RoomHistory.</tt><tt class="descname">room_id</tt><a class="headerlink" href="#apps.room.models.RoomHistory.room_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.room.models.RoomType">
+<em class="property">class </em><tt class="descclassname">apps.room.models.</tt><tt class="descname">RoomType</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.room.models.RoomType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>RoomType(id, name, photo, comment, status, price)</p>
+<dl class="exception">
+<dt id="apps.room.models.RoomType.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.room.models.RoomType.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.room.models.RoomType.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">RoomType.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.room.models.RoomType.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomType.full_photo_path">
+<tt class="descclassname">RoomType.</tt><tt class="descname">full_photo_path</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.room.models.RoomType.full_photo_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.room.models.RoomType.get_ready_room">
+<tt class="descclassname">RoomType.</tt><tt class="descname">get_ready_room</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.room.models.RoomType.get_ready_room" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomType.objects">
+<tt class="descclassname">RoomType.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x00000000049F7080&gt;</em><a class="headerlink" href="#apps.room.models.RoomType.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.room.models.RoomType.room_set">
+<tt class="descclassname">RoomType.</tt><tt class="descname">room_set</tt><a class="headerlink" href="#apps.room.models.RoomType.room_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apps.room.urls">
+<span id="apps-room-urls-module"></span><h2>apps.room.urls module<a class="headerlink" href="#module-apps.room.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-apps.room.views">
+<span id="apps-room-views-module"></span><h2>apps.room.views module<a class="headerlink" href="#module-apps.room.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="apps.room.views.add_room">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">add_room</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views.add_room" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.delete_rooms">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">delete_rooms</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views.delete_rooms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.import_rooms">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">import_rooms</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views.import_rooms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.input_room">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">input_room</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views.input_room" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.room_detail">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">room_detail</tt><big>(</big><em>request</em>, <em>room_id=None</em><big>)</big><a class="headerlink" href="#apps.room.views.room_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.room_input">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">room_input</tt><big>(</big><em>request</em>, <em>room_id=None</em><big>)</big><a class="headerlink" href="#apps.room.views.room_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.room_list">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">room_list</tt><big>(</big><em>request</em>, <em>contype='html'</em><big>)</big><a class="headerlink" href="#apps.room.views.room_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>todo.hy
+同一个内容只需要一个方法。该方法在后续重构优化中将与rooms整合。
+之所以出现难于处理不得不分开的原因是：
+django 为了参数接收，做了form机制
+为了数据传出，做了模板渲染机制
+但我的开发思想，前后端分离，各做各的事，数据以json方式传递前端，与此渲染机制不相符。
+table.Table 实际的作用：1是描述输出项，2是描述输出格式对齐前端所需，3是分页取数，
+应该可以用django 分页类 + 输出描述器 两者完成同类功能，并能扩展到任意控件。
+输出描述器的开发 预计在此项目之后 暂时分开写。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views.rooms">
+<tt class="descclassname">apps.room.views.</tt><tt class="descname">rooms</tt><big>(</big><em>request</em>, <em>contype='html'</em><big>)</big><a class="headerlink" href="#apps.room.views.rooms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-apps.room.views_room_type">
+<span id="apps-room-views-room-type-module"></span><h2>apps.room.views_room_type module<a class="headerlink" href="#module-apps.room.views_room_type" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="apps.room.views_room_type.add_room_type">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">add_room_type</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.add_room_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.delete_room_types">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">delete_room_types</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.delete_room_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.input_room_type">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">input_room_type</tt><big>(</big><em>request</em>, <em>action='add'</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.input_room_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.room_type_detail">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">room_type_detail</tt><big>(</big><em>request</em>, <em>room_type_id=None</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.room_type_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.room_type_input">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">room_type_input</tt><big>(</big><em>request</em>, <em>room_type_id=None</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.room_type_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.room_type_list">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">room_type_list</tt><big>(</big><em>request</em>, <em>contype='html'</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.room_type_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.room_types">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">room_types</tt><big>(</big><em>request</em>, <em>contype='html'</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.room_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.room.views_room_type.upload_photo">
+<tt class="descclassname">apps.room.views_room_type.</tt><tt class="descname">upload_photo</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.room.views_room_type.upload_photo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-apps.room">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-apps.room" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">apps.room package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-apps.room.admin">apps.room.admin module</a></li>
+<li><a class="reference internal" href="#module-apps.room.forms">apps.room.forms module</a></li>
+<li><a class="reference internal" href="#apps-room-models-module">apps.room.models module</a></li>
+<li><a class="reference internal" href="#module-apps.room.urls">apps.room.urls module</a></li>
+<li><a class="reference internal" href="#module-apps.room.views">apps.room.views module</a></li>
+<li><a class="reference internal" href="#module-apps.room.views_room_type">apps.room.views_room_type module</a></li>
+<li><a class="reference internal" href="#module-apps.room">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/apps.room.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

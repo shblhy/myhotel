@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from libs.yhwork.response import render_to_tmpl_response as render_to_tmpl_response
+from libs.djex.response import render_to_tmpl_response as render_to_tmpl_response
 
 
 def render_to_basehtml_response(*args, **kwargs):

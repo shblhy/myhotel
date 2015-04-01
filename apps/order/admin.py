@@ -1,32 +1,26 @@
 # -*- coding: utf-8 -*-
 import unittest
 from django.contrib import admin
-from libs.yhwork.admin import BaseListManager
-from apps.member.models import User
+from libs.localdjex.admin import BaseListManager
 from apps.order.models import Order
-from apps.room.models import RoomType
 
 
 class OrderListManager(BaseListManager):
-    paginate_by = 100
-    fields = ['sn', 'status', 'customer', 'use_time', 'room_type', 'use_days', 'note', 'price', 'action']
+    fields = ['id', 'sn', 'status', 'customer', 'use_time', 'room_type', 'use_days', 'note', 'price', 'action']
     visible_fields = ['id']
     labels = {
               'customer': u'顾客姓名',
               'use_time': u'使用天数',
               'action': u'操作'
               }
-    exclude = []
-    order_fields = ['id', 'room_type', 'status']
+    order_fields = ['id', 'sn', 'room_type', 'status']
     accessors = {
                  'action': BaseListManager.OUT_CALL,
                  'customer': lambda x: x.member.real_name if x.member else '',
                  'status': lambda x: x.get_status_display(),
                  'room_type': lambda x: x.room_type.name
                  }
-    accessors_out = {}
     model = Order
-    order_by = '-1'
 
     @staticmethod
     def get_action(item, user):

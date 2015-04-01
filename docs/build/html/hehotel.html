@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>hehotel package &mdash; hyhotel 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="hyhotel 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="hehotel-package">
+<h1>hehotel package<a class="headerlink" href="#hehotel-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hehotel.common">
+<span id="hehotel-common-module"></span><h2>hehotel.common module<a class="headerlink" href="#module-hehotel.common" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hehotel.common.render_to_baseadminhtml_response">
+<tt class="descclassname">hehotel.common.</tt><tt class="descname">render_to_baseadminhtml_response</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#hehotel.common.render_to_baseadminhtml_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.common.render_to_basehtml_response">
+<tt class="descclassname">hehotel.common.</tt><tt class="descname">render_to_basehtml_response</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#hehotel.common.render_to_basehtml_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-hehotel.models">
+<span id="hehotel-models-module"></span><h2>hehotel.models module<a class="headerlink" href="#module-hehotel.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hehotel.models.Hotel">
+<em class="property">class </em><tt class="descclassname">hehotel.models.</tt><tt class="descname">Hotel</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#hehotel.models.Hotel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>保存酒店的详细信息以便查看</p>
+<dl class="exception">
+<dt id="hehotel.models.Hotel.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#hehotel.models.Hotel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="hehotel.models.Hotel.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Hotel.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#hehotel.models.Hotel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hehotel.models.Hotel.objects">
+<tt class="descclassname">Hotel.</tt><tt class="descname">objects</tt><em class="property"> = &lt;django.db.models.manager.Manager object at 0x0000000005729400&gt;</em><a class="headerlink" href="#hehotel.models.Hotel.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hehotel.views">
+<span id="hehotel-views-module"></span><h2>hehotel.views module<a class="headerlink" href="#module-hehotel.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hehotel.views.about">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">about</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.about" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.admin">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">admin</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.admin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.easy_page">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">easy_page</tt><big>(</big><em>request</em>, <em>template</em><big>)</big><a class="headerlink" href="#hehotel.views.easy_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.hotel">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">hotel</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.hotel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.index">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">index</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.order">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">order</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.pictures">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">pictures</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.pictures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.rooms">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">rooms</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.rooms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.site_update">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">site_update</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.site_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.sitemap">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">sitemap</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.sitemap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hehotel.views.special_offers">
+<tt class="descclassname">hehotel.views.</tt><tt class="descname">special_offers</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#hehotel.views.special_offers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-hehotel">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hehotel" title="Permalink to this headline">¶</a></h2>
+<p>默认的主模块，存放店家信息</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">hehotel package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hehotel.common">hehotel.common module</a></li>
+<li><a class="reference internal" href="#module-hehotel.models">hehotel.models module</a></li>
+<li><a class="reference internal" href="#module-hehotel.views">hehotel.views module</a></li>
+<li><a class="reference internal" href="#module-hehotel">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/hehotel.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">hyhotel 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, hy.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -39,6 +39,7 @@ AUTH_USER_MODEL = 'member.User'
 INSTALLED_APPS = (
     'apps.member',
     'django.contrib.admin',
+    'libs.djex.autodocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

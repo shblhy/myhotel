@@ -4,7 +4,8 @@ from datetime import datetime, timedelta
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseBadRequest, HttpResponse
 from django.contrib.auth import login, authenticate
-from libs.yhwork.response import HttpJsonResponse
+from django.template import RequestContext
+from libs.djex.response import HttpJsonResponse
 from apps.order.admin import OrderListManager
 from apps.order.form import OrderForm, OrderQForm
 from apps.order.models import Order
@@ -27,15 +28,18 @@ def orders(request, contype='html'):
             }
     ).to_table()
     if contype == 'html':
-        return render_to_response('order/orders.html', locals())
+        return render_to_response('order/orders.html', RequestContext(request, locals()))
     elif contype == 'table':
         return HttpResponse(table.get_rows(), content_type='application/json; charset=UTF-8')
 
 
 def order_input(request, order_id=None, room_type=None):
     if order_id:
+        #实际上未提供订单修改方法
+        action = 'edit'
         order = get_object_or_404(Order, pk=order_id)
     else:
+        action = 'add'
         room_type = get_object_or_404(RoomType, pk=room_type)
         order = Order()
         defautlTime = datetime.now() + timedelta(days=1)
@@ -44,17 +48,17 @@ def order_input(request, order_id=None, room_type=None):
         order.room_type = room_type
         if request.user.pk != None:
             order.set_creater(request.user)
-    return render_to_response('order/order_input.html', locals())
+    return render_to_response('order/order_input.html', RequestContext(request, locals()))
 
 
 def order_detail(request, order_id=None):
     order = get_object_or_404(Order, pk=order_id)
-    return render_to_response('order/order_detail.html', locals())
+    return render_to_response('order/order_detail.html', RequestContext(request, locals()))
 
 
 def order_detail_admin(request, order_id=None):
     order = get_object_or_404(Order, pk=order_id)
-    return render_to_response('order/admin/order_detail.html', locals())
+    return render_to_response('order/admin/order_detail.html', RequestContext(request, locals()))
 
 
 def input_order(request):

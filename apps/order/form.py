@@ -1,8 +1,6 @@
-#!/usr/bin/env python
 #-*- coding:utf-8 -*-
 from django import forms
-from django.utils.translation import ugettext_lazy as _
-from libs.yhwork.forms import ModelForm, QForm, PageField
+from libs.djex.forms import ModelForm, QForm, PageField
 from apps.order.models import Order
 from apps.room.models import Room, RoomType
 from apps.member.models import User
@@ -26,8 +24,8 @@ class OrderQForm(QForm):
     room = forms.ModelChoiceField(Room.objects, required=False)
     status = forms.IntegerField(label=u'状态', required=False)
     note_like = forms.CharField(label=u'备注', required=False)
-    iDisplayStart = PageField(default=0, required=False)
-    iDisplayLength = PageField(default=30, required=False)
+    iDisplayStart = PageField(label='记录起始点', default=0, required=False)
+    iDisplayLength = PageField(label='记录长', default=30, required=False)
     orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)
 
     def get_condition(self):
