@@ -1,4 +1,4 @@
-define(["dataTable", "functions", "fileupload", "tipped_plugin", "bootstrap", "address"], function(dataTable) {
+define(["dataTable", "functions", "fileupload", "tipped_plugin", "bootstrap"], function(dataTable) {
 	return {
 		Table: function(containerName, options) {
 			var _this = this;

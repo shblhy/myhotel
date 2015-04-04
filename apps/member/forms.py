@@ -2,6 +2,16 @@
 from django import forms
 from libs.djex.forms import ModelForm, QForm, PageField
 from apps.member.models import User
+from django.contrib.auth.forms import AuthenticationForm as OriAuthenticationForm
+from django.utils.translation import ugettext_lazy as _
+
+
+class AuthenticationForm(OriAuthenticationForm):
+    error_messages = {
+        'invalid_login': _(u"用户名密码不正确。 "
+                           "注意大小写"),
+        'inactive': _("该账号已锁定，请联系管理员。"),
+    }
 
 
 class UserForm(ModelForm):

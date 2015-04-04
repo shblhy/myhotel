@@ -5,7 +5,7 @@ from django.template import RequestContext
 from libs.djex.response import render_to_csv_response, HttpJsonResponse
 from apps.member.models import User
 from apps.member.admin import UserListManager
-from apps.member.form import UserForm, UserQForm
+from .forms import UserForm, UserQForm
 from apps.order.admin import OrderListManager
 
 

@@ -1,7 +1,8 @@
 /*
  * utf-8 编码
  */
- define(["address"], function() {
+// define(["address"], function() {
+define([], function() {
  	if (typeof (functions) == 'undefined') {
  		functions = {};
  	}
@@ -58,7 +59,7 @@
                	if (hishref.split("#")[1] == target)
                		return false;
             }*/
-			$.address.value(target);
+			//$.address.value(target);
 			$.ajax({
 				url: target,
 				before : function() {

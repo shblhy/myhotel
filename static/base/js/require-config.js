@@ -15,7 +15,7 @@ var require = {
 		"dataTable" : '../com/datatables/FixedHeader',
 		"fileupload" : '../com/fileupload/jquery.fileupload.min',
 		"tipped_plugin" : '../com/tipped/tipped',
-		"address" : '../com/address/jquery.address-1.5.min',
+		//"address" : '../com/address/jquery.address-1.5.min',
 		"jquery.ui.widget" : '../com/fileupload/jquery.ui.widget.min',
 		"excanvas" : '../com/tipped/excanvas.min',
 		"spinners" : '../com/tipped/spinners.min',

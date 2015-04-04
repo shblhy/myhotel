@@ -23,7 +23,6 @@ div.header{ width: 960px;height:auto;position:relative;margin-top:0px;}
 .header .rnav .user-name a{color: #fff; display: inline-block; line-height: 30px; padding: 0 5px;}
 .header .rnav .user-name a:hover{text-decoration: underline; }
 
-div.main {padding:50px 0;}
 div.main2 {float: left;width:100%;}
 div.index {position:relative;float:left;}
 .indexs ul li a{font-family: tahoma,arial,宋体;font-size: 16px;font-weight: 700;height:16px;
@@ -38,14 +37,6 @@ p.middle  {float: left;margin:10px 20px;}
 div.photos {position:absolute;margin:-130px 260px }
 div.content {float:left;position:relative;width:960px;border-left:1px solid #a19053;border-right:1px solid #a19053;}
 div.contentbase {float:left;margin-top:50px;position:relative;width:960px;border-left:1px solid #a19053;border-right:1px solid #a19053;}
-div.footer {float:left;background: url("../images/foot-bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:auto;line-height: 47px;margin-bottom: 57px;width: 960px;overflow: hidden;padding-bottom: 43px;}
-div.footer .footer-nav {
-    padding: 0 20px;
-}
-div.footer .footer-nav2 {
-	background-color:#3F1BD0;
-    padding: 0 20px;
-}
 a.newfooter-nav {
     color: #ece5cb;
     text-decoration: none;
