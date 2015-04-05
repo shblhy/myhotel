@@ -8,9 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 
 class AuthenticationForm(OriAuthenticationForm):
     error_messages = {
-        'invalid_login': _(u"用户名密码不正确。 "
-                           "注意大小写"),
-        'inactive': _("该账号已锁定，请联系管理员。"),
+        'invalid_login': _(u"用户名密码不正确。注意大小写"),
+        'inactive': _(u"该账号已锁定，请联系管理员。"),
     }
 
 
@@ -26,6 +25,6 @@ class UserQForm(QForm):
     real_name = forms.CharField(label='real_name', required=False)
     qq = forms.CharField(label='', required=False)
     phone = forms.CharField(label='', required=False)
-    iDisplayStart = PageField(label='记录起始点', default=0, required=False)
-    iDisplayLength = PageField(label='记录长', default=30, required=False)
+    iDisplayStart = PageField(label=u'记录起始点', default=0, required=False)
+    iDisplayLength = PageField(label=u'记录长', default=30, required=False)
     orderBy = forms.CharField(label='', widget=forms.HiddenInput, required=False)
