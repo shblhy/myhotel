@@ -2,66 +2,137 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
-    <script type="text/javascript" src="/static/base/com/jquery.form.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>道县万豪假日酒店</title>
+	<script type="text/javascript" src="/static/plugin/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/base/com/jquery.form.js"></script>
+	<script type="text/javascript" src="/static/plugin/jqueryvalidate/jquery.validate.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>道县万豪假日酒店</title>
 </head>
 <body>
-    <div>
-        <h3>会员注册</h3>
-        <form id="pop-regist-form1" action="/member/regist/" method="post">
-            {% csrf_token %}
-             <fieldset>
-                <dl>
-                    <dd>
-                        <label for="pop-regist-account">*用户名：</label>
-                        <input type="text" id="pop-regist-username" name="username">
-                        <span style="display:none;"></span><span class="form-error">请输入您的用户名!</span> </dd>
-                    <dd>
-                        <label for="pop-regist-password">*密码：</label>
-                        <input type="password" id="pop-regist-password" name="password">
-                        <span style="display:none;"></span><span class="form-error">请输入密码!</span> </dd>
-                     <dd>
-                        <label class="pop-title" for="pop-regist-password">*重复密码：</label>
-                        <input type="password" id="pop-regist-repeat-password">
-                        <span style="display:none;"></span><span class="form-error">再次输入密码!</span> </dd>
-                     <dd>
-                        <label for="pop-regist-password">*手机：</label>
-                        <input type="text" id="pop-phone" name="phone">
-                        <span style="display:none;"></span><span class="form-error">输入10-20位手机</span> </dd>
-                    <dd>
-                        <label for="pop-regist-password">*真实姓名：</label>
-                        <input type="text" id="pop-realname" name="realname">
-                        <span style="display:none;"></span><span class="form-error">输入真实姓名</span> </dd>
-                    <dd>
-                        <label for="pop-regist-password">QQ：</label>
-                        <input type="text" id="pop-qq" name="qq">
-                        <span style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> </dd>
-                    <dd>
-                        <label for="pop-regist-password">Email：</label>
-                        <input type="text"  id="pop-email" name="email">
-                        <span style="display:none;"></span><span class="form-error">输入正确Email地址</span> </dd>
-                    <dd class="pop-submit-application">
-                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
-                        <a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
-                    </dd>
-                </dl>
-            </fieldset>
-        </form>
-    </div>
-<script language="JavaScript">
-    $('#login-regist-btn').click(function(){
-        $("#pop-regist-form1").ajaxForm({
-                data : {},
-                dataType : "json",
-                success: function(data) {
-                    alert('sucess');
-                    window.location = '/'
-                }
-            }).submit();
-    });
-
-</script>
+	<div>
+		<h3>会员注册</h3>
+		<form id="pop-regist-form1" action="/member/regist/" method="post" data-jkit="[form:validateonly=true]>
+			{% csrf_token %}
+			<fieldset>
+				<dl>
+					<dd><label for="username">*用户名：</label>
+						<input type="text" id="username" name="username">
+					</dd>
+					<dd>
+						<label for="password">*密码：</label>
+						<input type="password" id="password" name="password">
+					</dd>
+					<dd>
+						<label for="confirm_password">*重复密码：</label>
+						<input type="password" id="confirm_password">
+					</dd>
+					<dd>
+						<label for="phone">*手机：</label>
+						<input type="text" id="pop-phone" name="phone">
+					</dd>
+					<dd>
+						<label for="real_name">*真实姓名：</label>
+						<input type="text" id="real_name" name="real_name">
+					</dd>
+					<dd>
+						<label for="qq">QQ：</label>
+						<input type="text" id="qq" name="qq">
+						<span style="display:none;"></span><span class="form-error">输入5-15位数字QQ号码</span> 
+					</dd>
+					<dd>
+						<label for="email">Email：</label>
+						<input type="text"  id="email" name="email">
+						<span style="display:none;"></span><span class="form-error">输入正确Email地址</span>
+					</dd>
+					<input class="submit" type="submit" value="Submit">
+					<!--dd class="pop-submit-application">
+						<a href="javascript:;" class="button-without-text button-first-type pop-regist-submit" id="regist-submit-btn">注册<i class="button-left"></i><i class="button-right"></i></a>
+						<a href="javascript:;" class="button-without-text button-first-type pop-regist-cancer" id="regist-cancel-btn">取消<i class="button-left"></i><i class="button-right"></i></a>
+					</dd-->
+				</dl>
+			</fieldset>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$.validator.setDefaults({
+				submitHandler: function() {
+					alert("submitted!");
+				}
+			});
+			$("#pop-regist-form1").validate({
+				rules: {
+					username: {
+						required: true,
+						minlength: 2,
+						maxlength: 30
+					},
+					password: {
+						required: true,
+						minlength: 5
+					},
+					confirm_password: {
+						required: true,
+						minlength: 5,
+						equalTo: "#password"
+					},
+					phone: {
+						required: true
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					qq:  {
+						required: false
+					}
+				},
+				messages: {
+					username:  {
+						required: "请输入用户名(英文或数字，限长30，也容许符号_-.@)",
+						minlength: "用户名长度必须大于2个字符",
+						maxlength: "用户名限长30个字符",
+					},
+					password: {
+						required: "请输入密码",
+						minlength: "密码长度必须大于5位"
+					},
+					confirm_password: {
+						required: "请再一次输入密码",
+						equalTo: "两次输入的密码不相同，请确认"
+					},
+					phone: "输入10-20位手机",
+					qq: "输入5-15位数字QQ号码",
+					email: "输入正确Email地址"
+				}
+			});
+			#signupForm {
+				width: 670px;
+			}
+			#signupForm label.error {
+				margin-left: 10px;
+				width: auto;
+				display: inline;
+			}
+			//alert('aaa');
+			//$('pop-regist-form1').jKit();
+		});
+		
+		/*$('#regist-submit-btn').click(function(){
+		$('pop-regist-form1').jKit();
+		alert("begin");
+		$("#pop-regist-form1").ajaxForm({
+		data : {},
+		dataType : "json",
+		success: function(data) {
+		alert('sucess');
+		window.location = '/'
+			},
+		error: function(data) {
+			alert(data.responseText);
+		}
+		}).submit();
+		});*/
+	</script>
 </body>
 </html>

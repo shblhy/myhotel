@@ -24,33 +24,44 @@
 	<link media="screen" href="/static/base/css/style.css" rel="stylesheet">
 	<script type="text/javascript" src="/static/base/js/require-config.js"></script>
     <script type="text/javascript" src="/static/base/com/require-jquery1.9-migrate1.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/static/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<link media="screen" href="/static/plugin/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link media="screen" href="/static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/plugin/bootstrap/css/bootstrap-theme.min.css">
+	<link media="screen" href="/static/css/theme.css" rel="stylesheet">
+	<link media="screen" href="/static/css/base.css" rel="stylesheet">
 	<title>道县万豪假日酒店官方网站|最低房价保证，更多优惠服务</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="道县万豪假日酒店，道县酒店，道县五星级酒店，道县5星级酒店，道县靠海酒店，道县度假酒店，道县酒店预订，道县酒店预定，道县商务酒店" name="keywords">
 	<meta content="道县万豪假日酒店官方网站预订，价格最优，更多优惠。道县万豪假日酒店屹立于道县最为繁华的商业地带，是商务旅行和休闲度假的首选之地。" name="description">
 </head>
-<body class="index_background">
-	<div class="wrapper">
-		<div class="header" >
-			<div class="logo"><a href='/'><img src="/static/base/images/LOGO.jpg" alt='首页' width="218" height="46"></a></div>
-			<div style="float:right;position:relative;right:1%;top:10px;">
-				<a href="javascript:void(0)">收藏</a>
-				<span id="member-entrance">
+<body role="document">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href='/'><img class="navbar-brand-logo" src="/static/base/images/LOGO.jpg" alt='首页'/></a>
+				<a class='navbar-item pull-left' href="javascript:void(0)" onclick="javascript:addFavorite2()">收藏</a>
+			</div>
+			<div class="navbar-header-right">
+				<span id="member-entrance" class="navbar-item pull-right">
 					<img src="/static/base/images/icon-crown.png" width="12" height="12">&nbsp;&nbsp;
 					{%if request.user.is_authenticated%}
-					<label style="margin: 10px"><a href='/member/center'>{{request.user.real_name}}</a></label>
-					{%if request.user.is_superuser%}|<label style="margin: 10px"><a href='/admin'>后台</a></label>{%endif%}
-					|<label style="margin: 10px"><a href='/member/logout'>注销</a></label>{%else%}
-					<a href="javascript:;" id="show-login-btn" style="margin: 10px">登录</a>|<a href="javascript:;" id="show-regist-btn" style="margin: 10px">注册</a>| 
-					{%endif%}
-				</span>		
+					<a href='/member/center'>{{request.user.real_name}}</a>
+					{%if request.user.is_superuser%}|<a href='/admin'>后台</a>{%endif%}
+					<label>|
+						<a href='/member/logout'>注销</a>{%else%}
+						<a href="javascript:;" id="show-login-btn" >登录</a>|<a href="javascript:;" id="show-regist-btn" >注册</a>
+						{%endif%}
+					</span>
+				</div>
 			</div>
-		</div>
-		<div class="contentbase" id='main'>
+		</nav>
+		<div class="main" id='main'>
     	{% block content %} base.html {% endblock %}
     	</div>
-    		<div class="footer">
-    		<div class="footer-nav"> <a href="/site_map.html" class="newfooter-nav">网站地图</a>|<a href="/contactus.html" class="newfooter-nav">联系我们</a>|<a href="/recruit.html" class="newfooter-nav">工作机会</a>|<a href="/privacy.html" class="newfooter-nav">隐私条款</a>|<a href="/usage_clause.html" class="newfooter-nav">使用条款</a> </div>
+		<div class="footer">
+			<div class="footer-nav"> <a href="/site_map.html" class="newfooter-nav">网站地图</a>|<a href="/contactus.html" class="newfooter-nav">联系我们</a>|<a href="/recruit.html" class="newfooter-nav">工作机会</a>|<a href="/privacy.html" class="newfooter-nav">隐私条款</a>|<a href="/usage_clause.html" class="newfooter-nav">使用条款</a> </div>
 			<div class="site-info">        
 				<div class="site-r">
 					<p class="copy-address">中国湖南道县</p>
@@ -62,7 +73,6 @@
 				</div>
 			</div>
 		</div>
-    </div>
 {%include 'component/login_regist.htm' %}
 </body>
 </html>
